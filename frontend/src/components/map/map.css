@@ -1,0 +1,32 @@
+#map-container {
+  top: 150px;
+  width: 50%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+#map * {
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 100;
+}
+
+.marker {
+  /* background: image-url('beer-solid.svg'); */
+  filter: invert(75%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 5%;
+  height: 5%;
+  cursor: pointer;
+}
+
+.marker:hover {
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
