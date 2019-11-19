@@ -1,17 +1,29 @@
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
 .splash-main {
     display: flex;
     height: 100vh;
     width: 100vw;
+
     .signup-container {
         opacity: 0.3;
         width: 100vw;
         height: 150vh;
     
         .signup-form {
-      
-            opacity: 2.7;
+            filter: alpha(opacity=60);
+            opacity: 2.5;
             position: relative;
             align-items: center;
+            background-color: black;
+            box-sizing: 25px 25px 25px solid black;
+            border: 5px solid rgb(250, 213, 154);
+            padding: 10px;
+            width: 500px;
+            margin-left: 700px;
         }
     
         input {
@@ -21,8 +33,10 @@
             padding: 20px;
             border: 1px solid #E6E5E5;
             margin-top: 10px;
-            margin-bottom: 10px;
-            font-size: 13px;
+            //margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
             border-radius: 2px;
         }
     }

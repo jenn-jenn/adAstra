@@ -62,9 +62,9 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="splash-main">
-        <div className="login-form">
+        <div className="login-container">
           <form onSubmit={this.handleSubmit}>
-            <div className="login-container">
+            <div className="login-form">
               <input
                 type="text"
                 value={this.state.email}
