@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+import '../stylesheets/nav/nav.scss';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -35,9 +36,13 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Welcome to adAstra! navbar header</h1>
-        {this.getLinks()}
+      <div className="nav">
+        <div className="nav-header-text">
+          <h2>ad Astra</h2>
+        </div>
+        <div className="nav-right">
+          {this.getLinks()}
+        </div>
       </div>
     );
   }
