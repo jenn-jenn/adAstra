@@ -1,0 +1,42 @@
+.nav {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: bold;
+    position: fixed;
+    width: 100vw;
+    z-index: 10;
+    background-color: rgb(255, 255, 255);
+    padding: 0px 10px 0px 10px;
+    box-sizing: border-box;
+    top: 0px; //for fixed and absolute
+}
+
+.nav-header-text {
+    h2 {
+        padding-right: 20px;
+        font-size: 32px;
+        font-style: italic;
+        font-weight: bold;
+        letter-spacing: 1.3px;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.nav-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.logout-button {
+  border: 1px solid rgb(250, 213, 154);
+  font-size: 15px;
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 6px;
+}

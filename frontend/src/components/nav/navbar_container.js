@@ -9,4 +9,12 @@ const mapStateToProps = state => ({
   loggedIn: state.session.isAuthenticated
 });
 
-export default connect(mapStateToProps, { logout })(NavBar);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logout: () => dispatch(logout())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
+
+// export default connect(mapStateToProps, { logout })(NavBar);
