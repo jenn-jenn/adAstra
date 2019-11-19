@@ -17,7 +17,7 @@ class Comments extends React.Component {
                         <CommentListItem users={this.props.users}
                         comment={comment} key={comment._id}/>)
                 }
-                <CommentFormContainer />
+                <CommentFormContainer postId={1}/>
             </div>
         )
     }   
