@@ -146,7 +146,6 @@
 }
 
 .mapboxgl-ctrl-icon.mapboxgl-ctrl-icon-disabled {
-    opacity: 0.25;
     border-color: #373737;
 }
 
