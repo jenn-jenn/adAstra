@@ -1,8 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import './index.css';
-import axios from 'axios';
-import * as APIUtilComments from './util/comment_api_util';
 
 // We will create this component shortly
 import Root from "./components/root";
@@ -54,5 +52,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   ReactDOM.render(<Root store={store} />, root);
 });
-window.axios = axios;
-window.APIUtilComments = APIUtilComments;
