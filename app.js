@@ -9,6 +9,7 @@ const axios = require('axios');
 
 const cosmicObjects = require("./routes/api/cosmic_objects");
 const users = require("./routes/api/users");
+const comments = require("./routes/api/comments");
 const CosmicObject = require('./models/CosmicObject');
 
 mongoose
@@ -23,6 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use("/api/users", users);
+app.use("/api/comments", comments);
 app.use("/api/cosmicobjects", cosmicObjects);
 
 const port = process.env.PORT || 5000;
