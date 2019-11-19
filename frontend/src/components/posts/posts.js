@@ -1,47 +1,47 @@
 import React from 'react';
-import PostItem from './post_item';
+import PostItems from './post_item';
+import PostFormContainer from './post_form_container';
 
 class Posts extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            posts: []
-        }
-
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.fetchPosts();
     }
 
-    componentWillReceiveProps(newState) {
-        this.setState({ posts: newState.posts });
-    }
-
     render() {
-        const postDiv = (
-            <div>
-                <ul>
-                    {this.state.posts.map( (post, id) => (
-                        <li key={id}>
-                            <PostItem post={post}/>
-                        </li>
-                    ))}
-                </ul>
-                
-            </div>
-        );
         const postsEmpty = (
             <div>
                 No posts made
             </div>
-        )
-
-        if(this.state.posts.length === 0) {
+        );
+    
+        if (this.props.posts.length === 0) {
             return postsEmpty;
-        } else {
-            return postDiv;
         }
+        
+        const allPosts = Object.values(this.props.posts);
+        const postDiv = (
+            <div>
+                <ul>
+                    {allPosts.map( (post, id)=> (
+                        <li key={id}>
+                            <PostItems post={post}/>  
+                       </li>   
+                    ))}
+                </ul>
+
+            </div>
+        );
+       
+        return (
+            <div>
+                {postDiv}
+                <PostFormContainer />
+            </div>
+        )
     }
 };
 

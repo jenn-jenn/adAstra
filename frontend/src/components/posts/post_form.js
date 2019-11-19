@@ -9,7 +9,7 @@ class PostForm extends React.Component {
             title: '',
             body: '',
             newPost:''
-        }
+        };
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -21,7 +21,7 @@ class PostForm extends React.Component {
     update(field) {
         return(e) => {
             this.setState({[ field]: e.currentTarget.value} );
-        }
+        };
     }
     
     handleSubmit(e) {
@@ -30,16 +30,17 @@ class PostForm extends React.Component {
             title: this.state.title,
             body: this.state.body,
             author: this.props.currentUser.id
-        }
-        this.props.createNewPost(data);
+        };
+        this.props.createNewPost(data)
+          .then( () => this.props.fetchPosts());
         this.setState({title: '', body: ''})
     }
 
 
     render() {
         return (
-          <dvi>
-            <PostItem post={this.state.newPost} />
+          <div>
+            {/* <PostItem post={this.state.newPost} /> */}
             <form onSubmit={this.handleSubmit}>
               <div>
                 <input
@@ -57,7 +58,7 @@ class PostForm extends React.Component {
                 <input type="submit" value="Submit"/>
               </div>
             </form>
-          </dvi>
+          </div>
         );
     }
 };

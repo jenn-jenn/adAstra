@@ -1,13 +1,14 @@
 import axios from "axios";
 
 export const getPosts = () => {
-    debugger
-    console.log('getting all posts');
   return axios.get("/api/posts");
 };
 
+export const getAPost = (postId) => {
+  return axios.get(`/api/posts${postId}`);
+};
+
 export const writePost = (data) => {
-    console.log("writePost: ", data);
     return axios.post('/api/posts/', data);
 };
 

@@ -9,21 +9,35 @@ const Post = require("../../models/Post");
 router.get("/", (req, res) => {
     Post
         .find()
-        .sort( {date: -1} ) // 'asc' 
-        .then( posts => res.json(posts))
+        .sort( {date: 'asc'} ) // 'asc' 
+        .then( posts => {
+            let payload = {};
+            posts.map( post => payload[post._id] = post);
+            return res.json(payload);
+        })
         .catch(err => res.status(400).json(err));
-})
+});
+
+//DELETE a post
+router.get('/:postId', (req, res) => {
+    Post.findById(req.params.postId)
+        .then(post => {
+            if(!post) {
+                return res.status(404).json( {msg: "Post cannot be found"});
+            }
+            return res.json(post);
+        })
+        .catch(err => console.log(err));
+});
 
 
 // POST a post
 router.post("/", passport.authenticate("jwt", { session: false }), (req, res) => {
-    console.log(req);
     const { errors, isValid } = validatePostInput(req.body);
 
     if (!isValid) {
         return res.status(400).json(errors);
     }   
-    debugger
     const newPost = new Post({
         author: req.user.id,
         body: req.body.body,

@@ -5,6 +5,7 @@ import Posts from './posts';
 const msp = (state) => {
     return {
         posts: Object.values(state.posts.all)
+        // posts: state.posts.all
     };
 };
 
