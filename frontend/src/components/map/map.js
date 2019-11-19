@@ -43,7 +43,7 @@ class Map extends React.Component {
 
 
   render() {
-    if (this.props.cosmicObjects === undefined) return null;
+    if (this.props.cosmicObjects.length === 0) return null;
     return (
       <div id="map-container">
         <div id='map'></div>
