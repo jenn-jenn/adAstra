@@ -1,10 +1,9 @@
 #map-container {
-  top: 150px;
-  width: 50%;
-  height: 100%;
+  width: 500px;
+  height: 500px;
   position: fixed;
-  top: 0px;
-  left: 0px;
+  top: 100px;
+  left: 50px;
 }
 
 #map {
@@ -18,7 +17,7 @@
 }
 
 .marker {
-  /* background: image-url('beer-solid.svg'); */
+  background: url('icons8-marker-24.png');
   filter: invert(75%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
   background-position: center;
   background-repeat: no-repeat;

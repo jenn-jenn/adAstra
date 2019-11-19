@@ -1,64 +1,43 @@
 import React from 'react';
+import ApiKeys from '../../api';
+import "./mapboxgl-map.css";
+import './map.css';
+import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 import MarkerManager from './map_marker_manager';
-const ApiKeys = require("../../api");
-const mapboxgl = require("mapbox-gl/dist/mapbox-gl.js");
 
 class Map extends React.Component {
-  // constructor(props) {
-    // super(props);
-    // this.MarkerManager;
-//     // this.onGeolocateSuccess = this.onGeolocateSuccess.bind(window);
-//     // this.onGeolocateError = this.onGeolocateError.bind(window);
-//     this.geolocate = this.geolocate.bind(window);
-  // }
-
-//   onGeolocateSuccess(coordinates) {
-//     const { latitude, longitude } = coordinates.coords;
-//     console.log('Found coordinates: ', latitude, longitude);
-//   }
-
-//   onGeolocateError(error) {
-//     console.warn(error.code, error.message);
-
-//     if (error.code === 1) {
-//       console.log('they said no')
-//     } else if (error.code === 2) {
-//       console.log('position unavailable')
-//     } else if (error.code === 3) {
-//       console.log('timeout')
-//     }
-//   }
-
-//   geolocate() {
-//     if (window.navigator && window.navigator.geolocation) {
-//       // window.navigator.geolocation.getCurrentPosition(onGeolocateSuccess, onGeolocateError);
-//     }
-//   }
-
-//   componentWillMount() {
-//   }
-
   componentDidMount() {
     this.props.fetchCosmicObjects()
+    .then(() => {
+      mapboxgl.accessToken = ApiKeys.mapboxAccessToken;
 
-    // const location = geolocate();
-    mapboxgl.accessToken = ApiKeys.mapboxAccessToken;
-    // console.log(mapboxgl.accessToken)
+      const mapOptions = {
+        container: "map",
+        minZoom: 11.5,
+        center: [-122.4194, 37.7749],
+        // style: 'mapbox://styles/mapbox/navigation-preview-night-v2'
+        style: 'mapbox://styles/mapbox/navigation-guidance-night-v2'
+        // style: 'mapbox://styles/mapbox/dark-v9'
+      };
 
-    const mapOptions = {
-      container: 'map',
-      minZoom: 11.5,
-      center: [122.4194, 37.7749],
-      style: 'mapbox://styles/mapbox/dark-v9'
-    };
+      let mapbox;
+      mapbox = new mapboxgl.Map(mapOptions);
 
-    let mapbox;
-    new mapboxgl.Map(mapOptions);
+      const markerPlaces = this.props.cosmicObjects;
+      console.log(markerPlaces)
 
-    // const markerPlaces = this.props.cosmicObjects;
+      this.MarkerManager = new MarkerManager(mapbox);
+      this.MarkerManager.updateMarkers(markerPlaces);
 
-    // this.MarkerManager = new MarkerManager(mapbox);
-    // this.MarkerManager.updateMarkers(markerPlaces);
+      mapbox.addControl(
+        new mapboxgl.GeolocateControl({
+          positionOptions: {
+            enableHighAccuracy: true
+          },
+          trackUserLocation: true
+        })
+      );
+    })
 
   }
 

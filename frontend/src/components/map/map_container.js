@@ -3,10 +3,10 @@ import { fetchCosmicObjects } from '../../actions/cosmic_objects_actions';
 import Map from './map';
 import { withRouter } from 'react-router-dom';
 
-const msp = (state, ownProps) => {
-  return ({
-    cosmicObjects: state.entities.cosmicObjects
-  })
+const msp = (state) => {
+  return {
+    cosmicObjects: Object.values(state.entities.cosmicObjects)
+  };
 };
 
 const mdp = dispatch => ({

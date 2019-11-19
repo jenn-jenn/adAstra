@@ -1,26 +1,28 @@
-// class MarkerManager {
-//   constructor(map) {
-//     this.map = map;
-//     this.updateMarkers = this.updateMarkers.bind(this);
-//     this.createMarkerFromObject = this.createMarkerFromObject.bind(this);
-//   }
+const mapboxgl = require("mapbox-gl/dist/mapbox-gl.js");
 
-//   createMarkerFromObject(object) {
-//     const el = document.createElement('div');
-//     el.className = 'marker';
+class MarkerManager {
+  constructor(map) {
+    this.map = map;
+    this.updateMarkers = this.updateMarkers.bind(this);
+    this.createMarkerFromObject = this.createMarkerFromObject.bind(this);
+  }
 
-//     const lat = object.dec.decimal;
-//     const lng = object.ra.decimal;
-//     const coordinates = [lng, lat]    
+  createMarkerFromObject(object) {
+    const el = document.createElement('div');
+    el.className = 'marker';
 
-//     new mapboxgl.Marker(el)
-//       .setLngLat(coordinates)
-//       .addTo(this.map);
-//   }
+    const lng = object.ra.decimal;
+    const lat = object.dec.decimal;
+    const coordinates = [lng, lat]    
 
-//   updateMarkers(objects) {
-//     objects.map(object => (this.createMarkerFromObject(object)));
-//   }
-// }
+    new mapboxgl.Marker(el)
+      .setLngLat(coordinates)
+      .addTo(this.map);
+  }
 
-// export default MarkerManager;
+  updateMarkers(objects) {
+    objects.map(object => (this.createMarkerFromObject(object)));
+  }
+}
+
+export default MarkerManager;
