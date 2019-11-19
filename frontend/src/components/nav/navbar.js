@@ -16,11 +16,18 @@ class NavBar extends React.Component {
     this.props.logout();
   }
 
+  handleLogout(e) {
+    return (e) => {
+      e.preventDefault();
+      this.props.logout();
+    };
+  }
+
   // Selectively render links dependent on whether the user is logged in
   getLinks() {
     if (this.props.loggedIn) {
       return (
-        <div>
+        <div className="logout-button">
           <button onClick={this.logoutUser}>Logout</button>
         </div>
       );

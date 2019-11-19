@@ -17,7 +17,6 @@
 
 .nav-header-text {
     h2 {
-        margin-left: 900px;
         padding-right: 20px;
         font-size: 32px;
         font-style: italic;
@@ -34,3 +33,10 @@
     justify-content: space-evenly;
 }
 
+.logout-button {
+  border: 1px solid rgb(250, 213, 154);
+  font-size: 15px;
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 6px;
+}
