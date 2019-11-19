@@ -1,0 +1,68 @@
+#map-container {
+  width: 1000px;
+  height: 1000px;
+  position: fixed;
+  top: 100px;
+  left: 50px;
+}
+
+#map {
+  width: 800px;
+  height: 800px;
+}
+
+#map * {
+  background-color: rgba(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+.marker {
+  background: url('icons8-marker-24.png');
+  filter: invert(85%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 5%;
+  height: 5%;
+  cursor: pointer;
+}
+
+.marker:hover {
+  filter: invert(85%) sepia(51%) saturate(2878%) hue-rotate(180deg) brightness(104%) contrast(97%);
+}
+
+.map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  background-color: #ddd;
+  max-height: 100%;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 3px;
+}
+ 
+ 
+.map-overlay input {
+  display: block;
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 0;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  padding: 0px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.popup h1 {
+  font-size: 15px;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}

@@ -1,7 +1,8 @@
 import { combineReducers } from "redux";
+import CosmicObjectsReducer from "./cosmic_objects_reducer";
+import calendarsReducer from "./calendar_reducer";
 
-const entitiesReducer = combineReducers({
-    calendars: calendarsReducer
+export default combineReducers({
+  calendars: calendarsReducer,
+  cosmicObjects: CosmicObjectsReducer
 });
-
-export default entitiesReducer;
