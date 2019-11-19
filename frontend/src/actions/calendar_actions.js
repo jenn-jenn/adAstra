@@ -14,9 +14,9 @@ export const receiveDate = date => ({
     date
 });
 
-export const removeDate = date => ({
+export const removeDate = date_item => ({
     type: REMOVE_DATE, 
-    date
+    date_item
 });
 
 export const createDate = (date) => dispatch => (
