@@ -1,7 +1,7 @@
 import React from 'react';
 import ApiKeys from '../../api';
-import "./mapboxgl-map.css";
-import './map.css';
+import "../stylesheets/mapboxgl-map.css";
+import '../stylesheets/map.css';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 import MarkerManager from './map_marker_manager';
 
