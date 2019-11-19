@@ -1,38 +1,70 @@
 import React from 'react';
-import MarkerManager from './marker_manager';
+import MarkerManager from './map_marker_manager';
+const ApiKeys = require("../../api");
+const mapboxgl = require("mapbox-gl/dist/mapbox-gl.js");
 
 class Map extends React.Component {
-  constructor(props) {
-    super(props);
-    this.MarkerManager;
-  }
+  // constructor(props) {
+    // super(props);
+    // this.MarkerManager;
+//     // this.onGeolocateSuccess = this.onGeolocateSuccess.bind(window);
+//     // this.onGeolocateError = this.onGeolocateError.bind(window);
+//     this.geolocate = this.geolocate.bind(window);
+  // }
+
+//   onGeolocateSuccess(coordinates) {
+//     const { latitude, longitude } = coordinates.coords;
+//     console.log('Found coordinates: ', latitude, longitude);
+//   }
+
+//   onGeolocateError(error) {
+//     console.warn(error.code, error.message);
+
+//     if (error.code === 1) {
+//       console.log('they said no')
+//     } else if (error.code === 2) {
+//       console.log('position unavailable')
+//     } else if (error.code === 3) {
+//       console.log('timeout')
+//     }
+//   }
+
+//   geolocate() {
+//     if (window.navigator && window.navigator.geolocation) {
+//       // window.navigator.geolocation.getCurrentPosition(onGeolocateSuccess, onGeolocateError);
+//     }
+//   }
+
+//   componentWillMount() {
+//   }
 
   componentDidMount() {
-    this.props.fetchGuide(this.props.match.params.guideId)
-      .then(() => {
-        const { cityLng, cityLat, breweryLocations } = this.props.guide;
-        mapboxgl.accessToken = window.mboxAPIKey;
+    this.props.fetchCosmicObjects()
 
-        const mapOptions = {
-          container: 'map',
-          minZoom: 11.5,
-          center: [cityLng, cityLat],
-          style: 'mapbox://styles/mapbox/dark-v9'
-        };
+    // const location = geolocate();
+    mapboxgl.accessToken = ApiKeys.mapboxAccessToken;
+    // console.log(mapboxgl.accessToken)
 
-        let mapbox;
-        mapbox = new mapboxgl.Map(mapOptions);
+    const mapOptions = {
+      container: 'map',
+      minZoom: 11.5,
+      center: [122.4194, 37.7749],
+      style: 'mapbox://styles/mapbox/dark-v9'
+    };
 
-        const markerPlaces = Object.values(breweryLocations);
+    let mapbox;
+    new mapboxgl.Map(mapOptions);
 
-        this.MarkerManager = new MarkerManager(mapbox);
-        this.MarkerManager.updateMarkers(markerPlaces);
-      })
+    // const markerPlaces = this.props.cosmicObjects;
+
+    // this.MarkerManager = new MarkerManager(mapbox);
+    // this.MarkerManager.updateMarkers(markerPlaces);
+
   }
 
 
   render() {
-    if (this.props.guide === undefined) return null;
+    if (this.props.cosmicObjects === undefined) return null;
     return (
       <div id="map-container">
         <div id='map'></div>
