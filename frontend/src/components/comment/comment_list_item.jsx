@@ -5,11 +5,14 @@ class CommentListItem extends React.Component {
   render() {
     return (
       <div>
-          <div>
+          <h2>
             {this.props.comment.body}
-          </div>
+          </h2>
           <div>
             -{this.props.users[this.props.comment.userId].handle}
+          </div>
+          <div>
+            {this.props.comment.date}
           </div>
       </div>
     );
