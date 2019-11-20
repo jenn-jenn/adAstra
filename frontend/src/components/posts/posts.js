@@ -6,13 +6,8 @@ import '../stylesheets/post/post.scss';
 class Posts extends React.Component {
 
     componentDidMount() {
-        // this.props.fetchPosts().then(
-        // () => this.props.fetchUsers()
-        // )
-        this.props.fetchUsers().then(
-        () => this.props.fetchPosts()
-        )
-        debugger;
+        this.props.fetchUsers()
+            .then(() => this.props.fetchPosts());
     }
 
     render() {
@@ -32,8 +27,8 @@ class Posts extends React.Component {
             users[user._id] = user;
         })
         const postDiv = (
-            <div className="post-container">
-                <ul className="post-list">
+            <div className="post-container-div">
+                <ul className="post-container-list">
                     {allPosts.map( (post, id)=> (
                         <li key={id} className="post">
                             <PostItems post={post} users={users}/>  
@@ -44,7 +39,7 @@ class Posts extends React.Component {
             </div>
         );
         return (
-            <div>
+            <div className="post-container">
                 {postDiv}
                 <PostFormContainer />
             </div>

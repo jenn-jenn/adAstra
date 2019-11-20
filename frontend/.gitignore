@@ -13,6 +13,7 @@
 
 # misc
 api_dev.js
+
 .DS_Store
 .env
 .env.local

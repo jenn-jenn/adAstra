@@ -33,7 +33,7 @@ class PostForm extends React.Component {
 
     render() {
         return (
-          <div>
+          <div className="post-form-container">
             <form onSubmit={this.handleSubmit}>
               <div>
                 <input

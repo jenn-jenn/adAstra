@@ -16,7 +16,7 @@ const PostItems = ({ post, users }) => {
       </Link>
       {/* <h4>{post._id}</h4> */}
       <h4>{user.handle}</h4>
-      <h4>{date.toDateString()}</h4>
+      <h4>{date.toDateString()} {date.toTimeString()}</h4>
       <p>{post.body}</p>
     </div>
   )
