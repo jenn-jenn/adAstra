@@ -17,6 +17,9 @@ import { setAuthToken } from "./util/session_api_util";
 // We have not created this action yet, but will do so in the next step
 import { logout } from "./actions/session_actions";
 
+import axios from 'axios';
+window.axios = axios
+
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
