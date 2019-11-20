@@ -1,4 +1,5 @@
 import React from 'react';
+import  CommentsContainer  from '../comment/comment_container';
 
 class PostShow extends React.Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class PostShow extends React.Component {
         <h3>{post.author}</h3>
         <h4>{date.toDateString()}</h4>
         <p>{post.body}</p>
+        <CommentsContainer post={post}/>
       </div>
     )
   }

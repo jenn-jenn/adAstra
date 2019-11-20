@@ -7,7 +7,7 @@ const CommentSchema = new Schema({
         required: true
     },
     postId: {
-        type: Number
+        type: String
     },
     userId: {
         type: Schema.Types.ObjectId,

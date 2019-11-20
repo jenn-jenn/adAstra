@@ -6,7 +6,7 @@ class Comments extends React.Component {
 
     componentDidMount(){
         this.props.fetchUsers()
-        .then(()=> this.props.fetchPostComments(1))
+        .then(()=> this.props.fetchPostComments(this.props.post._id))
     }
 
     render() {
@@ -17,7 +17,7 @@ class Comments extends React.Component {
                         <CommentListItem users={this.props.users}
                         comment={comment} key={comment._id}/>)
                 }
-                <CommentFormContainer postId={1}/>
+                <CommentFormContainer postId={this.props.post._id}/>
             </div>
         )
     }   
