@@ -1,9 +1,10 @@
-import { getAllComments, getCommentsbyPost, writeComment} from '../util/comment_api_util';
+import { getAllComments, getCommentsbyPost, writeComment, deleteComment} from '../util/comment_api_util';
 
 export const RECEIVE_COMMENTS = "RECEIVE_COMMENTS";
 export const RECEIVE_POST_COMMENTS = "RECEIVE_POST_COMMENTS";
 export const RECEIVE_NEW_COMMENT = "RECEIVE_NEW_COMMENT";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
+export const REMOVE_COMMENT = "REMOVE_COMMENT";
 
 export const receiveComments = comments => {
     return ({
@@ -26,6 +27,13 @@ export const receiveNewComment = comment => {
     };
 }
 
+export const removeComment = id => {
+    return {
+        type: REMOVE_COMMENT,
+        id
+    }
+}
+
 export const receiveErrors = errors => ({
   type: RECEIVE_SESSION_ERRORS,
   errors
@@ -46,3 +54,7 @@ export const composeComment = data => dispatch =>
     .then(comment => dispatch(receiveNewComment(comment)))
     .catch(err => dispatch(receiveErrors(err)));
 
+export const destroyComment = id => dispatch =>
+    deleteComment(id)
+    .then(comment => dispatch(removeComment(id)))
+    .catch(err => dispatch(receiveErrors(err)));

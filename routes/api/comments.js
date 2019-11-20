@@ -39,4 +39,12 @@ router.post("/new",
     .then(comment => res.json(comment));
 });
 
+router.delete("/:id", (req, res) => {
+    Comment
+    .findByIdAndDelete(req.params.id)
+    .then(comment => res.json(comment))
+    .catch( err => res.status(400).json(err));
+});
+    
+
 module.exports = router;

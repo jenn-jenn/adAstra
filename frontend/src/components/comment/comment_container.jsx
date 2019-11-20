@@ -1,5 +1,8 @@
 import { connect } from "react-redux";
-import { fetchPostComments } from "../../actions/comment_actions";
+import {
+  fetchPostComments,
+  destroyComment
+} from "../../actions/comment_actions";
 import { fetchUsers } from "../../actions/user_actions";
 import Comments from './comments';
 
@@ -15,6 +18,7 @@ const mapDispatchToProps = dispatch => {
     return {
       fetchPostComments: postid => dispatch(fetchPostComments(postid)),
       fetchUsers: () => dispatch(fetchUsers()),
+      destroyComment: id => dispatch(destroyComment(id)),
     };
 }
 

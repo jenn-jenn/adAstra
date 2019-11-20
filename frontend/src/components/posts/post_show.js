@@ -1,4 +1,5 @@
 import React from 'react';
+import  CommentsContainer  from '../comment/comment_container';
 
 class PostShow extends React.Component {
 
@@ -33,6 +34,7 @@ class PostShow extends React.Component {
         <h4>{date.toDateString()}</h4>
         <p>{post.body}</p>
         <input onClick={this.delete} type="submit" value="Delete" />
+        <CommentsContainer post={post}/>
       </div>
     )
   }
