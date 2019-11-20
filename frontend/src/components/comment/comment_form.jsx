@@ -26,7 +26,7 @@ class CommentForm extends React.Component{
     }
 
     render() {
-        debugger;
+        // debugger;
         return (
             <form onSubmit={this.handleSubmit}>
                 <textarea name="" onChange={this.handleChange} id="" cols="30" rows="10" placeholder="Write a comment" value={this.state.body}/>

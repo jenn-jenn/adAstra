@@ -12,10 +12,8 @@ class PostShow extends React.Component {
   }
 
   delete() {
-    debugger
     this.props.deleteAPost(this.props.postId)
-      .then((res) => {
-        debugger
+      .then(() => {
         this.props.history.push('/posts');
       });
   }

@@ -10,7 +10,6 @@ const PostsReducer = (state = {}, action) => {
             newState2[action.post.data.id] = action.post.data;
             return newState2;
         case REMOVE_POST:
-            debugger
             let newState = Object.assign({}, state);
             delete newState[action.post.data.id];
             return newState;

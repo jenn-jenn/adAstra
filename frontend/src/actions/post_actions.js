@@ -47,10 +47,8 @@ export const createNewPost = (data) => (dispatch)=> {
 };
 
 export const deleteAPost = (postId) => (dispatch) => {
-    debugger
     return PostUtil.deletePost(postId)
         .then((post) => {
-            debugger
             dispatch(removeAPost(post));
         })
         .catch((err) => console.log(err));
