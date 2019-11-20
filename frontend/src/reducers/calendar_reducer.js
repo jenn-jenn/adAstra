@@ -11,7 +11,7 @@ const calendarsReducer = (oldState={}, action) => {
             let newState = Object.assign({}, oldState, {[action.dateId.data.id]: action.date.data });
             return newState;
         case REMOVE_DATE:
-            newState = Object.assign({}, state);
+            newState = Object.assign({}, oldState);
             delete newState[action.dateId.data.id];
             return newState;
         default:

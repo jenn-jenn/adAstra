@@ -6,14 +6,14 @@ import PostForm from './post_form';
 const msp = (state) => {
     return {
         currentUser: state.session.user,
-        newPost: state.posts.new
+        newPost: Object.values(state.entities.posts)[Object.values(state.entities.posts).length - 1]
     };
 };
 
 
 const mdp = (dispatch) => ({
     createNewPost: data => dispatch(createNewPost(data)),
-    fetchPosts: data => dispatch(fetchPosts()),
+    fetchPosts: () => dispatch(fetchPosts()),
 });
 
 export default connect(msp, mdp)(PostForm);

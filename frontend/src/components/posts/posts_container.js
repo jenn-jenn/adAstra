@@ -3,9 +3,9 @@ import { fetchPosts } from '../../actions/post_actions';
 import Posts from './posts';
 
 const msp = (state) => {
+    debugger
     return {
-        posts: Object.values(state.posts.all)
-        // posts: state.posts.all
+        posts: Object.values(state.entities.posts)
     };
 };
 
