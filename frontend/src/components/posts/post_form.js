@@ -1,5 +1,4 @@
 import React from 'react';
-import PostItem from './post_item';
 
 class PostForm extends React.Component {
     constructor(props) {

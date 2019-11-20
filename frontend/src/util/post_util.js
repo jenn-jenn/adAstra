@@ -12,7 +12,7 @@ export const writePost = (data) => {
     return axios.post('/api/posts/', data);
 };
 
-// export const deletePost = (postId) => {
-//     console.log("deletePost: ", postId);
-//     return axios.delete(`/api/posts/${postId}`);
-// }
+export const deletePost = (postId) => {
+    console.log("deletePost: ", postId);
+    return axios.delete(`/api/posts/${postId}`);
+}
