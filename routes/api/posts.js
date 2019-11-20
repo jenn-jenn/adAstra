@@ -49,16 +49,16 @@ router.post("/", passport.authenticate("jwt", { session: false }), (req, res) =>
 })
 
 //DELETE a post
-// router.delete('/:postId', (req, res) => {
-//     Post.findByIdAndRemove(req.params.postId)
-//         .then(post => {
-//             if(!post) {
-//                 return res.status(404).json( {msg: "Post cannot be found"});
-//             }
-//             return res.json({msg: "Post deleted"});
-//         })
-//         .catch(err => console.log(err));
-// });
+router.delete('/:postId', (req, res) => {
+    Post.findByIdAndDelete(req.params.postId)
+        .then(post => {
+            if(!post) {
+                return res.status(404).json( {msg: "Post cannot be found"});
+            }
+            return res.json({msg: "Post deleted"});
+        })
+        .catch(err => console.log(err));
+});
 
 
 module.exports = router;

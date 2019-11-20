@@ -1,14 +1,23 @@
 import React from 'react';
 
 class PostShow extends React.Component {
+
   constructor(props) {
     super(props);
-
+    this.delete = this.delete.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchPosts();
+  }
 
+  delete() {
+    debugger
+    this.props.deleteAPost(this.props.postId)
+      .then((res) => {
+        debugger
+        this.props.history.push('/posts');
+      });
   }
 
   render() {  
@@ -25,6 +34,7 @@ class PostShow extends React.Component {
         <h3>{post.author}</h3>
         <h4>{date.toDateString()}</h4>
         <p>{post.body}</p>
+        <input onClick={this.delete} type="submit" value="Delete" />
       </div>
     )
   }

@@ -3,9 +3,7 @@ import PostItems from './post_item';
 import PostFormContainer from './post_form_container';
 
 class Posts extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+
 
     componentDidMount() {
         this.props.fetchPosts();
