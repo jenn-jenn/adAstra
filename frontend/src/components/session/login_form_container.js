@@ -7,13 +7,16 @@ import SessionForm from './session_form';
 
 const mapStateToProps = state => {
   return {
-    errors: state.errors.session
+    signedIn: state.session.isAuthenticated,
+    errors: state.errors.session,
+    formType: "login",
+    formHeader: "Log In"
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    formAction: user => dispatch(login(user))
+    processForm: user => dispatch(login(user))
   };
 };
 

@@ -1,21 +1,32 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Redirect, withRouter } from 'react-router-dom';
+import '../stylesheets/session/session_form.scss';
+
 
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
+      email: "",
+      handle: "",
       password: "",
-      email: ""
+      password2: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
     this.update = this.update.bind(this);
   }
 
-  componentDidMount() {
-    this.props.clearErrors();
+  // componentDidMount() {
+  //   this.props.clearErrors();
+  // }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.signedIn === true) {
+      this.props.history.push("/login");
+    }
+
+    this.setState({ errors: nextProps.errors });
   }
 
   handleSubmit(e) {
@@ -27,7 +38,12 @@ class SessionForm extends React.Component {
 
   handleDemo(e) {
     e.preventDefault();
-    this.setState({ username: "DemoUser", password: "123456", email: "demo@email.com" }, () => {
+    this.setState({
+      email: "guest@adastra.com",
+      handle: "Guest",
+      password: "123456",
+      password2: "123456"
+    }, () => {
       const user = Object.assign({}, this.state);
       this.props.processForm(user)
         .then(() => this.props.history.push("/"));
@@ -36,6 +52,16 @@ class SessionForm extends React.Component {
 
   update(field) {
     return e => this.setState({ [field]: e.target.value });
+  }
+
+  renderErrors() {
+    return (
+      <ul>
+        {Object.keys(this.props.errors).map((error, i) => (
+          <li key={`error-${i}`}>{this.props.errors[error]}</li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
@@ -52,17 +78,23 @@ class SessionForm extends React.Component {
           </Link>
         </div><br />
 
-        <div>
-          {this.props.errors.map((err, i) => (
-            <div className="user-auth-errors" key={i}>
-              {err}
-            </div>
-          ))}
+        <div className="user-auth-errors">
+          {this.renderErrors()}
         </div>
 
         <form className="form flex-center">
+
           <input
             className="input"
+            onChange={this.update("email")}
+            placeholder="Email"
+            type="text"
+            name="email"
+            value={this.state.email}
+          />
+
+          <input
+            className={this.props.formType === "signup" ? "input email" : "hidden"}
             onChange={this.update("username")}
             placeholder="Username"
             type="text"
@@ -81,11 +113,11 @@ class SessionForm extends React.Component {
 
           <input
             className={this.props.formType === "signup" ? "input email" : "hidden"}
-            onChange={this.update("email")}
-            placeholder="Email"
-            type="text"
-            name="email"
-            value={this.state.email}
+            onChange={this.update("password2")}
+            placeholder="Confirm Password"
+            type="password"
+            name="password2"
+            value={this.state.password2}
           />
 
           <input
@@ -99,7 +131,7 @@ class SessionForm extends React.Component {
             className={this.props.formType === "login" ? "input submit" : "hidden"}
             onClick={this.handleDemo}
             type="submit"
-            value="Demo Login"
+            value="Guest Login"
           />
         </form>
       </div>
@@ -107,4 +139,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);
