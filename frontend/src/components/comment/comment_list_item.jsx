@@ -13,6 +13,9 @@ class CommentListItem extends React.Component {
 
   render() {
     let deletebutton = this.props.currentUser.id === this.props.comment.userId ? <button onClick={this.handleDelete} id={this.props.comment._id}>Delete Comment</button> : "";
+
+    const date = new Date(this.props.comment.date)
+
     return (
       <div>
           <h2>
@@ -22,7 +25,7 @@ class CommentListItem extends React.Component {
             -{this.props.users[this.props.comment.userId].handle}
           </div>
           <div>
-            {this.props.comment.date}
+            {date.toDateString()} {date.toTimeString()}
           </div>
           {deletebutton}
       </div>
