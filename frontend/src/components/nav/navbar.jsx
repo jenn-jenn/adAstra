@@ -47,6 +47,9 @@ class NavBar extends React.Component {
         <div className="nav-header-text">
           <h2>ad Astra</h2>
         </div>
+        <div className="nav-links">
+          <Link to={"/posts"}>Forum</Link>
+        </div>
         <div className="nav-right">
           {this.getLinks()}
         </div>
