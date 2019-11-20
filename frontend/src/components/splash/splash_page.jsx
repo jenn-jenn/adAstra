@@ -8,7 +8,7 @@ class SplashPage extends React.Component {
     return (
 
       <div className="splash-main">
-          <h2>Ad Astra!</h2>
+          <h2>adAstra</h2>
           <div className="splash-popup">
 
             <div className="splash-page-buttons">

@@ -1,9 +1,10 @@
 body {
-	background: url('splashimg.png');
+	background-image:  url('sky.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
+  // background-repeat: repeat-x;
   background-position: center;
-  background-size: 100% 100%
+  background-size: 100% 100%;
 }
 
 
@@ -23,7 +24,7 @@ body {
   box-shadow: 0px 0px 15px rgb(33, 48, 67);
   border-radius: 15px;
   width: 400px;
-  height: 550px;
+  height: 500px;
   padding: 50px;
   background: rgba(0, 0, 0, 0.596);
   padding-top: 110px;
@@ -34,8 +35,7 @@ body {
   font-size: 75px;
   color: rgb(255, 255, 255);
 
-  margin: 20px;
-  height: 70px;
+  height: 60px;
   line-height: 1%;
   box-sizing: border-box;
   border-radius: 25px;
