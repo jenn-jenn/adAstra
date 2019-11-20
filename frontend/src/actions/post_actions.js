@@ -20,6 +20,14 @@ export const receiveAPost = (post) => {
     };
 };
 
+export const removeAPost = (post) => {
+    return {
+        type: REMOVE_POST,
+        post
+    };
+};
+
+
 export const fetchPosts = () => (dispatch) => {
     return PostUtil.getPosts()
             .then((posts) => dispatch(receivePosts(posts)))
@@ -37,3 +45,12 @@ export const createNewPost = (data) => (dispatch)=> {
             .then(post => dispatch(receiveAPost(post)))
             .catch(err => console.log(err));
 };
+
+export const deleteAPost = (postId) => (dispatch) => {
+    return PostUtil.deletePost(postId)
+        .then((post) => {
+            dispatch(removeAPost(post));
+        })
+        .catch((err) => console.log(err));
+}
+
