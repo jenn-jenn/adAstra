@@ -1,5 +1,3 @@
-// src/components/app.js
-
 import React from "react";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import { Switch } from "react-router-dom";
@@ -11,7 +9,6 @@ import SignupFormContainer from "./session/signup_form_container";
 import PostsContainer from "./posts/posts_container";
 import PostFormContainer from "./posts/post_form_container";
 import PostShowContainer from "./posts/post_show_container";
-import './stylesheets/main_page.scss';
 
 const App = () => (
   <div id="app">
@@ -26,7 +23,6 @@ const App = () => (
       <ProtectedRoute exact path="/posts/" component={PostFormContainer} />
       <ProtectedRoute exact path="/posts/:postId" component={PostShowContainer} />
     </Switch>
-    <footer>Copyright &copy; 2019</footer>
   </div>
 );
 

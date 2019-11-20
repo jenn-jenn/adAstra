@@ -1,42 +1,79 @@
 .nav {
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 12px;
-    font-weight: bold;
-    position: fixed;
-    width: 100vw;
-    z-index: 10;
-    background-color: rgb(255, 255, 255);
-    padding: 0px 10px 0px 10px;
-    box-sizing: border-box;
-    top: 0px; //for fixed and absolute
+  height: 70px;
+  width: 100%;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(248, 229, 229);
+
+  position: fixed;
+  top: 0px; //for fixed and absolute
+  z-index: 10;
+  
+  // background-color: rgba(255, 255, 255, 0.377);
+  background-color: black;
+  padding: 0px 10px 0px 10px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .nav-header-text {
-    h2 {
-        padding-right: 20px;
-        font-size: 32px;
-        font-style: italic;
-        font-weight: bold;
-        letter-spacing: 1.3px;
-        display: flex;
-        flex-direction: row;
-    }
-}
-
-.nav-right {
+  h2 {
+    padding-right: 20px;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: 1.3px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+  }
 }
 
-.logout-button {
+.search-overlay {
+  background-color: #ddd;
+  max-height: 100%;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 3px;
+}
+
+.fa {
+  size: 200px;
+}
+ 
+ 
+.map-overlay input {
+  font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  display: block;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 0;
+}
+
+
+.nav-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.nav-right * {
+  margin: 5px;
+}
+
+.nav-right button {
   border: 1px solid rgb(250, 213, 154);
-  font-size: 15px;
-  cursor: pointer;
+  background-color: rgb(250, 213, 154);
   padding: 12px 24px;
-  border-radius: 6px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.nav-right button:hover {
+  border: 1px solid rgb(255, 255, 255);
+  background-color: rgba(255, 157, 0, 0);
+  cursor: pointer;
 }

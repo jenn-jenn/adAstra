@@ -8,11 +8,13 @@ body, html {
     // width: 100vw;
     // background-position: 20% 75%;
     // background-repeat: no-repeat;
-    // background-size: cover;
+    // background-size:  100%;
     // position: relative;
+    
+    top: 100px;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     min-height: 800px;
     min-width: 800px;
@@ -26,13 +28,40 @@ body, html {
     color: rgb(255, 255, 255);
     font-size: 100px;
     margin: 0;
+    margin-top: 75px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+#content-wrapper {
+  border: 5px solid black;
+  width: 800px;
+  height: 800px;
+  border-radius: 5%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 100px;
+  left: 50px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
 }
 
 footer {
+    color: grey;
     background-color: rgba(0, 0, 0, 0.342);
     text-align: center;
     // background-size: cover;
-    // min-height: 100px;
+    min-height: 40px;
     // align-items: center;
 
 }
