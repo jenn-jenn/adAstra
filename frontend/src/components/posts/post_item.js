@@ -5,9 +5,7 @@ import { Link } from 'react-router-dom';
 
 const PostItems = ({ post, users }) => {
   const date = new Date(post.date);
-  // debugger
-  const user = users[post.author._id];
-
+  const user = users[post.author];
   return(
     <div>
       <Link to={{
@@ -16,8 +14,8 @@ const PostItems = ({ post, users }) => {
       }}>
         <h3>{post.title}</h3>
       </Link>
-      <h4>{post._id}</h4>
-      <h4>{post.user.handle}</h4>
+      {/* <h4>{post._id}</h4> */}
+      <h4>{user.handle}</h4>
       <h4>{date.toDateString()}</h4>
       <p>{post.body}</p>
     </div>
