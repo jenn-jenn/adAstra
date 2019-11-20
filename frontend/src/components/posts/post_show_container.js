@@ -4,7 +4,7 @@ import { fetchPosts, fetchAPost } from '../../actions/post_actions';
 
 
 const msp = (state, ownProps) => {
-  debugger
+  // debugger
   return {
     posts: state.entities.posts,
     postId: ownProps.match.params.postId

@@ -14,8 +14,12 @@ class Comments extends React.Component {
             <div>
                 {
                     this.props.comments.map( comment =>  
-                        <CommentListItem users={this.props.users}
-                        comment={comment} key={comment._id}/>)
+                        <CommentListItem 
+                        users={this.props.users}
+                        currentUser = {this.props.currentUser}
+                        comment={comment} 
+                        key={comment._id}
+                        destroyComment={this.props.destroyComment}/>)
                 }
                 <CommentFormContainer postId={this.props.post._id}/>
             </div>

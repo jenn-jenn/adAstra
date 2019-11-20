@@ -11,3 +11,7 @@ export const getCommentsbyPost = id => {
 export const writeComment = data => {
     return axios.post(`/api/comments/new`, data)
 }
+
+export const deleteComment = id => {
+    return axios.delete(`/api/comments/${id}`)
+}
