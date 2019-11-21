@@ -31,6 +31,15 @@ router.get('/:id', (req, res) => {
         );
 });
 
+//get events by date
+router.get("/dates/:date_id", (req, res) => {
+    Date
+        .find({ dateId: req.params.date_id })
+        .then(dates => res.json(dates))
+        .catch(err => res.status(400).json(err));
+});
+
+
 //create an event
 router.post('/',
     passport.authenticate('jwt', { session: false }),
