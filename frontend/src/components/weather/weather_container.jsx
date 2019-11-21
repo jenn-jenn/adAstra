@@ -4,7 +4,7 @@ import Weather from './weather';
 
 const msp = state => {
     return {
-        
+        sunset: state.weather,
     }
 }
 
