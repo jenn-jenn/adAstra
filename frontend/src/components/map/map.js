@@ -1,5 +1,5 @@
 import React from 'react';
-import ApiKeys from '../../api/api';
+import APIKeys from '../../api/api';
 import "../stylesheets/map/mapboxgl-map.scss";
 import '../stylesheets/map/map.scss';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
@@ -9,12 +9,12 @@ class Map extends React.Component {
   componentDidMount() {
     this.props.fetchCosmicObjects()
     .then(() => {
-      mapboxgl.accessToken = ApiKeys.mapboxAccessToken;
+      mapboxgl.accessToken = APIKeys.mapboxAccessToken;
       let currCenter = [-98.5795, 39.8283];
       const mapOptions = {
         container: "map",
-        minZoom: 1,
-        maxZoom: 1,
+        minZoom: 0,
+        maxZoom: 1.6,
         center: currCenter,
         // style: 'mapbox://styles/mapbox/navigation-preview-night-v2'
         // style: "mapbox://styles/mapbox/navigation-guidance-night-v2"
@@ -52,15 +52,11 @@ class Map extends React.Component {
 
         console.log(`Latitude : ${crd.latitude}`);
         console.log(`Longitude: ${crd.longitude}`);
-
-        const sw = new mapboxgl.LngLat(crd.longitude - 45, crd.latitude + 45);
-        const ne = new mapboxgl.LngLat(crd.longitude + 45, crd.latitude - 45);
-        new mapboxgl.LngLatBounds(sw, ne);
       }
 
       function error(err) {
         console.warn(`ERROR(${err.code}): ${err.message}`);
-        alert("There was an error in retrieving your location.");
+        alert("There was an error in retrieving your location. Unable to retrieve star, moon, and sun information.");
       }
 
       navigator.geolocation.getCurrentPosition(success, error, options);
@@ -68,6 +64,8 @@ class Map extends React.Component {
 
       // lng = dec; range: [dec + 45, dec - 45]
       // lat = ra; range: [ra + 45, ra - 45]
+      // lat: 37.7749  se = (-167.4194, 82.7749)
+      // lng: -122.4194  nw = (-77.4194, -7.2251)
     })
   }
 
