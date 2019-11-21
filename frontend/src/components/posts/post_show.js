@@ -29,18 +29,19 @@ class PostShow extends React.Component {
     const date = new Date(post.date);
     return (
       <div className="post-show">
-        <div className="post-show-header">
-          <h1>
-            <i className="fas fa-meteor" alt="meteor" />
-            {post.title}
-          </h1>
-          <div className="post-show-footer">
-            <h4>Posted by {post.author} | {`${date.getHours()}:${date.getMinutes()} ${date.toDateString()}`}</h4>
-            <i className="fa fa-trash" onClick={this.delete}/>
+        <div className="post-show-content">
+          <div className="post-show-header">
+            <h1>
+              <i className="fas fa-meteor" alt="meteor" />
+              {post.title}
+            </h1>
+            <div className="post-show-footer">
+              <h4>Posted by {post.author} | {`${date.getHours()}:${date.getMinutes()} ${date.toDateString()}`}</h4>
+              <i className="fa fa-trash" onClick={this.delete}/>
+            </div>
           </div>
+          <p>{post.body}</p>
         </div>
-
-        <p>{post.body}</p>
         <CommentsContainer post={post}/>
       </div>
     )

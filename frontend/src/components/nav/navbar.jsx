@@ -63,11 +63,11 @@ class NavBar extends React.Component {
             <h2>adAstra</h2>
           </Link>
         </div>
-        <a href="#/main" className="fa fa-star-and-crescent" alt="star"/>
-        <a href="#/main" className="fas fa-star" alt="star"/>
-        <a href="#/main" className="fa fa-moon" alt="star"/>
-        <a href="#/main" className="fa fa-sun" alt="sunset"/>
-        <a href="#/main" className="fas fa-meteor" alt="meteor"/>
+        <i className="fa fa-star-and-crescent"/>
+        <i className="fas fa-star"/>
+        <i className="fa fa-moon"/>
+        <i className="fa fa-sun"/>
+        <i className="fas fa-meteor"/>
         {this.searchBar()}
         {this.getLinks()}
       </div>

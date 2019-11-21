@@ -1,16 +1,25 @@
 .post-show {
-  list-style-type: none;
   border-radius: 20px;
   box-sizing: border-box;
   
-  display: block;
+  // display: block;
 
   padding: 5px 30px 5px 30px;
   margin: 10% 15% 10% 15%;
-  // position: fixed;
   background: rgba(0,0,0,0.6);
   color: white;
   box-shadow: 0px 0px 5px grey;
+  min-width: 600px;
+}
+
+.post-show-content {
+  border: 1px solid grey;
+  border-radius: 20px;
+  box-sizing: border-box;
+  min-width: 550px;
+
+  padding: 10px 25px 20px 25px;
+  margin: 10px 0px 10px 0px;
 }
 
 .post-show-header {
@@ -85,4 +94,12 @@
 .comment-submit:hover {
   opacity: 0.5;
   cursor: pointer;
+}
+
+.post-show .fas:hover {
+  opacity: 1.0;
+}
+
+.post-show .fa-trash:hover {
+  opacity: 0.5;
 }

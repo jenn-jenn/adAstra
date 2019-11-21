@@ -24,10 +24,10 @@
   h2 {
     padding: 20px;
     font-size: 32px;
-    font-weight: bold;
+    // font-weight: bold;
     letter-spacing: 1.3px;
     color: white;
-    text-shadow: 2px 2px 5px rgb(255, 255, 255);
+    text-shadow: 1px 1px 3px rgb(255, 255, 255);
     transition: 0.3s;
   }
   h2:hover {
@@ -48,6 +48,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-evenly;
 
   width: 25%;
   min-width: 230px;
@@ -75,7 +76,7 @@
 }
 
 .fa:hover, .fas:hover {
-  opacity: 0.5;
+  // opacity: 0.5;
 }
 
 .nav-right {

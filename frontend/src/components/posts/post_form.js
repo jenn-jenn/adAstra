@@ -48,8 +48,8 @@ class PostForm extends React.Component {
               placeholder="Write post"
             />
             <div className="image-upload">
-              <label for="file-input">
-                <i class="fas fa-image"/>
+              <label htmlFor="file-input">
+                <i className="fas fa-image"/>
               </label>
               <input id="file-input" type="file" />
             </div>

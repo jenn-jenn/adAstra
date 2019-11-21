@@ -1,6 +1,6 @@
 import React from "react";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
-import { Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import FooterContainer from './footer/footer_container';
 import NavBarContainer from "./nav/navbar_container";
 import SplashPage from './splash/splash_page';
@@ -23,7 +23,7 @@ const App = () => (
       <ProtectedRoute exact path="/posts" component={PostsContainer} />
       <ProtectedRoute exact path="/posts/:postId" component={PostShowContainer} />
     </Switch>
-    <FooterContainer />
+    <Route exact path="/main" component={FooterContainer} />
   </div>
 );
 
