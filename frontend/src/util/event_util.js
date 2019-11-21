@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const createEvent = event => {
+export const createEvent = data => {
     return axios.post('/api/events/new', data);
 };
 

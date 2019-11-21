@@ -21,7 +21,7 @@ export const receiveAnEvent = eventItem => ({
     eventItem
 });
 
-export const receiveDateEvents = events => ({
+export const receiveDateEvent = events => ({
    type: RECEIVE_DATE_EVENTS, 
    events 
 });

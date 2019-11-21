@@ -46,10 +46,10 @@ class Dates extends React.Component {
             <div className="calendar">
                 <div className="main-cal-and-timeline">
                     <div className="calendar-with-button">
-                        <Calendar
+                        {/* <Calendar
                             onChange={this.changeDate()}
                             value={this.state.date}
-                        />
+                        /> */}
                         <button className="create-date-button">Create Date</button> 
                     </div>
                     <div className="right-side">
