@@ -1,6 +1,6 @@
 import React from "react";
 import '../stylesheets/calendar/date.scss';
-import DateItem from './date_item';
+import Date from './date';
 
 class Dates extends React.Component {
     constructor(props) {
@@ -27,7 +27,7 @@ class Dates extends React.Component {
                 if (new Date(date.date).getMonth() === new Date(this.state.date).getMonth() &&
                     new Date(date.date).getYear() === new Date(this.state.date).getYear()) {
                     return (
-                        <DateItem
+                        <Date
                             date={date}
                             key={i}
                             deleteDate={this.props.deleteDate}
