@@ -4,8 +4,8 @@ class WeatherItem extends React.Component{
 
     render(){
         return (
-          <div>
-            <div>Day: {this.props.day.name}</div>
+          <div className="Days">
+            <div>{this.props.day.name}</div>
             <div>
               {this.props.day.temperature}
               {this.props.day.temperatureUnit}

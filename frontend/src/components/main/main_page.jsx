@@ -8,6 +8,7 @@ class MainPage extends React.Component {
     return (
       <div className="main">
         ><h2>adAstra</h2>
+        <WeatherContainer />
         <div className="main-content">
           <div id="content-wrapper">
             <h3>Constellation Map</h3>
@@ -18,7 +19,7 @@ class MainPage extends React.Component {
           </div>
           <div id="content-wrapper">
             CALENDAR
-            <WeatherContainer />
+            
           </div>
         </div>
         <div id="content-wrapper">FORUM</div>

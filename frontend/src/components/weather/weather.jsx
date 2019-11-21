@@ -1,5 +1,6 @@
 import React from 'react';
 import WeatherItem from './weather_item';
+import '../stylesheets/weather.scss';
 
 class Weather extends React.Component{
 
@@ -34,7 +35,7 @@ class Weather extends React.Component{
         forecastData.length !==0 ? forcastDataNight = forecastData.filter( day => !day.isDaytime) : forcastDataNight = [];
         let forecastitems = forcastDataNight.length !== 0 ? forcastDataNight.map( (day, i) => <WeatherItem key={i} day={day}/>) : <div></div>;
         return(
-            <div>
+            <div className="weather">
                 <div>The Moon rises at {moon} </div>
                 <div>The Sun sets at {sunset} </div>
                 {forecastitems}
