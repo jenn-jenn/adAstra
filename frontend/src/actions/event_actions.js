@@ -26,30 +26,30 @@ export const removeEvent = event => ({
 });
 
 export const fetchEvents = () => dispatch => {
-    return EventUtil.fetchEvents()
+    return EventUtil.getEvents()
         .then((events) => dispatch(receiveEvents(events)))
         .catch((err) => console.log(err));
 };
 
 export const fetchAnEvent = (eventId) => dispatch => {
-    return EventUtil.fetchAnEvent(eventId)
+    return EventUtil.getAnEvent(eventId)
         .then(eventItem => dispatch(receiveAnEvent(eventItem)))
         .catch((err) => console.log(err));
 };
 
 export const createNewEvent = (data) => dispatch => {
-    return EventUtil.createNewEvent(data)
+    return EventUtil.editEvent(data)
         .then(event => dispatch(receiveNewEvent(event)))
         .catch((err) => console.log(err));
 };
 
 export const updateEvent = (eventId) => dispatch => {
-    return EventUtil.updateEvent(eventId)
+    return EventUtil.editEvent(eventId)
         .then(eventItem => dispatch(receiveAnEvent(eventItem)))
         .catch((err) => console.log(err));
 };
 
-export const deleteEvent = (eventId) => dispatch => {
+export const deleteAnEvent = (eventId) => dispatch => {
     return EventUtil.deleteEvent(eventId)
         .then(eventId => dispatch(removeEvent(eventId)))
 };

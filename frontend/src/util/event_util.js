@@ -4,11 +4,11 @@ export const createEvent = event => {
     return axios.post('/api/events/new', data);
 };
 
-export const fetchEvents = () => {
+export const getEvents = () => {
     return axios.get(`/api/events`);
 };
 
-export const fetchEvent = (eventId) => {
+export const getAnEvent = (eventId) => {
     return axios.get(`/api/events/${eventId}`);
 };
 
