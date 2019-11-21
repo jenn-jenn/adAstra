@@ -12,7 +12,6 @@ class Posts extends React.Component {
         this.props.fetchUsers().then(
         () => this.props.fetchPosts()
         )
-        debugger;
     }
 
     render() {

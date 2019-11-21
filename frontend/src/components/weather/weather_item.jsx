@@ -3,17 +3,18 @@ import React from 'react';
 class WeatherItem extends React.Component{
 
     render(){
-        return(
+        return (
+          <div>
+            <div>Day: {this.props.day.name}</div>
             <div>
-                {this.props.day.name}
-                {this.props.day.temperature}
-                {this.props.day.temperatureUnit}
-                {this.props.day.temperatureTrend}
-                {this.props.day.shortForecast}
-                {this.props.day.detailedForecast}
-                {this.props.day.windSpeed}
+              {this.props.day.temperature}
+              {this.props.day.temperatureUnit}
             </div>
-        )
+            <div>{this.props.day.shortForecast}</div>
+            {/* <div>{this.props.day.detailedForecast}</div> */}
+            <div>Winds: {this.props.day.windSpeed}</div>
+          </div>
+        );
     }
 }
 

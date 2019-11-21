@@ -19,11 +19,11 @@ class Weather extends React.Component{
             sunset = Object.keys(this.props.sunset).length !== 0 ? this.props.sunset.data.sunset : "";
             moon = Object.keys(this.props.sunset).length !== 0 ? this.props.sunset.data.moonrise : "";
         let forecast = this.props.forecast;
-        let forecastData; 
+        let forecastData;
+        let forcastDataNight; 
         Object.keys(forecast).length !== 0 ? forecastData = forecast.data.properties.periods : forecastData = [];
-
-        let forecastitems = forecastData.length !== 0 ? forecastData.map( (day, i) => <WeatherItem key={i} day={day}/>) : <div></div>;
-        debugger;
+        forecastData.length !==0 ? forcastDataNight = forecastData.filter( day => !day.isDaytime) : forcastDataNight = [];
+        let forecastitems = forcastDataNight.length !== 0 ? forcastDataNight.map( (day, i) => <WeatherItem key={i} day={day}/>) : <div></div>;
         return(
             <div>
                 <div>The Moon rises at {moon} </div>
