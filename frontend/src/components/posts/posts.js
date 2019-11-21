@@ -1,14 +1,18 @@
 import React from 'react';
 import PostItems from './post_item';
 import PostFormContainer from './post_form_container';
+import '../stylesheets/post/post.scss';
 
 class Posts extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     componentDidMount() {
-        this.props.fetchPosts();
+        // this.props.fetchPosts().then(
+        // () => this.props.fetchUsers()
+        // )
+        this.props.fetchUsers().then(
+        () => this.props.fetchPosts()
+        )
+        debugger;
     }
 
     render() {
@@ -23,19 +27,22 @@ class Posts extends React.Component {
         }
         
         const allPosts = Object.values(this.props.posts);
+        let users = {};
+        this.props.users.map(user => {
+            users[user._id] = user;
+        })
         const postDiv = (
-            <div>
-                <ul>
+            <div className="post-container">
+                <ul className="post-list">
                     {allPosts.map( (post, id)=> (
-                        <li key={id}>
-                            <PostItems post={post}/>  
+                        <li key={id} className="post">
+                            <PostItems post={post} users={users}/>  
                        </li>   
                     ))}
                 </ul>
 
             </div>
         );
-       
         return (
             <div>
                 {postDiv}

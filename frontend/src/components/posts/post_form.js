@@ -1,5 +1,4 @@
 import React from 'react';
-import PostItem from './post_item';
 
 class PostForm extends React.Component {
     constructor(props) {
@@ -7,15 +6,10 @@ class PostForm extends React.Component {
 
         this.state = {
             title: '',
-            body: '',
-            newPost:''
+            body: ''
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    componentWillReceiveProps(nextProps) {
-        this.setState({ newPost: nextProps.newPost });
     }
 
     update(field) {
@@ -33,14 +27,13 @@ class PostForm extends React.Component {
         };
         this.props.createNewPost(data)
           .then( () => this.props.fetchPosts());
-        this.setState({title: '', body: ''})
+        this.setState({title: '', body: ''});
     }
 
 
     render() {
         return (
           <div>
-            {/* <PostItem post={this.state.newPost} /> */}
             <form onSubmit={this.handleSubmit}>
               <div>
                 <input

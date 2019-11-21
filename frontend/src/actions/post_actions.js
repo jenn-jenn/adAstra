@@ -13,13 +13,6 @@ export const receivePosts = (posts) => {
     };
 };
 
-export const receiveNewPost = (post) => {
-    return {
-        type: RECEIVE_NEW_POST,
-        post
-    };
-};
-
 export const receiveAPost = (post) => {
     return {
         type: RECEIVE_A_POST,
@@ -27,14 +20,14 @@ export const receiveAPost = (post) => {
     };
 };
 
-// export const removePost = postId => {
-//   return {
-//     type: REMOVE_POST,
-//     postId
-//   };
-// };
+export const removeAPost = (post) => {
+    return {
+        type: REMOVE_POST,
+        post
+    };
+};
 
-// ----------------------------
+
 export const fetchPosts = () => (dispatch) => {
     return PostUtil.getPosts()
             .then((posts) => dispatch(receivePosts(posts)))
@@ -49,12 +42,15 @@ export const fetchAPost = (postId) => (dispatch) => {
 
 export const createNewPost = (data) => (dispatch)=> {
     return PostUtil.writePost(data)
-            .then(post => dispatch(receiveNewPost(post)))
+            .then(post => dispatch(receiveAPost(post)))
             .catch(err => console.log(err));
 };
 
-// export const deletePost = (postId) => (dispatch) => {
-//     return PostUtil.deletePost(postId)
-//             .then(postId => dispatch(removePost(postId)))
-//             .catch(err => console.log(err));
-// };
+export const deleteAPost = (postId) => (dispatch) => {
+    return PostUtil.deletePost(postId)
+        .then((post) => {
+            dispatch(removeAPost(post));
+        })
+        .catch((err) => console.log(err));
+}
+

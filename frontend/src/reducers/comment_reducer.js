@@ -1,7 +1,8 @@
 import {
   RECEIVE_COMMENTS,
   RECEIVE_POST_COMMENTS,
-  RECEIVE_NEW_COMMENT
+  RECEIVE_NEW_COMMENT,
+  REMOVE_COMMENT
 } from "../actions/comment_actions";
 
 const CommentsReducer = ( 
@@ -19,6 +20,11 @@ const CommentsReducer = (
             return newState;
         case RECEIVE_NEW_COMMENT:
             newState.post.push(action.comment.data);
+            return newState;
+        case REMOVE_COMMENT:
+            newState.post = newState.post.filter(
+              comment => comment._id !== action.id
+            );
             return newState;
         default:
             return state;
