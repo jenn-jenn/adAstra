@@ -3,7 +3,7 @@ import APIkeys from '../api/api';
 
 export const getWeather = location => {
     return axios.get(
-          `https://cors-anywhere.herokuapp.com/https://api.weather.gov/points/39.7456,-97.0892`
+          `https://cors-anywhere.herokuapp.com/https://api.weather.gov/points/${location.lat},${location.long}`
         )
         .then(res =>
           axios
