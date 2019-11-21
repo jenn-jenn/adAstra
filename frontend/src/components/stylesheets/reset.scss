@@ -42,3 +42,12 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+body, #root, #app {
+	min-height: 100vh;
+	width: 100vh;
+}
+// #root, #app {
+// 	height: inherit;
+// 	width: inherit;
+// }

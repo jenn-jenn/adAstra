@@ -25,14 +25,14 @@ class NavBar extends React.Component {
   getLinks() {
     if (this.props.loggedIn) {
       return (
-        <div>
+        <div className="nav-right">
           <Link to={"/posts"}><button>Forum</button></Link>
           <button onClick={this.logoutUser}>Logout</button>
         </div>
       );
     } else {
       return (
-        <div>
+        <div className="nav-right">
           <Link to={"/signup"}><button>Signup</button></Link>
           <Link to={"/login"}><button>Login</button></Link>
         </div>
@@ -63,15 +63,13 @@ class NavBar extends React.Component {
             <h2>adAstra</h2>
           </Link>
         </div>
-        <a href="#/main" className="fa fa-star-and-crescent" alt="star"/>
-        <a href="#/main" className="fas fa-star" alt="star"/>
-        <a href="#/main" className="fa fa-moon" alt="star"/>
-        <a href="#/main" className="fa fa-sun" alt="sunset"/>
-        <a href="#/main" className="fas fa-meteor" alt="meteor"/>
+        <i className="fa fa-star-and-crescent"/>
+        <i className="fas fa-star"/>
+        <i className="fa fa-moon"/>
+        <i className="fa fa-sun"/>
+        <i className="fas fa-meteor"/>
         {this.searchBar()}
-        <div className="nav-right">
-          {this.getLinks()}
-        </div>
+        {this.getLinks()}
       </div>
     );
   }

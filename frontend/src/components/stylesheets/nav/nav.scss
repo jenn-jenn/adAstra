@@ -24,11 +24,14 @@
   h2 {
     padding: 20px;
     font-size: 32px;
-    font-style: italic;
-    font-weight: bold;
+    // font-weight: bold;
     letter-spacing: 1.3px;
     color: white;
-    text-shadow: 2px 2px 5px rgb(255, 255, 255);
+    text-shadow: 1px 1px 3px rgb(255, 255, 255);
+    transition: 0.3s;
+  }
+  h2:hover {
+    opacity: 0.5;
   }
 }
 .nav-header-components > a {
@@ -40,20 +43,25 @@
   background-color: #ddd;
   padding: 5px;
   margin: 5px;
-  border-radius: 3px;
+  border-radius: 10px;
 
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-evenly;
 
-  width: 400px;
+  width: 25%;
+  min-width: 230px;
 }
 
 .search-overlay input {
+  border-radius: 10px;
   padding: 5px;
-  margin: 2px;
-  margin-right: 10px;
+  margin: 2px 10px 2px 10px;
   width: 350px;
+  outline: none;
+  border: none;
+  text-align: center;
 }
 
 .fa, .fas {
@@ -68,24 +76,24 @@
 }
 
 .fa:hover, .fas:hover {
-  opacity: 0.5;
+  // opacity: 0.5;
 }
 
 .nav-right {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-}
-
-.nav-right * {
-  margin: 5px;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  text-decoration: none;
 }
 
 .nav-right button {
-  box-shadow: 0px 0px 15px grey;
+  box-shadow: 0px 0px 10px grey;
   border: 1px solid rgb(33, 48, 67);
   background-color: rgb(33, 48, 67);
-  padding: 12px 24px;
+  margin: 10px;
+  padding: 8px 20px;
   border-radius: 10px;
   font-size: 15px;
   transition: .3s;
