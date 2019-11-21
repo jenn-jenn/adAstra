@@ -21,6 +21,13 @@ import axios from 'axios';
 window.axios = axios
 
 
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
+
+
 document.addEventListener("DOMContentLoaded", () => {
   let store;
 
