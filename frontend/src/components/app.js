@@ -27,8 +27,8 @@ const App = () => (
       <ProtectedRoute exact path="/posts" component={PostsContainer} />
       <ProtectedRoute exact path="/posts/" component={PostFormContainer} />
       <ProtectedRoute exact path="/posts/:postId" component={PostShowContainer} />
-      <ProtectedRoute exact path="/" component={DatesContainer} />
-      <ProtectedRoute exact path="/events" component={EventsContainer} />
+      {/* <ProtectedRoute exact path="/dates" component={DatesContainer} />
+      <ProtectedRoute exact path="/events" component={EventsContainer} /> */}
       
     </Switch>
   </div>

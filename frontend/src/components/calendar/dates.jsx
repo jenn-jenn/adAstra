@@ -19,7 +19,7 @@ class Dates extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchAllDates(this.props.user.id);
+        this.props.fetchAllDates(this.props.userId);
     }
 
     render() {
@@ -31,7 +31,7 @@ class Dates extends React.Component {
                         <DateObj
                             date={date}
                             key={i}
-                            deleteDate={this.props.deleteDate}
+                            changeDate={this.props.changeDate}
                             user={this.props.user}
                         />
                     );
@@ -46,7 +46,7 @@ class Dates extends React.Component {
                         <DateObj
                             date={date}
                             key={i}
-                            deleteDate={this.props.deleteDate}
+                            changeDate={this.props.changeDate}
                             user={this.props.user}
                         />
                     );

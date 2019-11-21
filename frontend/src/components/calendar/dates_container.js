@@ -4,7 +4,7 @@ import Dates from "./dates";
 import { fetchEvents } from '../../actions/event_actions';
 
 const mapStateToProps = (state) => {
-    let dates = Object.values(state.dates).reverse();
+    let dates = Object.values(state.dates);
     
     return {
         dates,

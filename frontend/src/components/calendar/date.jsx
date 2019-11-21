@@ -56,12 +56,26 @@ class DateObj extends React.Component {
         )
     }
     render() {
+        let { date, title } = this.props.date;
+
         return (
-            <div>
-                <button>Show event</button>
-                <button>Create Event</button>
+            <div className="tile">
+                <div className="container-right">
+                    <div className="event-">
+                        <div className="event">
+                            <div className="event-date">
+                                {this.getDate(date)}
+                            </div>
+                            {this.showUserButton()}
+                        </div>
+                        <div className="event-title">
+                            {title}
+                        </div>
+                    </div>
+                </div>
             </div>
-        );
+
+        )
     }
 }
 
