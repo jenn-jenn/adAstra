@@ -1,9 +1,5 @@
 import axios from "axios";
 
-export const createDate = date => {
-    return axios.post('/api/events/', date);
-};
-
 export const getDates = (userId) => {
     return axios.get(`/api/events/user/${userId}`);
 };
