@@ -1,82 +1,60 @@
-
 import React, { Component } from 'react';
-
-import BigCalendar from 'react-big-calendar';
-import moment from 'moment';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
-
-import axios from 'axios'
-
-
 import logo from './logo.svg';
-import "react-big-calendar/lib/css/react-big-calendar.css";
-import './App.css';
-
-moment.locale('en-GB');
-BigCalendar.momentLocalizer(moment);
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Icon from './icon';
+import { Form, Input, FormGroup, Container, Label } from 'reactstrap';
+import 'react-dates/initialize';
+import 'react-dates/lib/css/_datepicker.css';
+import { SingleDatePicker } from 'react-dates';
 
 class App extends Component {
-
   constructor(props) {
-    super(props)
-
+    super(props);
     this.state = {
-      cal_events: [
-        //State is updated via componentDidMount
-      ],
+      date: null,
+      focused: null
     }
-
   }
-
-  convertDate = (date) => {
-    return moment.utc(date).toDate()
-  }
-
-  componentDidMount() {
-
-
-    axios.get('http://localhost:3001/events')
-      .then(response => {
-        console.log(response.data);
-        let appointments = response.data;
-
-        for (let i = 0; i < appointments.length; i++) {
-
-          appointments[i].start = this.convertDate(appointments[i].start)
-          appointments[i].end = this.convertDate(appointments[i].end)
-
-        }
-
-        this.setState({
-          cal_events: appointments
-        })
-
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
-
-
   render() {
-
-    const { cal_events } = this.state
-
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">React Calendar</h1>
-        </header>
-        <div style={{ height: 700 }}>
-          <BigCalendar
-            events={cal_events}
-            step={30}
-            defaultView='week'
-            views={['month', 'week', 'day']}
-            defaultDate={new Date()}
-          />
-        </div>
+      <div>
+        <Container>
+          <Form>
+            <FormGroup>
+              <Label for="firstname">Name: </Label>
+              <Input type="text" name="firstname" />
+            </FormGroup>
+            <FormGroup>
+              <Label for="lastname">Last Name: </Label>
+              <Input type="text" name="lastname" />
+            </FormGroup>
+            <FormGroup>
+              <SingleDatePicker
+                // showClearDate={true}
+                customInputIcon={
+                  <svg className="icon icon-small">
+                    <Icon
+                      icon="ICON_CALENDER"
+                      className="icon icon-large"
+                    />
+                  </svg>
+                }
+                inputIconPosition="after"
+                small={true}
+                block={false}
+                numberOfMonths={1}
+                date={this.state.date}
+                onDateChange={date => this.handleDateChange(date)}
+                focused={this.state.focused}
+                onFocusChange={({ focused }) =>
+                  this.setState({ focused })
+                }
+                openDirection="up"
+                hideKeyboardShortcutsPanel={true}
+              />
+            </FormGroup>
+          </Form>
+        </Container>
       </div>
     );
   }
@@ -162,5 +140,3 @@ export default App;
 //     );
 //   }
 // }
-
-export default App;

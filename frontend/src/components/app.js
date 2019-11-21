@@ -13,7 +13,7 @@ import PostFormContainer from "./posts/post_form_container";
 import PostShowContainer from "./posts/post_show_container";
 import DatesContainer from "./calendar/dates_container";
 import EventsContainer from './events/events_container';
-import EventFormContainer from './events/event_form_container';
+
 
 const App = () => (
   <div>
@@ -29,7 +29,7 @@ const App = () => (
       <ProtectedRoute exact path="/posts/:postId" component={PostShowContainer} />
       <ProtectedRoute exact path="calendar" component={DatesContainer} />
       <ProtectedRoute exact path="/events" component={EventsContainer} />
-      <ProtectedRoute exact path="/events/" component={EventFormContainer} />
+      
     </Switch>
   </div>
 );

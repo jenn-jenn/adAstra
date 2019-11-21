@@ -1,5 +1,5 @@
 import React from "react";
-import '../stylesheets/calendar/date.scss';
+//import '../stylesheets/calendar/date.scss';
 import Date from './date';
 
 class Dates extends React.Component {
