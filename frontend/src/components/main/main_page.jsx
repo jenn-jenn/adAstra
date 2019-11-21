@@ -5,7 +5,7 @@ import '../stylesheets/main_page.scss';
 class MainPage extends React.Component {
   render() {
     return (
-      <div className="main">
+      <div className="main">>
         <h2>adAstra</h2>
         <div className="main-content">
           <div id="content-wrapper">
@@ -19,7 +19,14 @@ class MainPage extends React.Component {
         <div id="content-wrapper">
           FORUM
           </div>
-        <footer>Made with MongoDB, Express, React, and Node.js in San Francisco.                      &copy; Team Astra 2019</footer>
+        <footer>
+          <div>
+            Made with MongoDB, Express, React, and Node.js in San Francisco.
+          </div>
+          <div>
+            &copy; Team Astra 2019
+          </div>
+        </footer>
       </div>
     );
   }

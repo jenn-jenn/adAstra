@@ -7,6 +7,7 @@ class NavBar extends React.Component {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
+    this.searchBar = this.searchBar.bind(this);
   }
 
   logoutUser(e) {
@@ -24,7 +25,10 @@ class NavBar extends React.Component {
   getLinks() {
     if (this.props.loggedIn) {
       return (
-        <button onClick={this.logoutUser}>Logout</button>
+        <div>
+          <Link to={"/forum"}><button>Forum</button></Link>
+          <button onClick={this.logoutUser}>Logout</button>
+        </div>
       );
     } else {
       return (
@@ -36,27 +40,36 @@ class NavBar extends React.Component {
     }
   }
 
-  render() {
-    return (
-      <div className="nav">
-        <div className="nav-header-text">
-            <a href="#/" className="fa fa-star-and-crescent" alt="star"/>
-          <Link to="/">
-            <h2>adAstra</h2>
-          </Link>
-            <a href="#/" className="fa fa-meteor" alt="meteor"/>
-        </div>
+  searchBar() {
+    if (this.props.loggedIn) {
+      return (
         <div className="search-overlay">
           <input
             id="feature-filter"
             type="text"
             placeholder="Search for the stars..."
           />
-        </div>
-        <div className="nav-right">
           <a href="#/search" className="fa fa-search" alt="search"/>
-          <a href="#/calender" className="fa fa-calendar" alt="calendar"/>
-          <a href="#/posts" className="fa fa-users" alt="forum"/>
+        </div>
+      )
+    }
+  }
+
+  render() {
+    return (
+      <div className="nav">
+        <div className="nav-header-components">
+          <Link to="/">
+            <h2>adAstra</h2>
+          </Link>
+        </div>
+        <a href="#/main" className="fa fa-star-and-crescent" alt="star"/>
+        <a href="#/main" className="fas fa-star" alt="star"/>
+        <a href="#/main" className="fa fa-moon" alt="star"/>
+        <a href="#/main" className="fa fa-sun" alt="sunset"/>
+        <a href="#/main" className="fas fa-meteor" alt="meteor"/>
+        {this.searchBar()}
+        <div className="nav-right">
           {this.getLinks()}
         </div>
       </div>
