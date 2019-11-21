@@ -44,7 +44,7 @@ export const createNewEvent = (data) => dispatch => {
 };
 
 export const updateEvent = (eventId) => dispatch => {
-    return EventUtil.fetchAnEvent(eventId)
+    return EventUtil.updateEvent(eventId)
         .then(eventItem => dispatch(receiveAnEvent(eventItem)))
         .catch((err) => console.log(err));
 };
