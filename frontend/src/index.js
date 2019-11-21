@@ -24,8 +24,8 @@ window.axios = axios
 
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+// ReactDOM.render(<App />, document.getElementById('root'));
+// registerServiceWorker();
 
 
 document.addEventListener("DOMContentLoaded", () => {

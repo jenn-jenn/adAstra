@@ -28,3 +28,4 @@ export const changeDate = (dateId) => dispatch => (
     APIUtil.editDate(dateId)
         .then(date => dispatch(receiveDate(date)))
 );
+

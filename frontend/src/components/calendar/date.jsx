@@ -1,6 +1,6 @@
 import React from "react";
 
-class DateItem extends React.Component {
+class DateObj extends React.Component {
 
     handleDeleteDate() {
         return (e) => {
@@ -65,4 +65,6 @@ class DateItem extends React.Component {
     }
 }
 
-export default DateItem;
+export default DateObj;
+
+

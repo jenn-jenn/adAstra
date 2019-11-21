@@ -1,6 +1,7 @@
 import React from "react";
-//import '../stylesheets/calendar/date.scss';
-import Date from './date';
+import '../stylesheets/calendar/calendar.scss';
+import DateObj from './date';
+import Calendar from 'react-calendar/dist/entry.nostyle';
 
 class Dates extends React.Component {
     constructor(props) {
@@ -27,7 +28,7 @@ class Dates extends React.Component {
                 if (new Date(date.date).getMonth() === new Date(this.state.date).getMonth() &&
                     new Date(date.date).getYear() === new Date(this.state.date).getYear()) {
                     return (
-                        <Date
+                        <DateObj
                             date={date}
                             key={i}
                             deleteDate={this.props.deleteDate}
@@ -37,20 +38,37 @@ class Dates extends React.Component {
                 }
             })
         )
+        let nextMonth = (
+            this.props.dates.map((date, i) => {
+                if (new Date(date.date).getMonth() === new Date(this.state.date).getMonth() + 1 &&
+                    new Date(date.date).getYear() === new Date(this.state.date).getYear()) {
+                    return (
+                        <DateObj
+                            date={date}
+                            key={i}
+                            deleteDate={this.props.deleteDate}
+                            user={this.props.user}
+                        />
+                    );
+                }
+            })
+        );
         
         if (!this.props.dates) {
             return null;
         }
 
-        return(
-            <div className="calendar">
+        return (
+            <div className="dates-page">
+            
+                <div className="empty-line"></div>
                 <div className="main-cal-and-timeline">
                     <div className="calendar-with-button">
-                        {/* <Calendar
+                        <Calendar
                             onChange={this.changeDate()}
                             value={this.state.date}
-                        /> */}
-                        <button className="create-date-button">Create Date</button> 
+                        />
+                        <button className="create-date-button">Create Date</button>
                     </div>
                     <div className="right-side">
                         <div className="upcoming-events">This Month</div>
@@ -59,10 +77,16 @@ class Dates extends React.Component {
                                 {thisMonth}
                             </div>
                         </div>
+                        <div className="upcoming-events" id="next-month-event">Next Month</div>
+                        <div className="timeline-wrapper">
+                            <div className="timeline">
+                                {nextMonth}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        );
+        )
     }
 }
 
