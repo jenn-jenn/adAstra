@@ -5,14 +5,23 @@ class Weather extends React.Component{
 
     constructor(props){
         super(props);
-        this.state = { lat: 37.7749, long: -122.4194, date: Date.now() }
+        this.state = { lat: 39.0119, long: -98.4194, date: Date.now() }
     }
 
     componentDidMount(){
-        let location = this.state;
-        this.props.fetchWeather(location)
-        .then(res => this.props.fetchSunset(location));
+        this.getLocation()
     }
+
+    getLocation(){
+        function success(pos) {
+            const crd = pos.coords;
+            this.setState({ lat: crd.latitude, long: crd.longitude }, console.log(this.state))
+            this.props.fetchWeather(this.state)
+            // this.props.fetchSunset(this.state)
+        }
+        navigator.geolocation.getCurrentPosition(success.bind(this));
+    }
+
     render(){
         let sunset;
         let moon;
