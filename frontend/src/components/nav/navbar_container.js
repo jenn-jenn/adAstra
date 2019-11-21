@@ -1,5 +1,3 @@
-// src/components/nav/navbar_container.js
-
 import { connect } from "react-redux";
 import { logout } from "../../actions/session_actions";
 
@@ -16,5 +14,3 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
-
-// export default connect(mapStateToProps, { logout })(NavBar);

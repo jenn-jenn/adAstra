@@ -1,5 +1,6 @@
 import React from 'react';
 import  CommentsContainer  from '../comment/comment_container';
+import '../stylesheets/forum/post_show.scss';
 
 class PostShow extends React.Component {
 
@@ -26,14 +27,20 @@ class PostShow extends React.Component {
       return null;
     }
     const date = new Date(post.date);
-    
     return (
-      <div>
-        <h1>{post.title}</h1>
-        <h3>{post.author}</h3>
-        <h4>{date.toDateString()}</h4>
+      <div className="post-show">
+        <div className="post-show-header">
+          <h1>
+            <i className="fas fa-meteor" alt="meteor" />
+            {post.title}
+          </h1>
+          <div className="post-show-footer">
+            <h4>Posted by {post.author} | {`${date.getHours()}:${date.getMinutes()} ${date.toDateString()}`}</h4>
+            <i className="fa fa-trash" onClick={this.delete}/>
+          </div>
+        </div>
+
         <p>{post.body}</p>
-        <input onClick={this.delete} type="submit" value="Delete" />
         <CommentsContainer post={post}/>
       </div>
     )

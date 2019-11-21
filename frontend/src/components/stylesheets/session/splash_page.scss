@@ -4,13 +4,7 @@ body, html {
 }
 
 .splash-main {
-    // background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./sky.jpg");
     background-image: url("./sky.jpg");
-    // display: flex;
-    // height: 100vh;
-    // width: 100vw;
-    // background-position: 50% 65%;
-    // background-repeat: no-repeat;
     background-size:  100% 100%;
 
     position: relative;
@@ -35,8 +29,6 @@ body, html {
 .splash-page-buttons {
   display: flex;
   flex-direction: column;
-  // margin: 0 auto;
-  // margin-top: 30px;
 }
 
 .splash-page-buttons a {
@@ -45,38 +37,22 @@ body, html {
   padding: 10px;
 }
 
-.loginbutton {
+.loginbutton, .signupbutton {
   width: 250px;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 15px 0;
-  font-weight: bold;
-  font-size: 20px;
+  font-size: 15px;
   border: 1px solid black;
   color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
   0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: .3s;
 }
 
-.loginbutton:hover {
+.loginbutton:hover, .signupbutton:hover {
   cursor: pointer;
+  opacity: 0.5;
   background-color: black;
   color: white;
-}
-
-.signupbutton {
-  width: 250px;
-  border-radius: 5px;
-  margin: 10px 0;
-  font-weight: bold;
-  font-size: 20px;
-  border: 1px solid black;
-  color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-  0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.signupbutton:hover {
-  cursor: pointer;
-  background-color: black;
-  color: white;
+  box-shadow: 0px 0px 15px grey;
 }

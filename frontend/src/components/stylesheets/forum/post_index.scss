@@ -1,0 +1,121 @@
+.forum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 80px;
+  color: white;
+}
+.post-container {
+  width: 60%;
+  min-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px grey;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: 10px;
+  min-width: 550px;
+}
+
+.post-list {
+  border-radius: 20px;
+  margin: 0;
+  padding: 0px;
+}
+
+.post {
+  list-style-type: none;
+  border-radius: 20px;
+  border: 1px solid grey;
+  box-sizing: border-box;
+  
+  padding: 5px 30px 5px 30px;
+  margin: 20px;
+}
+
+.post:hover {
+  border: 1px solid white;
+}
+
+.post-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.post a:hover {
+  text-shadow: 1px 0px 2px rgb(255, 208, 105);
+}
+
+.post .fa-meteor:hover {
+  opacity: 1.0;
+}
+
+.post h2 {
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
+.post h4 {
+  text-transform: capitalize;
+  font-size: 10px;
+}
+
+.post p {
+  font-size: 16px;
+  padding: 0px 10px 0px 10px;
+}
+
+
+.post-form {
+  border-radius: 20px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 10px grey;
+  width: 60%;
+  padding: 15px 20px 15px 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  min-width: 550px;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+
+.post-form input {
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  padding: 10px;
+  margin: 10px;
+}
+
+.post-form .write {
+  width: 50%;
+}
+
+.image-upload>input {
+  display: none;
+}
+
+.post-form-submit {
+  border: 1px solid rgb(33, 48, 67);
+  background-color: rgb(33, 48, 67);
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: .3s;
+  color: white;
+  outline: none;
+}
+
+.post-form-submit:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}

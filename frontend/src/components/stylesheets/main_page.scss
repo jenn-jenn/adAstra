@@ -3,14 +3,7 @@ body, html {
     width: 100%;
 }
 
-.main {
-    // height: 100vh;
-    // width: 100vw;
-    // background-position: 20% 75%;
-    // background-repeat: no-repeat;
-    // background-size:  100%;
-    // position: relative;
-    
+.main {    
     top: 100px;
     display: flex;
     flex-direction: column;
@@ -18,9 +11,6 @@ body, html {
     justify-content: center;
     min-height: 800px;
     min-width: 800px;
-    // text-align: center;
-    // font-weight: 300px;
-    // height: 100%;
 }
 
 .main h2 {
@@ -42,11 +32,12 @@ body, html {
     align-items: center;
     justify-content: center;
     color: white;
+    flex-flow: row wrap;   
 }
 
 #content-wrapper {
-  width: 800px;
-  height: 800px;
+  width: 600px;
+  height: 650px;
   border-radius: 5%;
   background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 15px grey;
@@ -59,14 +50,13 @@ body, html {
   justify-content: center;
   align-items: center;
   margin: 20px;
-
 }
 
 footer {
     color: grey;
     background-color: rgba(0, 0, 0, 0.342);
     text-align: center;
-    min-height: 40px;
+    margin-top: 100px;
     display: flex;
 }
 
