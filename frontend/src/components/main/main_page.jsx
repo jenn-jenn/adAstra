@@ -11,12 +11,16 @@ class MainPage extends React.Component {
         <WeatherContainer />
         <div className="main-content">
           <div id="content-wrapper">
+            CALENDAR
+          </div>
+          <div id="content-wrapper">
             <h3>Constellation Map</h3>
             <p>
               Share your location to find constellations you currently can view!
             </p>
             <MapContainer />
           </div>
+<<<<<<< HEAD
           <div id="content-wrapper">
             CALENDAR
             
@@ -29,6 +33,9 @@ class MainPage extends React.Component {
           </div>
           <div>&copy; Team Astra 2019</div>
         </footer>
+=======
+        </div>
+>>>>>>> master
       </div>
     );
   }

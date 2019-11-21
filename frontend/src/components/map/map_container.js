@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchCosmicObjects } from '../../actions/cosmic_objects_actions';
-import Map from './map';
+import Map from './map.jsx';
 import { withRouter } from 'react-router-dom';
 
 const msp = (state) => {
