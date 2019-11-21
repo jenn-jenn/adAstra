@@ -9,7 +9,8 @@ class MainPage extends React.Component {
         <h2>adAstra</h2>
         <div className="main-content">
           <div id="content-wrapper">
-            <h3>Click on a star for its name!</h3>
+            <h3>Constellation Map</h3>
+            <p>Share your location to find constellations you currently can view!</p>
             <MapContainer />
           </div>
           <div id="content-wrapper">

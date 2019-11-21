@@ -26,7 +26,7 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div>
-          <Link to={"/forum"}><button>Forum</button></Link>
+          <Link to={"/posts"}><button>Forum</button></Link>
           <button onClick={this.logoutUser}>Logout</button>
         </div>
       );
@@ -59,7 +59,7 @@ class NavBar extends React.Component {
     return (
       <div className="nav">
         <div className="nav-header-components">
-          <Link to="/">
+          <Link to="/main">
             <h2>adAstra</h2>
           </Link>
         </div>
