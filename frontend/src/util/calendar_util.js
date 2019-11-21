@@ -19,3 +19,8 @@ export const editDate = (dateId, date) => {
 export const deleteDate = (dateId) => {
     return axios.delete(`/api/events/${dateId}`);
 };
+
+
+
+
+
