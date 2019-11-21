@@ -56,7 +56,12 @@ class DateItem extends React.Component {
         )
     }
     render() {
-        // return ();
+        return (
+            <div>
+                <button>Show event</button>
+                <button>Create Event</button>
+            </div>
+        );
     }
 }
 
