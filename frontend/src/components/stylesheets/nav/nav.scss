@@ -1,42 +1,108 @@
 .nav {
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 12px;
-    font-weight: bold;
-    position: fixed;
-    width: 100vw;
-    z-index: 10;
-    background-color: rgb(255, 255, 255);
-    padding: 0px 10px 0px 10px;
-    box-sizing: border-box;
-    top: 0px; //for fixed and absolute
+  height: 70px;
+  width: 100%;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(248, 229, 229);
+
+  position: fixed;
+  top: 0px; //for fixed and absolute
+  z-index: 10;
+  
+  background-color: black;
+  padding: 0px 10px 0px 10px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 15px grey;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.nav-header-text {
-    h2 {
-        padding-right: 20px;
-        font-size: 32px;
-        font-style: italic;
-        font-weight: bold;
-        letter-spacing: 1.3px;
-        display: flex;
-        flex-direction: row;
-    }
+.nav-header-components {
+  h2 {
+    padding: 20px;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+    color: white;
+    text-shadow: 2px 2px 5px rgb(255, 255, 255);
+  }
 }
+.nav-header-components > a {
+  text-decoration: none;
+}
+
+.search-overlay {
+  box-shadow: 0px 0px 15px grey;
+  background-color: #ddd;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 3px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  width: 400px;
+}
+
+.search-overlay input {
+  padding: 5px;
+  margin: 2px;
+  margin-right: 10px;
+  width: 350px;
+}
+
+.fa, .fas {
+  padding: 0px;
+  margin: 0px;
+  font-size: 20px;
+  width: 30px;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+  text-shadow: 0px 0px 15px grey;
+}
+
+.fa:hover, .fas:hover {
+  opacity: 0.5;
+}
+ 
+ 
+.map-overlay input {
+  font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  display: block;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 0;
+}
+
 
 .nav-right {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
-.logout-button {
-  border: 1px solid rgb(250, 213, 154);
-  font-size: 15px;
-  cursor: pointer;
+.nav-right * {
+  margin: 5px;
+}
+
+.nav-right button {
+  box-shadow: 0px 0px 15px grey;
+  border: 1px solid rgb(33, 48, 67);
+  background-color: rgb(33, 48, 67);
   padding: 12px 24px;
-  border-radius: 6px;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: .3s;
+  color: white;
+}
+
+.nav-right button:hover {
+  opacity: 0.5;
+  cursor: pointer;
 }

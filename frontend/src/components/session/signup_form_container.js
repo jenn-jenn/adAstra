@@ -1,21 +1,23 @@
 // src/components/session/signup_form_container.js
 
 import { connect } from "react-redux";
-import { signup, login } from "../../actions/session_actions";
+import { signup } from "../../actions/session_actions";
 import SignupForm from "./signup_form";
+import SessionForm from './session_form';
 
 const mapStateToProps = state => {
   return {
-    signedIn: state.session.isSignedIn,
-    errors: state.errors.session
+    signedIn: state.session.isAuthenticated,
+    errors: state.errors.session,
+    formType: "signup",
+    formHeader: "Sign Up"
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    signup: user => dispatch(signup(user)),
-    login: user => dispatch(login(user))
+    processForm: user => dispatch(signup(user)),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignupForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
