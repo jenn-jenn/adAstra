@@ -17,8 +17,7 @@ router.get("/", (req, res) => {
         })
         .catch(err => res.status(400).json(err));
 });
-
-//DELETE a post
+// GET a post
 router.get('/:postId', (req, res) => {
     Post.findById(req.params.postId)
         .then(post => {
@@ -29,7 +28,6 @@ router.get('/:postId', (req, res) => {
         })
         .catch(err => console.log(err));
 });
-
 
 // POST a post
 router.post("/", passport.authenticate("jwt", { session: false }), (req, res) => {
@@ -59,6 +57,7 @@ router.delete('/:postId', (req, res) => {
         })
         .catch(err => console.log(err));
 });
+
 
 
 module.exports = router;

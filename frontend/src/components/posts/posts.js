@@ -27,8 +27,8 @@ class Posts extends React.Component {
             users[user._id] = user;
         })
         const postDiv = (
-            <div className="post-container-div">
-                <ul className="post-container-list">
+            <div className="post-container">
+                <ul className="post-list">
                     {allPosts.map( (post, id)=> (
                         <li key={id} className="post">
                             <PostItems post={post} users={users}/>  
@@ -39,7 +39,7 @@ class Posts extends React.Component {
             </div>
         );
         return (
-            <div className="post-container">
+            <div className="forum">
                 {postDiv}
                 <PostFormContainer />
             </div>
