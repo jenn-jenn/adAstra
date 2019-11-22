@@ -8,6 +8,7 @@ class NavBar extends React.Component {
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
     this.searchBar = this.searchBar.bind(this);
+    this.logoLink = this.logoLink.bind(this);
   }
 
   logoutUser(e) {
@@ -49,19 +50,33 @@ class NavBar extends React.Component {
             type="text"
             placeholder="Search for the stars..."
           />
-          <a href="#/search" className="fa fa-search" alt="search"/>
+          <i className="fa fa-search"/>
         </div>
       )
     }
   }
 
+  logoLink() {
+    if (this.props.loggedIn) {
+      return (
+        <Link to="/main">
+          <h2>adAstra</h2>
+        </Link>
+      )
+    } else {
+      return (
+        <Link to="/">
+          <h2>adAstra</h2>
+        </Link>
+      )
+    }
+  }
+  
   render() {
     return (
       <div className="nav">
         <div className="nav-header-components">
-          <Link to="/main">
-            <h2>adAstra</h2>
-          </Link>
+          {this.logoLink()}
         </div>
         <i className="fa fa-star-and-crescent"/>
         <i className="fas fa-star"/>

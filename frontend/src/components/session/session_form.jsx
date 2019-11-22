@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect, withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import '../stylesheets/session/session_form.scss';
 
 
@@ -40,9 +40,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     this.setState({
       email: "guest@guest.com",
-      // handle: "guest",
       password: "password",
-      // password2: "password"
     }, () => {
       const user = Object.assign({}, this.state);
       this.props.processForm(user)

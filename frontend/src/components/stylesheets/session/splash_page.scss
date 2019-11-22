@@ -4,19 +4,17 @@ body, html {
 }
 
 .splash-main {
-    background-image: url("./sky.jpg");
-    background-size:  100% 100%;
-
-    position: relative;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 760px;
-    min-width: 760px;
-    text-align: center;
-    font-size: 100px;
-    font-weight: 700;
-    height: 100%;
+  top: 200px;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 760px;
+  min-width: 760px;
+  text-align: center;
+  font-size: 100px;
+  font-weight: 700;
+  height: 100%;
 }
 
 .splash-main h2 {
@@ -29,6 +27,7 @@ body, html {
 .splash-page-buttons {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .splash-page-buttons a {
