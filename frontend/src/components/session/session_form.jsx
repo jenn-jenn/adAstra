@@ -15,15 +15,16 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
     this.update = this.update.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.props.clearErrors();
-  // }
+  componentDidMount() {
+    this.props.clearErrors();
+  }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
-      this.props.history.push("/login");
+      this.props.history.push("/main");
     }
 
     this.setState({ errors: nextProps.errors });
@@ -33,7 +34,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
-      .then(() => this.props.history.push("/"));
+      .then(this.props.history.push("/login"))
   }
 
   handleDemo(e) {
@@ -76,7 +77,7 @@ class SessionForm extends React.Component {
           </Link>
         </div><br />
 
-        <div className="user-auth-errors">
+        <div id="user-auth-errors">
           {this.renderErrors()}
         </div>
 
@@ -93,11 +94,11 @@ class SessionForm extends React.Component {
 
           <input
             className={this.props.formType === "signup" ? "input email" : "hidden"}
-            onChange={this.update("username")}
+            onChange={this.update("handle")}
             placeholder="Username"
             type="text"
-            name="username"
-            value={this.state.username}
+            name="handle"
+            value={this.state.handle}
           />
 
           <input
