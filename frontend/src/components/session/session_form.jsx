@@ -24,7 +24,7 @@ class SessionForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
-      this.props.history.push("/login");
+      this.props.history.push("/main");
     }
 
     this.setState({ errors: nextProps.errors });
@@ -34,6 +34,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
+      .then(this.props.history.push("/login"))
   }
 
   handleDemo(e) {
@@ -93,11 +94,11 @@ class SessionForm extends React.Component {
 
           <input
             className={this.props.formType === "signup" ? "input email" : "hidden"}
-            onChange={this.update("username")}
+            onChange={this.update("handle")}
             placeholder="Username"
             type="text"
-            name="username"
-            value={this.state.username}
+            name="handle"
+            value={this.state.handle}
           />
 
           <input
