@@ -1,6 +1,7 @@
 import React from "react";
 import CommentListItem from './comment_list_item';
 import CommentFormContainer from './comment_form_container';
+import '../stylesheets/forum/comments.scss';
 
 class Comments extends React.Component {
 
@@ -11,7 +12,7 @@ class Comments extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="comments">
                 {
                     this.props.comments.map( comment =>  
                         <CommentListItem 

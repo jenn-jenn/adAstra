@@ -1,8 +1,7 @@
-// src/components/app.js
-
 import React from "react";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
-import { Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
+import FooterContainer from './footer/footer_container';
 import NavBarContainer from "./nav/navbar_container";
 import SplashPage from './splash/splash_page';
 import MainPage from "./main/main_page";
@@ -16,21 +15,20 @@ import EventsContainer from './events/events_container';
 
 
 const App = () => (
-  <div>
-    <NavBarContainer />
+  <div id="app">
+    <header><NavBarContainer /></header>
     <Switch>
-      <AuthRoute exact path="/" component={MainPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-   
-      <ProtectedRoute exact path="/splash" component={SplashPage} />
+      <AuthRoute exact path="/" component={SplashPage} />
+      <ProtectedRoute exact path="/main" component={MainPage} />
       <ProtectedRoute exact path="/posts" component={PostsContainer} />
-      <ProtectedRoute exact path="/posts/" component={PostFormContainer} />
       <ProtectedRoute exact path="/posts/:postId" component={PostShowContainer} />
       {/* <ProtectedRoute exact path="/dates" component={DatesContainer} />
       <ProtectedRoute exact path="/events" component={EventsContainer} /> */}
       
     </Switch>
+    <Route exact path="/main" component={FooterContainer} />
   </div>
 );
 

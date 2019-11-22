@@ -1,0 +1,58 @@
+#map-container {
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0px 40px 40px 40px;
+}
+
+#map {
+  width: 500px;
+  height: 500px;
+}
+
+#map * {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.marker {
+  background: url('icons8-marker-24.png');
+  filter: invert(85%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 5%;
+  height: 5%;
+  cursor: pointer;
+}
+
+.marker:hover {
+  filter: invert(85%) sepia(51%) saturate(2878%) hue-rotate(180deg) brightness(104%) contrast(97%);
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  padding: 0px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.popup h1 {
+  font-size: 15px;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+
+button.mapboxgl-ctrl-icon {
+  // overflow: visible !important;
+  // background-color: white !important;
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+}
+
+.mapboxgl-ctrl.mapboxgl-ctrl-group {
+  // position: absolute;
+}

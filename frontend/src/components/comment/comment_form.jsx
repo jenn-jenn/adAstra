@@ -27,9 +27,10 @@ class CommentForm extends React.Component{
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <textarea name="" onChange={this.handleChange} id="" cols="30" rows="10" placeholder="Write a comment" value={this.state.body}/>
-                <input type="submit" value="Submit a Comment"/>
+            <form onSubmit={this.handleSubmit} className="comment-form">
+                <i className="fas fa-user-circle" />
+                <input className="write" type="textarea" name="" onChange={this.handleChange} id="" cols="30" rows="10" placeholder="Write a comment" value={this.state.body}/>
+                <input className="comment-submit" type="submit" value="Comment"/>
             </form>
         )
     }

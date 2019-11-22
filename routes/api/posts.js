@@ -9,7 +9,7 @@ const Post = require("../../models/Post");
 router.get("/", (req, res) => {
     Post
         .find()
-        .sort( {date: 'asc'} ) // 'asc' 
+        .sort( {date: 'desc'} ) // 'asc'
         .then( posts => {
             let payload = {};
             posts.map( post => payload[post._id] = post);
