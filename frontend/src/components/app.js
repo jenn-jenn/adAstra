@@ -9,7 +9,7 @@ import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import PostsContainer from "./posts/posts_container";
 import PostShowContainer from "./posts/post_show_container";
-import Modal from './modal/modal';
+import Modal from './modal/Modal';
 
 
 const App = () => (
