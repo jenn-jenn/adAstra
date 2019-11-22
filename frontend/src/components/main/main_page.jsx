@@ -7,9 +7,47 @@ import '../stylesheets/main_page.scss';
 import WeatherContainer from "../weather/weather_container";
 
 class MainPage extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showModal: false
+    }
+  }
+
+  toggleModal = () => {
+    this.setState ({
+      showModal: !this.state.showModal
+    })
+  };
+
   render() {
+    const { showModal } = this.state;
+
     return (
       <div className="main">
+      <React.Fragment>
+        <button
+          className="modal-toggle-button"
+          onClick={this.toggleModal}
+        >
+          {!showModal ? 'Open Modal' : 'Close Modal'}
+        </button>
+        {
+          showModal ? (
+            <EventModal>
+              <h1>Heading</h1>
+              <p>Lorem ipsum </p>
+              <button
+                className="modal-close"
+                onClick={this.toggleModal}
+              >X</button>
+            </EventModal>
+          ) : null
+        }
+
+      </React.Fragment>
         ><h2>adAstra</h2>
         <div id="content-wrapper">
           <WeatherContainer />

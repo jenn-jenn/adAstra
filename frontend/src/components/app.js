@@ -9,16 +9,21 @@ import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import PostsContainer from "./posts/posts_container";
 import PostShowContainer from "./posts/post_show_container";
+import Modal from './modal/modal';
 
 
 const App = () => (
   <div id="app">
     <header><NavBarContainer /></header>
+
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <AuthRoute exact path="/" component={SplashPage} />
-      <ProtectedRoute exact path="/main" component={MainPage} />
+      <div>
+        <ProtectedRoute exact path="/main" component={MainPage} />
+        <Modal />
+      </div>
       <ProtectedRoute exact path="/posts" component={PostsContainer} />
       <ProtectedRoute exact path="/posts/:postId" component={PostShowContainer} />
       
