@@ -16,6 +16,7 @@ class MainPage extends React.Component {
         <div className="main-content">
           <div id="content-wrapper">
             CALENDAR
+           <DatesContainer />
           </div>
           <div id="content-wrapper">
             <h3>Constellation Map</h3>
@@ -25,8 +26,6 @@ class MainPage extends React.Component {
             <MapContainer />
           </div>
         </div>
-        <DatesContainer />
-          <footer>Copyright &copy; 2019</footer>
       </div>
     );
   }

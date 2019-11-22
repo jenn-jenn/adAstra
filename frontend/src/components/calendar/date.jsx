@@ -57,7 +57,7 @@ class DateObj extends React.Component {
     }
     render() {
         let { date, title } = this.props.date;
-        debugger
+     
         return (
             <div className="tile">
                 <div className="container-right">

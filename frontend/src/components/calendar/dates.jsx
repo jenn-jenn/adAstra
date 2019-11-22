@@ -24,8 +24,7 @@ class Dates extends React.Component {
     }
 
     render() {
-       // let calendar = this.props.calendar;
-        debugger
+      
         let thisMonth = (
             this.props.dates.map((date, i) => {
                 if (new Date(date.date).getMonth() === new Date(this.state.date).getMonth() &&

@@ -8,10 +8,7 @@ import MainPage from "./main/main_page";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import PostsContainer from "./posts/posts_container";
-import PostFormContainer from "./posts/post_form_container";
 import PostShowContainer from "./posts/post_show_container";
-import DatesContainer from "./calendar/dates_container";
-import EventsContainer from './events/events_container';
 
 
 const App = () => (
@@ -24,8 +21,6 @@ const App = () => (
       <ProtectedRoute exact path="/main" component={MainPage} />
       <ProtectedRoute exact path="/posts" component={PostsContainer} />
       <ProtectedRoute exact path="/posts/:postId" component={PostShowContainer} />
-      {/* <ProtectedRoute exact path="/dates" component={DatesContainer} />
-      <ProtectedRoute exact path="/events" component={EventsContainer} /> */}
       
     </Switch>
     <Route exact path="/main" component={FooterContainer} />
