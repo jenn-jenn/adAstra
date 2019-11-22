@@ -55,7 +55,7 @@ class Weather extends React.Component{
               <div>{name}</div>
               <div>His: {tempMax} °F</div>
               <div>Lows: {tempMin} °F</div>
-        <div>Summary: {cloudPerc}</div>
+              <div>Summary: {cloudPerc}</div>
             </div>
           </div>
         );
