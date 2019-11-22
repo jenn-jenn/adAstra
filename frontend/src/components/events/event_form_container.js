@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import EventForm from './event_form';
-import { openModal, closeModal } from '../../actions/modal_actions';
+// import { openModal, closeModal } from '../../actions/modal_actions';
 import { fetchUsers } from '../../actions/user_actions';
 import {
     createNewEvent, 
@@ -10,10 +10,10 @@ import {
 
 const mSTP = (state) => {
     let { id: authorId, connectionCode } = state.session.user;
-
+    
     return {
         authorId,
-        connectionCode
+        connectionCode,
     };
 };
 
@@ -23,12 +23,12 @@ const mDTP = (dispatch) => {
         updateEvent: (eventId) => dispatch(updateEvent(eventId)), 
         deleteAnEvent: (eventId) => dispatch(deleteAnEvent(eventId)),
 
-        EventForm: (
-            <button onClick={() => dispatch(openModal('Create Event'))}>
-                Create Event
-            </button>
-        ),
-        closeModal: () => dispatch(closeModal())
+        // EventForm: (
+        //     <button onClick={() => dispatch(openModal('Create Event'))}>
+        //         Create Event
+        //     </button>
+        // ),
+        // closeModal: () => dispatch(closeModal())
     };
 };
 

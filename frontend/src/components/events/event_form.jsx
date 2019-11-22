@@ -1,4 +1,6 @@
 import React from "react";
+import { withRouter } from 'react-router-dom';
+import '../stylesheets/modal/event_modal';
 
 class EventForm extends React.Component {
     constructor(props) {
@@ -10,13 +12,18 @@ class EventForm extends React.Component {
             address: '',
             body: '',
             connectionCode: props.connectionCode,
-            processed: false
+            //processed: false
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleEventModalClick = this.handleEventModalClick.bind(this);
+        //this.handleEventModalClick = this.handleEventModalClick.bind(this);
     }
-
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.currentUser === true) {
+            this.props.history.push("/main");
+        }
+    }
+    
     update(field) {
         return(e) => {
             this.setState({ [field]: e.currentTarget.value });
@@ -50,7 +57,7 @@ class EventForm extends React.Component {
     render() {
         return (
             <div className="eventCalendar">
-                <form className="event-form" onClick={this.handleEventModalClick} onSubmit={this.handleSubmit()}>
+                <form className="event-form" onClick={this.handleEventModalClick} onSubmit={this.handleSubmit}>
                     <div className="fill-event-form">Fill In Event</div>
                     <input type="text"
                         value={this.state.title}
@@ -58,27 +65,32 @@ class EventForm extends React.Component {
                         placeholder="ex: Stargazing Night"
                         maxLength="50">
                     </input>
+                    <br />
                     <input type="text"
                         value={this.state.date}
                         onChange={this.update("date")}
                         placeholder="ex: 11/22/2019"
                         maxLength="10">
                     </input>
+                    <br />
                     <input type="text"
                         value={this.state.address}
                         onChange={this.update("address")}
                         placeholder="ex: S.F., CA"
                         maxLength="50">
                     </input>
+                    <br />
                     <input type="text"
                         value={this.state.body}
                         onChange={this.update("body")}     
                         maxLength="50">
                     </input>
+                    <br />
+                    <input type="submit" value="New Event" />
                 </form>
             </div>
         )
     }
 }
 
-export default EventForm;
+export default withRouter(EventForm);
