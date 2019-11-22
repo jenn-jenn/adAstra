@@ -31,9 +31,9 @@
 }
 
 #content-wrapper {
-  width: 600px;
-  height: 650px;
-  border-radius: 5%;
+  width: auto;
+  height: auto;
+  border-radius: 15px;
   background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 15px grey;
   top: 100px;
@@ -45,24 +45,14 @@
   justify-content: center;
   align-items: center;
   margin: 20px;
+  padding: 20px;
 }
 
 footer {
-    // width: 100%;
-    // margin-bottom: 0px;
-    // z-index: 12;
-    // position: sticky;
-    // bottom: 0;
-
     color: grey;
     background-color: rgba(0, 0, 0, 0.342);
     text-align: center;
     margin-top: 100px;
     display: flex;
     justify-content: space-evenly;
-}
-
-footer * {
-    // margin: 0px 200px;
-    // width: fit-content;
 }
