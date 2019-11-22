@@ -33,7 +33,10 @@ class Weather extends React.Component{
         let name = Object.keys(forecast).length !== 0 ? forecast.data.name : "";
         let tempMin = Object.keys(forecast).length !== 0 ? forecast.data.main.temp_min : "";
         let tempMax = Object.keys(forecast).length !== 0 ? forecast.data.main.temp_max : "";
-        let cloudPerc = Object.keys(forecast).length !== 0 ? forecast.data.clouds.all : "";
+        let cloudPerc =
+          Object.keys(forecast).length !== 0
+            ? forecast.data.weather[0].description
+            : "";
 
 
         return (
@@ -50,9 +53,9 @@ class Weather extends React.Component{
             </div>
             <div className="weather-content forecast">
               <div>{name}</div>
-              <div>His: {tempMax}</div>
-              <div>Lows: {tempMin}</div>
-              <div>Overcast {cloudPerc}%</div>
+              <div>His: {tempMax} °F</div>
+              <div>Lows: {tempMin} °F</div>
+        <div>Summary: {cloudPerc}</div>
             </div>
           </div>
         );
