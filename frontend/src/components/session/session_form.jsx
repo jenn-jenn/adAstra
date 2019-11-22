@@ -15,6 +15,7 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
     this.update = this.update.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentDidMount() {
@@ -75,7 +76,7 @@ class SessionForm extends React.Component {
           </Link>
         </div><br />
 
-        <div className="user-auth-errors">
+        <div id="user-auth-errors">
           {this.renderErrors()}
         </div>
 
