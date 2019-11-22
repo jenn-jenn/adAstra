@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
 import EventForm from './event_form';
+import { openModal, closeModal } from '../../actions/modal_actions';
+import { fetchUsers } from '../../actions/user_actions';
 import {
-    fetchEvents, 
-    fetchAnEvent, 
-    fetchDateEvents, 
     createNewEvent, 
     updateEvent, 
     deleteAnEvent 
@@ -21,11 +20,15 @@ const mSTP = (state) => {
 const mDTP = (dispatch) => {
     return {
         createNewEvent: (data) => dispatch(createNewEvent(data)),
-        fetchEvents: () => dispatch(fetchEvents()),
-        fetchAnEvent: (eventId) => dispatch(fetchAnEvent(eventId)),
-        fetchDateEvents: (eventId) => dispatch(fetchDateEvents(eventId)),
         updateEvent: (eventId) => dispatch(updateEvent(eventId)), 
-        deleteAnEvent: (eventId) => dispatch(deleteAnEvent(eventId))
+        deleteAnEvent: (eventId) => dispatch(deleteAnEvent(eventId)),
+
+        EventForm: (
+            <button onClick={() => dispatch(openModal('Create Event'))}>
+                Create Event
+            </button>
+        ),
+        closeModal: () => dispatch(closeModal())
     };
 };
 

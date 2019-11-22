@@ -1,15 +1,10 @@
 import { connect } from 'react-redux';
 import React from 'react';
+import { fetchUsers } from '../../actions/user_actions';
 import { 
     fetchEvents, 
-    fetchDateEvents, 
-    createNewEvent, 
-    updateEvent, 
-    deleteAnEvent
-
+    fetchDateEvents
 } from '../../actions/event_actions';
-import { openModal, closeModal } from '../../actions/modal_actions';
-import { fetchUsers } from '../../actions/user_actions';
 import Events from './events';
 
 const mapStateToProps = state => {
@@ -24,17 +19,7 @@ const mapDispatchToProps = dispatch => {
     return {
         fetchDateEvents: eventId => dispatch(fetchDateEvents(eventId)),
         fetchUsers: () => dispatch(fetchUsers()),
-        fetchEvents: () => dispatch(fetchEvents()),
-        createNewEvent: eventId => dispatch(createNewEvent(eventId)),
-        updateEvent: eventId => dispatch(updateEvent(eventId)),
-        deleteAnEvent: eventId => dispatch(deleteAnEvent(eventId)),
-
-        EventForm: (
-            <button onClick={() => dispatch(openModal('Create Event'))}>
-                Create Event
-            </button>
-        ),
-        closeModal: () => dispatch(closeModal())
+        fetchEvents: () => dispatch(fetchEvents())
     };
 };
 
