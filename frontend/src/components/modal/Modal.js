@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 
 const modalRoot = document.getElementById('modal');
 
-class Modal extends React.Component {
+class EventModal extends React.Component {
     constructor(props) {
         super(props);
 
@@ -17,10 +17,10 @@ class Modal extends React.Component {
     componentWillUnmount() {
         modalRoot.removeChild(this.element);
     }
-    
+
     render() {
         return createPortal(this.props.children, this.element);
     }
 }
 
-export default Modal;
+export default EventModal;

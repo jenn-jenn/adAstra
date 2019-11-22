@@ -1,5 +1,6 @@
 import React from "react";
 import DatesContainer from "../../components/calendar/dates_container";
+import EventModal from "../modal/Modal";
 
 import MapContainer from '../map/map_container';
 import '../stylesheets/main_page.scss';
@@ -17,6 +18,7 @@ class MainPage extends React.Component {
           <div id="content-wrapper">
             CALENDAR
            <DatesContainer />
+           <EventModal />
           </div>
           <div id="content-wrapper">
             <h3>Constellation Map</h3>
