@@ -1,5 +1,4 @@
 import React from 'react';
-import WeatherItem from './weather_item';
 import '../stylesheets/weather.scss';
 
 class Weather extends React.Component{
@@ -18,7 +17,7 @@ class Weather extends React.Component{
             const crd = pos.coords;
             this.setState({ lat: crd.latitude, long: crd.longitude })
             this.props.fetchWeather(this.state)
-            // this.props.fetchSunset(this.state)
+            this.props.fetchSunset(this.state)
         }
         navigator.geolocation.getCurrentPosition(success.bind(this));
     }
@@ -53,8 +52,8 @@ class Weather extends React.Component{
             </div>
             <div className="weather-content forecast">
               <div>{name}</div>
-              <div>His: {tempMax} °F</div>
-              <div>Lows: {tempMin} °F</div>
+              <div>High: {tempMax} °F</div>
+              <div>Low: {tempMin} °F</div>
               <div>Summary: {cloudPerc}</div>
             </div>
           </div>

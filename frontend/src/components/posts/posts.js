@@ -6,9 +6,6 @@ import '../stylesheets/forum/post_index.scss';
 class Posts extends React.Component {
 
     componentDidMount() {
-        // this.props.fetchPosts().then(
-        // () => this.props.fetchUsers()
-        // )
         this.props.fetchUsers().then(
         () => this.props.fetchPosts()
         )
