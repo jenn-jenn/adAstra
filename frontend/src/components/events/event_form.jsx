@@ -41,3 +41,42 @@ class EventForm extends React.Component {
 }
 
 export default EventForm;
+
+
+
+import React from "react";
+import EventContainer from './events_container';
+import '../stylesheets/events.scss';
+
+class Events extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            processed: false
+        }
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleEventModalClick = this.handleEventModalClick.bind(this);
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        const event = this.props.event;
+        const user = Object.assign({}, this.state);
+        event(user);
+        this.setState({ processed: true });
+    }
+
+    handleEventModalClick() {
+        this.props.history.push('/main')
+        this.props.closeModal()
+    }
+
+    render() {
+        return (
+            
+        );
+    }
+}
+
+export default Events;
