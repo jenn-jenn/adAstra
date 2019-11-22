@@ -23,12 +23,9 @@ const App = () => (
       <ProtectedRoute exact path="/main" component={MainPage} />
       <ProtectedRoute exact path="/posts" component={PostsContainer} />
       <ProtectedRoute exact path="/posts/:postId" component={PostShowContainer} />
-<<<<<<< HEAD
       <ProtectedRoute exact path="/events/new" component={PostShowContainer} />
-=======
       <ProtectedRoute exact path="/events/new" component={EventFormContainer} />
       
->>>>>>> master
     </Switch>
     <Route exact path="/about" component={About} />
     <Route exact path="/main" component={FooterContainer} />
