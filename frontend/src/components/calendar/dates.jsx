@@ -2,6 +2,7 @@ import React from "react";
 import '../stylesheets/calendar/calendar.scss';
 import DateObj from './date';
 import Calendar from 'react-calendar/dist/entry.nostyle';
+import { Link } from 'react-router-dom';
 
 class Dates extends React.Component {
     constructor(props) {
@@ -72,7 +73,7 @@ class Dates extends React.Component {
                             onChange={this.changeDate()}
                             value={this.state.date}
                         />
-                        <button className="create-event-button">Create Event</button>
+                        <Link className="create-event-button">Create Event</Link>
                     </div>
                     <div className="right-side">
                         <div className="upcoming-events">This Month</div>
