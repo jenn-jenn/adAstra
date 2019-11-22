@@ -24,13 +24,13 @@
 .main-content {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     color: white;
     flex-flow: row wrap;   
 }
 
-#content-wrapper {
+.content-wrapper {
   width: auto;
   height: auto;
   border-radius: 15px;
