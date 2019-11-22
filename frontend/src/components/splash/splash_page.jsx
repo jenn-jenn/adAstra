@@ -1,5 +1,4 @@
 import React from "react";
-//import { View } from 'react-native';
 import '../stylesheets/session/splash_page.scss';
 import { Link } from 'react-router-dom';
 
