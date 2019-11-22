@@ -8,7 +8,7 @@ class About extends React.Component{
             <div className="about">
                
                 <div className="summary">
-                    To fill in later
+                    Meet the developers
                 </div>
                 <div className="profiles">
                     <div className="individualprofile">
@@ -16,6 +16,7 @@ class About extends React.Component{
                         Jessica Zhen
                         <div className="socialicons">
                             <a href="" className="fab fa-linkedin" target="_blank"></a>
+                            <a href="" className="fab fa-angellist" target="_blank"></a>
                             <a href="" className="fab fa-github" target="_blank"></a>
                             <a href="" className="fab fa-google" target="_blank"></a>
                         </div>
@@ -25,6 +26,7 @@ class About extends React.Component{
                         Jennifer Wong
                         <div className="socialicons">
                             <a href="" className="fab fa-linkedin" target="_blank"></a>
+                            <a href="" className="fab fa-angellist" target="_blank"></a>
                             <a href="" className="fab fa-github" target="_blank"></a>
                             <a href="" className="fab fa-google" target="_blank"></a>
                         </div>
@@ -34,6 +36,7 @@ class About extends React.Component{
                         Joanna Chen
                         <div className="socialicons">
                             <a href="" className="fab fa-linkedin" target="_blank"></a>
+                            <a href="" className="fab fa-angellist" target="_blank"></a>
                             <a href="" className="fab fa-github" target="_blank"></a>
                             <a href="" className="fab fa-google" target="_blank"></a>
                         </div>
@@ -43,6 +46,7 @@ class About extends React.Component{
                         Albert Yee
                         <div className="socialicons">
                             <a href="https://www.linkedin.com/in/albert-yee" className="fab fa-linkedin" target="_blank"></a>
+                            <a href="https://angel.co/albert-yee" className="fab fa-angellist" target="_blank"></a>
                             <a href="https://github.com/albertyee84" className="fab fa-github" target="_blank"></a>
                             <a href="mailto:albertyee84@gmail.com" className="fab fa-google" target="_blank"></a>
                         </div>
