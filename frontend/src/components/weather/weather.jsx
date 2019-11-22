@@ -24,7 +24,7 @@ class Weather extends React.Component{
     }
 
     render(){
-        debugger
+        
         let sunset;
         let moon;
             sunset = Object.keys(this.props.sunset).length !== 0 ? this.props.sunset.data.sunset : "";

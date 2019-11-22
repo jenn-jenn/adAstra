@@ -1,0 +1,64 @@
+.react-calendar {
+  max-width: 650px;
+  width: 90%;
+  height: 500px;
+  text-align: center;
+  background-color: white;
+  font-size: 15px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+  button {
+    border: none;
+    height: 65px;
+    background-color: white;
+    color: rgb(59, 59, 59);
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+}
+
+.react-calendar__navigation {
+  height: 30px;
+  margin-top: 10px;
+
+  button {
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 34px;
+  }
+
+  .react-calendar__navigation__label {
+    font-size: 20px;
+  }
+}
+
+.react-calendar__month-view {
+  margin-top: 30px;
+  text-shadow: none;
+}
+
+.react-calendar__month-view__weekdays {
+  font-weight: bold;
+  color: black;
+  height: 30px;
+  font-size: 20px;
+}
+
+.react-calendar__month-view__days {
+  margin-top: 10px;
+
+  button {
+    text-shadow: none;  
+
+  }
+
+  button:focus {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}

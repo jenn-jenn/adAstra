@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import App from './App';
+//import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
 // We will create this component shortly
@@ -19,6 +21,11 @@ import { logout } from "./actions/session_actions";
 
 import axios from 'axios';
 window.axios = axios
+
+
+
+ReactDOM.render(<App />, document.getElementById('root'));
+// registerServiceWorker();
 
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -8,8 +8,8 @@ import MainPage from "./main/main_page";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import PostsContainer from "./posts/posts_container";
-import PostFormContainer from "./posts/post_form_container";
 import PostShowContainer from "./posts/post_show_container";
+
 
 const App = () => (
   <div id="app">
@@ -21,6 +21,7 @@ const App = () => (
       <ProtectedRoute exact path="/main" component={MainPage} />
       <ProtectedRoute exact path="/posts" component={PostsContainer} />
       <ProtectedRoute exact path="/posts/:postId" component={PostShowContainer} />
+      
     </Switch>
     <Route exact path="/main" component={FooterContainer} />
   </div>

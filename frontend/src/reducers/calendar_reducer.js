@@ -1,5 +1,4 @@
-import { RECEIVE_ALL_DATES, RECEIVE_DATE, REMOVE_DATE } from '../actions/calendar_actions';
-import { strictEqual } from 'assert';
+import { RECEIVE_ALL_DATES, RECEIVE_DATE } from '../actions/calendar_actions';
 
 const calendarsReducer = (oldState={}, action) => {
     Object.freeze(oldState);
@@ -8,11 +7,7 @@ const calendarsReducer = (oldState={}, action) => {
         case RECEIVE_ALL_DATES:
             return action.dates;
         case RECEIVE_DATE:
-            let newState = Object.assign({}, oldState, {[action.dateId.data.id]: action.date.data });
-            return newState;
-        case REMOVE_DATE:
-            newState = Object.assign({}, oldState);
-            delete newState[action.dateId.data.id];
+            let newState = Object.assign({}, oldState, {[action.date.data._id]: action.date.data });
             return newState;
         default:
             return oldState;
@@ -20,3 +15,4 @@ const calendarsReducer = (oldState={}, action) => {
 }
 
 export default calendarsReducer;
+

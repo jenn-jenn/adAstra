@@ -1,4 +1,6 @@
 import React from "react";
+import DatesContainer from "../../components/calendar/dates_container";
+
 import MapContainer from '../map/map_container';
 import '../stylesheets/main_page.scss';
 import WeatherContainer from "../weather/weather_container";
@@ -14,6 +16,7 @@ class MainPage extends React.Component {
         <div className="main-content">
           <div id="content-wrapper">
             CALENDAR
+           <DatesContainer />
           </div>
           <div id="content-wrapper">
             <h3>Constellation Map</h3>
