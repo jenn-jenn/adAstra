@@ -25,11 +25,8 @@ class MainPage extends React.Component {
             <MapContainer />
           </div>
         </div>
-<<<<<<< HEAD
         <DatesContainer />
           <footer>Copyright &copy; 2019</footer>
-=======
->>>>>>> master
       </div>
     );
   }
