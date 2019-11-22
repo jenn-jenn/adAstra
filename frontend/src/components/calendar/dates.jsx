@@ -72,7 +72,7 @@ class Dates extends React.Component {
                             onChange={this.changeDate()}
                             value={this.state.date}
                         />
-                        <button className="create-date-button">Create Date</button>
+                        <button className="create-event-button">Create Event</button>
                     </div>
                     <div className="right-side">
                         <div className="upcoming-events">This Month</div>
