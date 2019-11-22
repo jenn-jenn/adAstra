@@ -1,20 +1,21 @@
 .react-calendar {
-  max-width: 650px;
+  max-width: 600px;
   width: 90%;
-  height: 500px;
+  height: 450px;
   text-align: center;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0);
   font-size: 15px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   border-radius: 5px;
   margin: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: white;
   
   button {
     border: none;
     height: 65px;
-    background-color: white;
-    color: rgb(59, 59, 59);
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
     font-size: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
@@ -43,7 +44,7 @@
 
 .react-calendar__month-view__weekdays {
   font-weight: bold;
-  color: black;
+  color: white;
   height: 30px;
   font-size: 20px;
 }
@@ -61,4 +62,47 @@
     background-repeat: no-repeat;
     background-position: center;
   }
+}
+
+.calendar-with-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-events {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 15px 50px 0px 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.create-event-link {
+  box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.5);
+  border: 1px solid rgb(33, 48, 67);
+  background-color: rgb(33, 48, 67);
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: .3s;
+  color: white;
+  outline: none;
+  text-decoration: none;
+}
+
+.create-event-link:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.upcoming-events h1 {
+  font-size: 20px;
+}
+
+.tile:focus {
+  outline: none;
 }
