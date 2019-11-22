@@ -17,9 +17,9 @@ class SessionForm extends React.Component {
     this.update = this.update.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.props.clearErrors();
-  // }
+  componentDidMount() {
+    this.props.clearErrors();
+  }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
