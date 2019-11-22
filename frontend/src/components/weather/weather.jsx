@@ -18,12 +18,13 @@ class Weather extends React.Component{
             const crd = pos.coords;
             this.setState({ lat: crd.latitude, long: crd.longitude }, console.log(this.state))
             this.props.fetchWeather(this.state)
-            // this.props.fetchSunset(this.state)
+            this.props.fetchSunset(this.state)
         }
         navigator.geolocation.getCurrentPosition(success.bind(this));
     }
 
     render(){
+        debugger
         let sunset;
         let moon;
             sunset = Object.keys(this.props.sunset).length !== 0 ? this.props.sunset.data.sunset : "";
@@ -36,9 +37,13 @@ class Weather extends React.Component{
         let forecastitems = forcastDataNight.length !== 0 ? forcastDataNight.map( (day, i) => <WeatherItem key={i} day={day}/>) : <div></div>;
         return(
             <div className="weather">
-                <div>The Moon rises at {moon} </div>
-                <div>The Sun sets at {sunset} </div>
-                {forecastitems}
+                <div className="weather-content">
+                    <div className="moonrise"><i className="fa fa-moon" />Moonrise at {moon} </div>
+                    <div className="sunset"><i className="fa fa-sun" />Sunset at {sunset} </div>
+                </div>
+                <div className="weather-content forecast">
+                    {forecastitems}
+                </div>
             </div>
         );
     }
