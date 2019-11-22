@@ -18,11 +18,14 @@ class Dates extends React.Component {
         };
     }
 
+
     componentDidMount() {
-        this.props.fetchAllDates(this.props.userId);
+        this.props.fetchAllDates(this.props.user.id);
     }
 
     render() {
+       // let calendar = this.props.calendar;
+        debugger
         let thisMonth = (
             this.props.dates.map((date, i) => {
                 if (new Date(date.date).getMonth() === new Date(this.state.date).getMonth() &&
@@ -33,6 +36,7 @@ class Dates extends React.Component {
                             key={i}
                             changeDate={this.props.changeDate}
                             user={this.props.user}
+                            fetchAllDates={this.props.fetchAllDates}
                         />
                     );
                 }
@@ -48,6 +52,7 @@ class Dates extends React.Component {
                             key={i}
                             changeDate={this.props.changeDate}
                             user={this.props.user}
+                            fetchAllDates={this.props.fetchAllDates}
                         />
                     );
                 }
