@@ -13,6 +13,5 @@ export const writePost = (data) => {
 };
 
 export const deletePost = (postId) => {
-    console.log("deletePost: ", postId);
     return axios.delete(`/api/posts/${postId}`);
 }
