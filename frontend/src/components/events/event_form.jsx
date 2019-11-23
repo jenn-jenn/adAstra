@@ -1,4 +1,5 @@
 import React from "react";
+import '../stylesheets/modal/event_modal.scss';
 
 class EventForm extends React.Component {
     constructor(props) {
@@ -6,36 +7,67 @@ class EventForm extends React.Component {
 
         this.state = {
             title: '',
-            authorId: props.authorId,
             date: '',
-            connectionCode: props.connectionCode
-        };
-    }
+            address: '',
+            body: '',
+            //connectionCode: props.connectionCode,
+           // new: true
+            //processed: false
+        }
 
+        this.handleSubmit = this.handleSubmit.bind(this);
+        //this.handleEventModalClick = this.handleEventModalClick.bind(this);
+    }
+  
+    
     update(field) {
-        return (e) => this.setState({
-            [field]: e.target.value
-        });
+        return(e) => {
+            this.setState({ [field]: e.currentTarget.value });
+        };
     }
 
-    handleSubmit() {
-        return (e) => {
-            let obj = this.state;
-            this.props.createNewEvent(obj);
-            this.props.getEvents(this.props.authorId);
-        };
+    handleSubmit(e) {
+        e.preventDefault();
+        
+        this.props.createNewEvent(this.state) 
+           .then( () => this.props.history.push('/main'));
     }
 
     render() {
         return (
-            <form className="event-form" onClick={e => e.stopPropagation()} onSubmit={this.handleSubmit()}>
-                <div className="create-event-header">Create Event</div>
-                <input value={this.state.title} onChange={this.update("title")} placeholder="ex: Stargazing Night" maxLength="50"></input>
-                <input type="datetime-local" value={this.state.date} onChange={this.update("event")} ></input>
-                <div className="create-date">
-                    <button>Create<i class="far fa-calendar-alt"></i></button>
-                </div>
-            </form>
+            <div className="eventCalendar">
+                <form className="event-form" >
+                    <div className="fill-event-form">New Event</div>
+                    <input type="text"
+                        value={this.state.title}
+                        onChange={this.update("title")}
+                        placeholder="ex: Stargazing Night"
+                        maxLength="50">
+                    </input>
+                    <br />
+                    <input type="text"
+                        value={this.state.date}
+                        onChange={this.update("date")}
+                        placeholder="ex: 11/22/2019"
+                        maxLength="10">
+                    </input>
+                    <br />
+                    <input type="text"
+                        value={this.state.address}
+                        onChange={this.update("address")}
+                        placeholder="ex: S.F., CA"
+                        maxLength="50">
+                    </input>
+                    <br />
+                    <input type="text"
+                        value={this.state.body}
+                        onChange={this.update("body")}     
+                        maxLength="50">
+                    </input>
+                    <br />
+                    <input onClick={this.handleSubmit} className="input submit" type="submit" value="Submit" />       
+                </form>
+            </div>
         )
     }
 }

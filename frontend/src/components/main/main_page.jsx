@@ -1,20 +1,35 @@
 import React from "react";
 import DatesContainer from "../../components/calendar/dates_container";
+import EventModal from "../modal/Modal";
+
 import MapContainer from '../map/map_container';
 import '../stylesheets/main_page.scss';
 import WeatherContainer from "../weather/weather_container";
 
 class MainPage extends React.Component {
-  render() {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showModal: false
+    }
+  }
+
+  componentDidMount() {
+    this.props.fetchEvents()
+  }
+
+  render() {   
     return (
       <div className="main">
-        ><h2>adAstra</h2>
+        <h2>adAstra</h2>
         <div className="content-wrapper">
           <WeatherContainer />
         </div>
         <div className="main-content">
           <div className="content-wrapper">
-           <DatesContainer />
+           <DatesContainer events={this.props.events} />
           </div>
           <div className="content-wrapper">
             <h3>Constellation Map</h3>

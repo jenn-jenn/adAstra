@@ -78,21 +78,11 @@ class Dates extends React.Component {
                         <div className="upcoming-events">
                             <h1>This Month's Events:</h1>
                             <ul>
-                                <li>
-                                    Event
-                                </li>
-                                <li>
-                                    Event
-                                </li>
-                                <li>
-                                    Event
-                                </li>
-                                <li>
-                                    Event
-                                </li>
-                                <li>
-                                    Event
-                                </li>
+                                {this.props.events.map((event, i) => (
+                                    <li key={i}>
+                                        {event.title}
+                                    </li>
+                                ))}
                             </ul>
                         </div>
                         <Link to="/events/new" className="create-event-link">Create Event</Link>
