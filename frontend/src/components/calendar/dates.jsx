@@ -22,6 +22,7 @@ class Dates extends React.Component {
 
     componentDidMount() {
         this.props.fetchAllDates(this.props.user.id);
+        this.props.fetchEvents();
     }
 
     render() {
@@ -76,7 +77,7 @@ class Dates extends React.Component {
                     </div>
                     <div className="calendar-events">
                         <div className="upcoming-events">
-                            <h1>This Month's Events:</h1>
+                            <h1>Upcoming Events:</h1>
                             <ul>
                                 {this.props.events.map((event, i) => (
                                     <li key={i}>
@@ -86,17 +87,6 @@ class Dates extends React.Component {
                             </ul>
                         </div>
                         <Link to="/events/new" className="create-event-link">Create Event</Link>
-                        {/* <div className="timeline-wrapper">
-                            <div className="timeline">
-                                {thisMonth}
-                            </div>
-                        </div>
-                        <div className="upcoming-events" id="next-month-event">Next Month</div>
-                        <div className="timeline-wrapper">
-                            <div className="timeline">
-                                {nextMonth}
-                            </div>
-                        </div> */}
                     </div>
                 </div>
             </div>
