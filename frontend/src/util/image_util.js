@@ -5,8 +5,13 @@ export const getImages = () => {
 }
 
 export const uploadImage = (data) => {
-    debugger
     return axios
       .post("/api/images/uploadImage", data)
-      .catch(err => console.log(err));
+    .catch(err => console.log(err));
+}
+
+export const uploadImageToDB = (imgData) => {
+    return axios
+        .post("/api/images/uploadImageDB", imgData)
+        .catch(err => console.log(err));
 }

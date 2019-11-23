@@ -10,12 +10,13 @@ const ImageSchema = new Schema({
     type: Date,
     default: Date.now
   },
+  src: {
+    type: String,
+    required: true
+  },
   fileName: {
     type: String,
-    // required: true
-  },
-  file_key: {
-    type: String
+    required: true
   }
 });
 

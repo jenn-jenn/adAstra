@@ -11,9 +11,12 @@ const msp = (state) => {
     };
 };
 
-const mdp = (dispatch) => ({
-    fetchPosts: () => dispatch(fetchPosts()),
-    fetchUsers: () => dispatch(fetchUsers())
-});
+const mdp = (dispatch) => {
+    debugger
+    return {
+        fetchPosts: () => dispatch(fetchPosts()),
+        fetchUsers: () => dispatch(fetchUsers())
+    }
+};
 
 export default connect(msp, mdp)(Posts);

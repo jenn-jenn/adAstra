@@ -33,12 +33,11 @@ export const fetchImages = () => (dispatch) => {
         .catch( err => dispatch(receiveImageErrors(err)));
 };
 
-export const uploadImage = (image) => (dispatch) => {
+export const uploadImage = (data) => (dispatch) => {
     debugger
-    return ImageUtil.uploadImage(image)
-        .then( (image) => {
-            debugger
-            dispatch(receiveImage(image))
+    return ImageUtil.uploadImage(data)
+        .then( (imgData) => {
+            return ImageUtil.uploadImageToDB(imgData).then((image) => dispatch(receiveImage(image)))
         })
         .catch( err => dispatch(receiveImageErrors(err)));
 };

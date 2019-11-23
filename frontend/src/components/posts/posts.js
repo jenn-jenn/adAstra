@@ -6,6 +6,7 @@ import '../stylesheets/post/post.scss';
 class Posts extends React.Component {
 
     componentDidMount() {
+        debugger
         this.props.fetchUsers()
             .then(() => this.props.fetchPosts());
     }

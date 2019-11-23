@@ -18,26 +18,26 @@ router.get('/', (req,res) => {
 })
 
 router.post('/uploadImage', passport.authenticate("jwt", { session: false }), (req, res) => {
-    debugger
-
-    let src = null;
     // save to AWS
     singleUpload(req, res, function(err) {
         if(err) {
             return res.status(422).json({errors: err.message});
         }    
-        src = req.file.location;
-        return res.json({'imageUrl': req.file.location});
+        debugger
+        return res.json({'imageUrl': req.file.location, 'postId': req.body.postId, 'fileName': req.file.originalname});
     })   
-    
-    // save postId and file name to MongoDB
-    const newImage = new Image({
-        postId: req.body.postId,
-        src: req.file.location
-    });
-    newImage.save()
-        .then( image => res.json(image));
-
 });
 
+router.post('/uploadImageDB', (req, res) => {
+    debugger
+    const newImage = new Image({
+        postId: req.body.data.postId,
+        fileName: req.body.data.fileName,
+        src: req.body.data.imageUrl
+    });
+    newImage.save()
+        .then(image => res.json(image));
+      
+});
+    
 module.exports = router;
