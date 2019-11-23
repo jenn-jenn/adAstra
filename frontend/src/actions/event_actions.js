@@ -43,14 +43,15 @@ export const fetchAnEvent = (eventId) => dispatch => {
         .catch((err) => console.log(err));
 };
 
-export const fetchDateEvents = (eventId) => dispatch => {
-    return EventUtil.getEventsbyDate(eventId)
+export const fetchDateEvents = (dateId) => dispatch => {
+    return EventUtil.getEventsbyDate(dateId)
         .then(events => dispatch(receiveDateEvent(events)))
         .catch(err => console.log(err));
 };
 
 export const createNewEvent = (data) => dispatch => {
-    return EventUtil.editEvent(data)
+    debugger
+    return EventUtil.createEvent(data)
         .then(event => dispatch(receiveNewEvent(event)))
         .catch((err) => console.log(err));
 };

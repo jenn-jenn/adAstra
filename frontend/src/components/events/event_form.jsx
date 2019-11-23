@@ -1,6 +1,5 @@
 import React from "react";
-import { withRouter } from 'react-router-dom';
-import '../stylesheets/modal/event_modal';
+import '../stylesheets/modal/event_modal.scss';
 
 class EventForm extends React.Component {
     constructor(props) {
@@ -12,6 +11,7 @@ class EventForm extends React.Component {
             address: '',
             body: '',
             connectionCode: props.connectionCode,
+            new: true
             //processed: false
         }
 
@@ -32,15 +32,17 @@ class EventForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+       
         let data = {
             title: this.state.title,
             date: this.state.date,
             address: this.state.address,
             body: this.state.body,
-            author: this.props.currentUser.id,
+           // author: this.props.user.id,
         }
-        this.props.createNewEvent(data)
-            .then( () => this.props.fetchEvents());
+        debugger
+        this.state.new ? this.props.createNewEvent(data) : this.props.updateEvent(data)
+          //  .then( () => this.props.fetchEvents());
         this.setState({
             title: '',
             date: '',
@@ -51,14 +53,14 @@ class EventForm extends React.Component {
     }
 
     handleEventModalClick() {
-        this.props.history.push('/main')
-        this.props.closeModal()
+        // this.props.history.push('/main')
+        // this.props.closeModal()
     }
     render() {
         return (
             <div className="eventCalendar">
-                <form className="event-form" onClick={this.handleEventModalClick} onSubmit={this.handleSubmit}>
-                    <div className="fill-event-form">Fill In Event</div>
+                <form className="event-form" onClick={this.handleEventModalClick}>
+                    <div className="fill-event-form">New Event</div>
                     <input type="text"
                         value={this.state.title}
                         onChange={this.update("title")}
@@ -86,11 +88,13 @@ class EventForm extends React.Component {
                         maxLength="50">
                     </input>
                     <br />
-                    <input type="submit" value="New Event" />
+                    <input onClick={this.handleSubmit} className="input submit" type="submit" value="Submit" />
+                    <input onClick={() => this.props.updateEvent()} className="input submit" type="submit" value="Edit" />
+                    <input onClick={() => this.props.deleteAnEvent()} className="input submit" type="submit" value="Delete" />
                 </form>
             </div>
         )
     }
 }
 
-export default withRouter(EventForm);
+export default EventForm;

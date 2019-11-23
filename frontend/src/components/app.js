@@ -11,21 +11,23 @@ import PostsContainer from "./posts/posts_container";
 import PostShowContainer from "./posts/post_show_container";
 import Modal from './modal/Modal';
 
+import EventFormContainer from './events/event_form_container';
+import EventForm from './events/event_form';
+
 
 const App = () => (
   <div id="app">
     <header><NavBarContainer /></header>
 
+    <Modal />
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <AuthRoute exact path="/" component={SplashPage} />
-      <div>
-        <ProtectedRoute exact path="/main" component={MainPage} />
-        <Modal />
-      </div>
+      <ProtectedRoute exact path="/main" component={MainPage} />
       <ProtectedRoute exact path="/posts" component={PostsContainer} />
       <ProtectedRoute exact path="/posts/:postId" component={PostShowContainer} />
+      <ProtectedRoute exact path="/events" component={EventFormContainer} />
       
     </Switch>
     <Route exact path="/main" component={FooterContainer} />
