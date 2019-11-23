@@ -17,6 +17,14 @@ router.get('/', (req,res) => {
         .catch(err => res.status(400).json(err));
 })
 
+router.get("/posts/:post_id", (req, res) => {
+    Image
+        .find({ postId: req.params.post_id })
+        .then(images => res.json(images))
+        .catch(err => res.status(400).json(err));
+});
+
+
 router.post('/uploadImage', passport.authenticate("jwt", { session: false }), (req, res) => {
     // save to AWS
     singleUpload(req, res, function(err) {
@@ -39,5 +47,5 @@ router.post('/uploadImageDB', (req, res) => {
         .then(image => res.json(image));
       
 });
-    
+
 module.exports = router;

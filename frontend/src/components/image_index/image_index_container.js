@@ -10,8 +10,10 @@ const msp = (state) => {
     }
 }
 
-const mdp = (dispatch) => ({
-    fetchImages: () => dispatch(fetchImages())
-});
+const mdp = (dispatch) => {
+    return {
+        fetchImages: () => dispatch(fetchImages())
+    }
+};
 
 export default connect(msp, mdp)(ImageIndex);

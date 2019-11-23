@@ -1,7 +1,12 @@
 import axios from 'axios';
 
 export const getImages = () => {
+    debugger
     return axios.get("/api/images/");
+}
+
+export const getImagesByPost = id => {
+    return axios.get(`/api/images/posts/${id}`)
 }
 
 export const uploadImage = (data) => {

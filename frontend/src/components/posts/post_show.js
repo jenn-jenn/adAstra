@@ -1,7 +1,7 @@
 import React from 'react';
 import CommentsContainer  from '../comment/comment_container';
 import ImageUploadContainer from '../image_upload/image_upload_container';
-import ImageIndex from '../image_index/image_index';
+import ImageIndexContainer from '../image_index/image_index_container';
 
 class PostShow extends React.Component {
   constructor(props) {
@@ -38,7 +38,7 @@ class PostShow extends React.Component {
         <p>{post.body}</p>
         <ImageUploadContainer post={post}/>
         <input onClick={this.delete} type="submit" value="Delete" />
-        <ImageIndex />
+        <ImageIndexContainer />
         <CommentsContainer post={post} />
       </div>
     );

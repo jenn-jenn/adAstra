@@ -5,26 +5,27 @@ class ImageIndex extends React.Component {
 
     constructor(props) {
         super(props);
+        debugger
     }
 
     componentDidMount() {
         this.props.fetchImages();
     }
     render() {
-        // if(this.props.images.length === 0){
-        //     return null
-        // }
+        if(this.props.images.length === 0){
+            return null
+        }
 
         return (
             <div>
-                {/* <ul>
+                <ul>
                     {this.props.images.map((img, id) => (
                         <li key={id}>
                             <ImageItem img={img} />
                         </li>
                         
                     ))}
-                </ul> */}
+                </ul>
             </div>
         )
     }
