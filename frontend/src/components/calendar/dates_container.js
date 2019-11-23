@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { fetchAllDates } from "../../actions/calendar_actions";
 import Dates from "./dates";
-import { fetchEvents } from '../../actions/event_actions';
+import { fetchEvents, deleteAnEvent } from "../../actions/event_actions";
 
 const mapStateToProps = (state) => {
     
@@ -18,7 +18,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
     return {
         fetchAllDates: () => dispatch(fetchAllDates()),
-        fetchEvents: () => dispatch(fetchEvents())
+        fetchEvents: () => dispatch(fetchEvents()),
+        delete: (eventId) => dispatch(deleteAnEvent(eventId))
     };
 };
 
