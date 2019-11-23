@@ -4,6 +4,7 @@
   "description": "adAstra Project",
   "main": "app.js",
   "scripts": {
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
     "start": "node app.js",
     "server:debug": "nodemon --inspect app.js",
     "server": "nodemon app.js",
