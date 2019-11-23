@@ -10,19 +10,15 @@ class EventForm extends React.Component {
             date: '',
             address: '',
             body: '',
-            connectionCode: props.connectionCode,
-            new: true
+            //connectionCode: props.connectionCode,
+           // new: true
             //processed: false
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
         //this.handleEventModalClick = this.handleEventModalClick.bind(this);
     }
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.currentUser === true) {
-            this.props.history.push("/main");
-        }
-    }
+  
     
     update(field) {
         return(e) => {
@@ -32,34 +28,15 @@ class EventForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-       
-        let data = {
-            title: this.state.title,
-            date: this.state.date,
-            address: this.state.address,
-            body: this.state.body,
-           // author: this.props.user.id,
-        }
-        debugger
-        this.state.new ? this.props.createNewEvent(data) : this.props.updateEvent(data)
-          //  .then( () => this.props.fetchEvents());
-        this.setState({
-            title: '',
-            date: '',
-            address: '',
-            body: '',
-            processed: true
-        })
+        
+        this.props.createNewEvent(this.state) 
+           .then( () => this.props.history.push('/main'));
     }
 
-    handleEventModalClick() {
-        // this.props.history.push('/main')
-        // this.props.closeModal()
-    }
     render() {
         return (
             <div className="eventCalendar">
-                <form className="event-form" onClick={this.handleEventModalClick}>
+                <form className="event-form" >
                     <div className="fill-event-form">New Event</div>
                     <input type="text"
                         value={this.state.title}
@@ -88,9 +65,7 @@ class EventForm extends React.Component {
                         maxLength="50">
                     </input>
                     <br />
-                    <input onClick={this.handleSubmit} className="input submit" type="submit" value="Submit" />
-                    <input onClick={() => this.props.updateEvent()} className="input submit" type="submit" value="Edit" />
-                    <input onClick={() => this.props.deleteAnEvent()} className="input submit" type="submit" value="Delete" />
+                    <input onClick={this.handleSubmit} className="input submit" type="submit" value="Submit" />       
                 </form>
             </div>
         )

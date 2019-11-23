@@ -16,46 +16,20 @@ class MainPage extends React.Component {
     }
   }
 
-  toggleModal = () => {
-    this.setState ({
-      showModal: !this.state.showModal
-    })
-  };
+  componentDidMount() {
+    this.props.fetchEvents()
+  }
 
-  render() {
-    const { showModal } = this.state;
-
+  render() {   
     return (
       <div className="main">
-      <React.Fragment>
-        <button
-          className="modal-toggle-button"
-          onClick={this.toggleModal}
-        >
-          {!showModal ? 'Open Modal' : 'Close Modal'}
-        </button>
-        {
-          showModal ? (
-            <EventModal>
-              <h1>Heading</h1>
-              <p>Lorem ipsum </p>
-              <button
-                className="modal-close"
-                onClick={this.toggleModal}
-              >X</button>
-            </EventModal>
-          ) : null
-        }
-
-      </React.Fragment>
-        ><h2>adAstra</h2>
+        <h2>adAstra</h2>
         <div className="content-wrapper">
           <WeatherContainer />
         </div>
         <div className="main-content">
           <div className="content-wrapper">
-           <DatesContainer />
-           <EventModal />
+           <DatesContainer events={this.props.events} />
           </div>
           <div className="content-wrapper">
             <h3>Constellation Map</h3>

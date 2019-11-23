@@ -50,7 +50,6 @@ export const fetchDateEvents = (dateId) => dispatch => {
 };
 
 export const createNewEvent = (data) => dispatch => {
-    debugger
     return EventUtil.createEvent(data)
         .then(event => dispatch(receiveNewEvent(event)))
         .catch((err) => console.log(err));

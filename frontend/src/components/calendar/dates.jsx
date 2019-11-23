@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import '../stylesheets/calendar/calendar.scss';
 import DateObj from './date';
 import Calendar from 'react-calendar/dist/entry.nostyle';
-import { Link } from 'react-router-dom';
 
 class Dates extends React.Component {
     constructor(props) {
@@ -74,27 +73,16 @@ class Dates extends React.Component {
                             onChange={this.changeDate()}
                             value={this.state.date}
                         />
-                        <Link className="create-event-button" to="/events">Create Event</Link>
                     </div>
                     <div className="calendar-events">
                         <div className="upcoming-events">
                             <h1>This Month's Events:</h1>
                             <ul>
-                                <li>
-                                    Event
-                                </li>
-                                <li>
-                                    Event
-                                </li>
-                                <li>
-                                    Event
-                                </li>
-                                <li>
-                                    Event
-                                </li>
-                                <li>
-                                    Event
-                                </li>
+                                {this.props.events.map((event, i) => (
+                                    <li key={i}>
+                                        {event.title}
+                                    </li>
+                                ))}
                             </ul>
                         </div>
                         <Link to="/events/new" className="create-event-link">Create Event</Link>

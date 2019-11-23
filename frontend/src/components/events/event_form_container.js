@@ -8,6 +8,7 @@ import {
     updateEvent, 
     deleteAnEvent 
 } from '../../actions/event_actions';
+import { withRouter } from 'react-router-dom';
 
 const mSTP = (state) => {
     let { id: authorId, connectionCode } = state.session.user;
@@ -19,19 +20,18 @@ const mSTP = (state) => {
 };
 
 const mDTP = (dispatch) => {
-    debugger
     return {
         createNewEvent: (data) => dispatch(createNewEvent(data)),
         updateEvent: (eventId) => dispatch(updateEvent(eventId)), 
         deleteAnEvent: (eventId) => dispatch(deleteAnEvent(eventId)),
 
-        EventForm: (
-            <button onClick={() => dispatch(openModal('Create Event'))}>
-                Create Event
-            </button>
-        ),
-        closeModal: () => dispatch(closeModal())
+        // EventForm: (
+        //     <button onClick={() => dispatch(openModal('Create Event'))}>
+        //         Create Event
+        //     </button>
+        // ),
+        // closeModal: () => dispatch(closeModal())
     };
 };
 
-export default connect(mSTP, mDTP)(EventForm);
+export default withRouter(connect(mSTP, mDTP)(EventForm));
