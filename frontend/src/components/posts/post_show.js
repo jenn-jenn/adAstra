@@ -2,6 +2,7 @@ import React from 'react';
 import CommentsContainer  from '../comment/comment_container';
 import ImageUploadContainer from '../image_upload/image_upload_container';
 import ImageIndexContainer from '../image_index/image_index_container';
+import '../stylesheets/forum/post_show.scss';
 
 class PostShow extends React.Component {
   constructor(props) {
@@ -29,17 +30,24 @@ class PostShow extends React.Component {
       return null;
     }
     const date = new Date(post.date);
-
     return (
-      <div>
-        <h1>{post.title}</h1>
-        <h3>{post.author}</h3>
-        <h4>{date.toDateString()}</h4>
-        <p>{post.body}</p>
-        <ImageUploadContainer post={post}/>
-        <input onClick={this.delete} type="submit" value="Delete" />
+      <div className="post-show">
+        <div className="post-show-content">
+          <div className="post-show-header">
+            <h1>
+              <i className="fas fa-meteor" alt="meteor" />
+              {post.title}
+            </h1>
+            <div className="post-show-footer">
+              <h4>Posted by {post.author} | {`${date.getHours()}:${date.getMinutes()} ${date.toDateString()}`}</h4>
+              <i className="fa fa-trash" onClick={this.delete}/>
+            </div>
+          </div>
+          <p>{post.body}</p>
+        </div>
+        <ImageUploadContainer post={post} />
         <ImageIndexContainer />
-        <CommentsContainer post={post} />
+        <CommentsContainer post={post}/>
       </div>
     );
   }

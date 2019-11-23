@@ -1,19 +1,18 @@
 #map-container {
-  width: 1000px;
-  height: 1000px;
-  position: fixed;
-  top: 100px;
-  left: 50px;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0px 40px 40px 40px;
 }
 
 #map {
-  width: 800px;
-  height: 800px;
+  width: 500px;
+  height: 500px;
 }
 
 #map * {
   background-color: rgba(0, 0, 0, 0);
-  overflow: hidden;
 }
 
 .marker {
@@ -30,27 +29,6 @@
   filter: invert(85%) sepia(51%) saturate(2878%) hue-rotate(180deg) brightness(104%) contrast(97%);
 }
 
-.map-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  background-color: #ddd;
-  max-height: 100%;
-  padding: 10px;
-  margin: 5px;
-  border-radius: 3px;
-}
- 
- 
-.map-overlay input {
-  display: block;
-  border: none;
-  border-radius: 3px;
-  padding: 10px;
-  margin: 0;
-}
-
 .mapboxgl-popup {
   max-width: 200px;
 }
@@ -58,7 +36,7 @@
 .mapboxgl-popup-content {
   padding: 0px;
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .popup h1 {

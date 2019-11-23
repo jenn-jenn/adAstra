@@ -1,30 +1,34 @@
-// src/components/app.js
-
 import React from "react";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
-import { Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
+import FooterContainer from './footer/footer_container';
 import NavBarContainer from "./nav/navbar_container";
 import SplashPage from './splash/splash_page';
 import MainPage from "./main/main_page";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import PostsContainer from "./posts/posts_container";
-import PostFormContainer from "./posts/post_form_container";
 import PostShowContainer from "./posts/post_show_container";
+import About from "./about/about";
+import EventFormContainer from "./events/event_form_container";
+
 
 const App = () => (
-  <div>
-    <NavBarContainer />
+  <div id="app">
+    <header><NavBarContainer /></header>
     <Switch>
-      <AuthRoute exact path="/" component={MainPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-   
-      <ProtectedRoute exact path="/splash" component={SplashPage} />
+      <AuthRoute exact path="/" component={SplashPage} />
+      <ProtectedRoute exact path="/main" component={MainPage} />
       <ProtectedRoute exact path="/posts" component={PostsContainer} />
-      <ProtectedRoute exact path="/posts/" component={PostFormContainer} />
       <ProtectedRoute exact path="/posts/:postId" component={PostShowContainer} />
+      <ProtectedRoute exact path="/events/new" component={PostShowContainer} />
+      <ProtectedRoute exact path="/events/new" component={EventFormContainer} />
+      
     </Switch>
+    <Route exact path="/about" component={About} />
+    <Route exact path="/main" component={FooterContainer} />
   </div>
 );
 

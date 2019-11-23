@@ -32,26 +32,32 @@ class PostForm extends React.Component {
 
     render() {
         return (
-          <div className="post-form-container">
-            <form onSubmit={this.handleSubmit}>
-              <div>
-                <input
-                  type="text"
-                  value={this.state.title}
-                  onChange={this.update("title")}
-                  placeholder="Title"
-                />
-                <input
-                  type="textarea"
-                  value={this.state.body}
-                  onChange={this.update("body")}
-                  placeholder="..."
-                />
-
-                <input type="submit" value="Submit" />
-              </div>
-            </form>
-          </div>
+          <form onSubmit={this.handleSubmit} className="post-form">
+            <input
+              type="text"
+              value={this.state.title}
+              onChange={this.update("title")}
+              placeholder="Title"
+            />
+            <input
+              className="write"
+              type="textarea"
+              value={this.state.body}
+              onChange={this.update("body")}
+              placeholder="Write post"
+            />
+            <div className="image-upload">
+              <label htmlFor="file-input">
+                <i className="fas fa-image"/>
+              </label>
+              <input id="file-input" type="file" />
+            </div>
+            <input
+              type="submit"
+              value="Submit"
+              className="post-form-submit"
+            />
+          </form>
         );
     }
 };

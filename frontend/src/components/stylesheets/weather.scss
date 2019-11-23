@@ -1,0 +1,38 @@
+.weather{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.weather-content{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.weather-content.forecast{
+    margin-top: 10px;
+    font-size: 12px;
+    text-transform: capitalize;
+}
+.weather-content.forecast *{
+    margin: 5px;
+}
+
+.moonrise, .sunset {
+    padding: 20px;
+    background: rgba(0,0,0,0.7);
+    box-shadow: 0px 0px 5px rgb(150, 150, 150);
+    border-radius: 15px;
+}
+
+.Days{
+    width: 15%;
+}
+
+.Days img{
+    border-radius: 15px;
+}

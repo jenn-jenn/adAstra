@@ -1,0 +1,57 @@
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    flex-direction: column;
+}
+.profiles{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+}
+
+.individualprofile{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 10px;
+}
+
+.fa-linkedin{
+    background: #007bb5;
+    color: white;
+}
+.fa-github{
+    color: white;
+    background: black;
+    border-radius: 60px;
+}
+.fa-google{
+    color: red;
+    border-radius: 50px;
+}
+.fa-angellist{
+    color: white;
+}
+.socialicons{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.fab {
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fab:hover {
+    opacity: 0.7;
+}
+
+.summary{
+    margin-top: 10%;
+    color: white;
+}

@@ -1,8 +1,7 @@
-//src / reducers / session_errors_reducer.js;
-
 import {
   RECEIVE_SESSION_ERRORS,
-  RECEIVE_CURRENT_USER
+  RECEIVE_CURRENT_USER,
+  CLEAR_ERRORS
 } from "../actions/session_actions";
 
 const _nullErrors = [];
@@ -14,6 +13,10 @@ const SessionErrorsReducer = (state = _nullErrors, action) => {
       return action.errors;
     case RECEIVE_CURRENT_USER:
       return _nullErrors;
+    case CLEAR_ERRORS:
+      const newState = Object.assign({}, state);
+      delete newState.errors;
+      return [];
     default:
       return state;
   }

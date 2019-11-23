@@ -1,5 +1,3 @@
-// src/components/nav/navbar.js
-
 import React from "react";
 import { Link } from "react-router-dom";
 import '../stylesheets/nav/nav.scss';
@@ -9,6 +7,8 @@ class NavBar extends React.Component {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
+    this.searchBar = this.searchBar.bind(this);
+    this.logoLink = this.logoLink.bind(this);
   }
 
   logoutUser(e) {
@@ -23,36 +23,68 @@ class NavBar extends React.Component {
     };
   }
 
-  // Selectively render links dependent on whether the user is logged in
   getLinks() {
     if (this.props.loggedIn) {
       return (
-        <div className="logout-button">
+        <div className="nav-right">
+          <Link to={"/posts"}><button>Forum</button></Link>
           <button onClick={this.logoutUser}>Logout</button>
         </div>
       );
     } else {
       return (
-        <div>
-          <Link to={"/signup"}>Signup</Link>
-          <Link to={"/login"}>Login</Link>
+        <div className="nav-right">
+          <Link to={"/signup"}><button>Signup</button></Link>
+          <Link to={"/login"}><button>Login</button></Link>
         </div>
       );
     }
   }
 
+  searchBar() {
+    if (this.props.loggedIn) {
+      return (
+        <div className="search-overlay">
+          <input
+            id="feature-filter"
+            type="text"
+            placeholder="Search for the stars..."
+          />
+          <i className="fa fa-search"/>
+        </div>
+      )
+    }
+  }
+
+  logoLink() {
+    if (this.props.loggedIn) {
+      return (
+        <Link to="/main">
+          <h2>adAstra</h2>
+        </Link>
+      )
+    } else {
+      return (
+        <Link to="/">
+          <h2>adAstra</h2>
+        </Link>
+      )
+    }
+  }
+  
   render() {
     return (
       <div className="nav">
-        <div className="nav-header-text">
-          <h2>ad Astra</h2>
+        <div className="nav-header-components">
+          {this.logoLink()}
         </div>
-        <div className="nav-links">
-          <Link to={"/posts"}>Forum</Link>
-        </div>
-        <div className="nav-right">
-          {this.getLinks()}
-        </div>
+        <i className="fa fa-star-and-crescent"/>
+        <i className="fas fa-star"/>
+        <i className="fa fa-moon"/>
+        <i className="fa fa-sun"/>
+        <i className="fas fa-meteor"/>
+        {this.searchBar()}
+        {this.getLinks()}
       </div>
     );
   }

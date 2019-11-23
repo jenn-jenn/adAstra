@@ -12,8 +12,7 @@
 /build
 
 # misc
-api_dev.js
-
+/api/api_dev.js
 .DS_Store
 .env
 .env.local

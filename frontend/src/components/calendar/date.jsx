@@ -1,6 +1,6 @@
 import React from "react";
 
-class DateItem extends React.Component {
+class DateObj extends React.Component {
 
     handleDeleteDate() {
         return (e) => {
@@ -56,8 +56,29 @@ class DateItem extends React.Component {
         )
     }
     render() {
-        // return ();
+        let { date, title } = this.props.date;
+     
+        return (
+            <div className="tile">
+                <div className="container-right">
+                    <div className="event-">
+                        <div className="event">
+                            <div className="event-date">
+                                {this.props.date.date}
+                            </div>
+                            {this.showUserButton()}
+                        </div>
+                        <div className="event-title">
+                            {title}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        )
     }
 }
 
-export default DateItem;
+export default DateObj;
+
+
