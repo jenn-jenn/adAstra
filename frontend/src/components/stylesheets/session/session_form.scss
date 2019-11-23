@@ -2,7 +2,6 @@ body {
 	background-image:  url('sky.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
-  // background-repeat: repeat-x;
   background-position: center;
   background-size: 100% 100%;
 }
@@ -102,10 +101,15 @@ body {
   display: none;
 }
 
-.user-auth-errors {
-  color: red;
-}
-
 .email {
   margin: 9px;
+}
+
+#user-auth-errors {
+  position:absolute;
+  top: 40%;
+  left: 510px;
+  width: 400px;
+  box-sizing:border-box;
+  color:red;
 }

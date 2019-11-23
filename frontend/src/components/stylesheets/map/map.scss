@@ -36,23 +36,11 @@
 .mapboxgl-popup-content {
   padding: 0px;
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .popup h1 {
   font-size: 15px;
   color: white;
   text-shadow: 2px 2px 5px black;
-}
-
-button.mapboxgl-ctrl-icon {
-  // overflow: visible !important;
-  // background-color: white !important;
-  // position: fixed;
-  // top: 0;
-  // left: 0;
-}
-
-.mapboxgl-ctrl.mapboxgl-ctrl-group {
-  // position: absolute;
 }

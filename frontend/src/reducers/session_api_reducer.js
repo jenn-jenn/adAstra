@@ -1,5 +1,3 @@
-// src/reducers/session_api_reducer.js
-
 import {
   RECEIVE_CURRENT_USER,
   RECEIVE_USER_LOGOUT,

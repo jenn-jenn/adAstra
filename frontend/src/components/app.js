@@ -10,9 +10,9 @@ import SignupFormContainer from "./session/signup_form_container";
 import PostsContainer from "./posts/posts_container";
 import PostShowContainer from "./posts/post_show_container";
 import Modal from './modal/Modal';
-
 import EventFormContainer from './events/event_form_container';
-import EventForm from './events/event_form';
+import About from "./about/about";
+
 
 
 const App = () => (
@@ -27,9 +27,10 @@ const App = () => (
       <ProtectedRoute exact path="/main" component={MainPage} />
       <ProtectedRoute exact path="/posts" component={PostsContainer} />
       <ProtectedRoute exact path="/posts/:postId" component={PostShowContainer} />
-      <ProtectedRoute exact path="/events" component={EventFormContainer} />
+      <ProtectedRoute exact path="/events/new" component={EventFormContainer} />
       
     </Switch>
+    <Route exact path="/about" component={About} />
     <Route exact path="/main" component={FooterContainer} />
   </div>
 );

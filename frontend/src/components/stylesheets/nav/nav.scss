@@ -6,7 +6,7 @@
   color: rgb(248, 229, 229);
 
   position: fixed;
-  top: 0px; //for fixed and absolute
+  top: 0px;
   z-index: 10;
   
   background-color: black;
@@ -24,7 +24,6 @@
   h2 {
     padding: 20px;
     font-size: 32px;
-    // font-weight: bold;
     letter-spacing: 1.3px;
     color: white;
     text-shadow: 1px 1px 3px rgb(255, 255, 255);
@@ -73,10 +72,6 @@
   color: white;
   transition: 0.3s;
   text-shadow: 0px 0px 15px grey;
-}
-
-.fa:hover, .fas:hover {
-  // opacity: 0.5;
 }
 
 .nav-right {

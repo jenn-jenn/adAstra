@@ -49,21 +49,20 @@ class MainPage extends React.Component {
 
       </React.Fragment>
         ><h2>adAstra</h2>
-        <div id="content-wrapper">
+        <div className="content-wrapper">
           <WeatherContainer />
         </div>
         <div className="main-content">
-          <div id="content-wrapper">
-            CALENDAR
+          <div className="content-wrapper">
            <DatesContainer />
            <EventModal />
           </div>
-          <div id="content-wrapper">
+          <div className="content-wrapper">
             <h3>Constellation Map</h3>
-            <p>
-              Share your location to find constellations you currently can view!
-            </p>
             <MapContainer />
+            <p>
+              Share your location to find constellations you can currently view.
+            </p>
           </div>
         </div>
       </div>

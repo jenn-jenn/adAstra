@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import '../stylesheets/calendar/calendar.scss';
 import DateObj from './date';
 import Calendar from 'react-calendar/dist/entry.nostyle';
@@ -75,9 +76,29 @@ class Dates extends React.Component {
                         />
                         <Link className="create-event-button" to="/events">Create Event</Link>
                     </div>
-                    <div className="right-side">
-                        <div className="upcoming-events">This Month</div>
-                        <div className="timeline-wrapper">
+                    <div className="calendar-events">
+                        <div className="upcoming-events">
+                            <h1>This Month's Events:</h1>
+                            <ul>
+                                <li>
+                                    Event
+                                </li>
+                                <li>
+                                    Event
+                                </li>
+                                <li>
+                                    Event
+                                </li>
+                                <li>
+                                    Event
+                                </li>
+                                <li>
+                                    Event
+                                </li>
+                            </ul>
+                        </div>
+                        <Link to="/events/new" className="create-event-link">Create Event</Link>
+                        {/* <div className="timeline-wrapper">
                             <div className="timeline">
                                 {thisMonth}
                             </div>
@@ -87,7 +108,7 @@ class Dates extends React.Component {
                             <div className="timeline">
                                 {nextMonth}
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

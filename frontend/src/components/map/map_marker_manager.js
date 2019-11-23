@@ -21,7 +21,6 @@ class MarkerManager {
     })
       .setLngLat(coordinates)
       .setHTML(`<h1>${object.target.name}</h1>`)
-      // .setMaxWidth("100px")
       .addTo(this.map);
 
 

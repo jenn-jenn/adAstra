@@ -16,9 +16,6 @@ class Map extends React.Component {
         minZoom: 0,
         maxZoom: 1.5,
         center: currCenter,
-        // style: 'mapbox://styles/mapbox/navigation-preview-night-v2'
-        // style: "mapbox://styles/mapbox/navigation-guidance-night-v2"
-        // style: "mapbox://styles/mapbox/satellite-streets-v10"
         style: "mapbox://styles/mapbox/outdoors-v10"
       };
 
@@ -60,17 +57,10 @@ class Map extends React.Component {
       }
 
       navigator.geolocation.getCurrentPosition(success, error, options);
-
-
-      // lng = dec; range: [dec + 45, dec - 45]
-      // lat = ra; range: [ra + 45, ra - 45]
-      // lat: 37.7749  se = (-167.4194, 82.7749)
-      // lng: -122.4194  nw = (-77.4194, -7.2251)
     })
   }
 
   render() {
-    // if (this.props.cosmicObjects.length === 0) return null;
     return (
       <div id="map-container">
         <div id="map"></div>

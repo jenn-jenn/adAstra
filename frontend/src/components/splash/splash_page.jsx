@@ -1,5 +1,4 @@
 import React from "react";
-//import { View } from 'react-native';
 import '../stylesheets/session/splash_page.scss';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +8,6 @@ class SplashPage extends React.Component {
 
       <div className="splash-main">
           <h2>adAstra</h2>
-          <div className="splash-popup">
             <div className="splash-page-buttons">
               <Link to='/login' className="loginbutton">
                 Log In
@@ -18,7 +16,6 @@ class SplashPage extends React.Component {
                 Sign Up
               </Link>
             </div>
-          </div>
       </div>
 
     );
