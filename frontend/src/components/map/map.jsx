@@ -46,9 +46,6 @@ class Map extends React.Component {
 
       function success(pos) {
         const crd = pos.coords;
-
-        console.log(`Latitude : ${crd.latitude}`);
-        console.log(`Longitude: ${crd.longitude}`);
       }
 
       function error(err) {
