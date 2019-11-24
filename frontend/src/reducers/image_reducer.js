@@ -7,10 +7,8 @@ const ImageReducer = (state = {}, action) => {
         case RECEIVE_IMAGES:
             return action.images.data;
         case RECEIVE_POST_IMAGES:
-            debugger
             return action.images.data;
         case RECEIVE_IMAGE:
-            debugger
             let newState = Object.assign({}, state)
             newState[action.image.data._id] = action.image.data
             return newState;

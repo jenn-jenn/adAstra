@@ -3,11 +3,11 @@ import CommentsContainer  from '../comment/comment_container';
 import ImageUploadContainer from '../image_upload/image_upload_container';
 import ImageIndexContainer from '../image_index/image_index_container';
 import '../stylesheets/forum/post_show.scss';
+import "../stylesheets/forum/image_index.scss";
 
 class PostShow extends React.Component {
   constructor(props) {
     super(props);
-    debugger
     this.delete = this.delete.bind(this);
   }
 
@@ -47,10 +47,10 @@ class PostShow extends React.Component {
           </div>
           <p>{post.body}</p>
         </div>
-        <div>
+        <div className="images">
           <ImageUploadContainer post={post} />
           <ImageIndexContainer post={post}/>
-          </div>
+        </div>
         <CommentsContainer post={post}/>
       </div>
     );

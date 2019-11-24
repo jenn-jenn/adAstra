@@ -4,7 +4,6 @@ import { fetchImages, fetchPostImages } from '../../actions/image_actions';
 
 
 const msp = (state, ownProps) => {
-    debugger
     return {
         images: Object.values(state.entities.images),
         errors: state.errors.image
