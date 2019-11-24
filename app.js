@@ -11,6 +11,7 @@ const cosmicObjects = require("./routes/api/cosmic_objects");
 const users = require("./routes/api/users");
 const posts = require("./routes/api/posts");
 const comments = require("./routes/api/comments");
+const images = require("./routes/api/images");
 const CosmicObject = require('./models/CosmicObject');
 const events = require("./routes/api/events");
 
@@ -36,6 +37,7 @@ app.use("/api/users", users);
 app.use("/api/posts", posts);
 app.use("/api/comments", comments);
 app.use("/api/cosmicobjects", cosmicObjects);
+app.use("/api/images", images);
 app.use("/api/events", events);
 
 const port = process.env.PORT || 5000;
