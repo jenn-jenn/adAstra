@@ -1,5 +1,4 @@
 import React from 'react';
-import APIKeys from '../../api/api';
 import "../stylesheets/map/mapboxgl-map.scss";
 import '../stylesheets/map/map.scss';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
@@ -9,7 +8,7 @@ class Map extends React.Component {
   componentDidMount() {
     this.props.fetchCosmicObjects()
     .then(() => {
-      mapboxgl.accessToken = APIKeys.mapboxAccessToken;
+      mapboxgl.accessToken = "pk.eyJ1IjoianVubmFjIiwiYSI6ImNrMnFxbjN6dDBodGwzbHBnOHo3a2JyOGkifQ.aFvV6CS-cHtsRT5Qvz2Z3w";
       let currCenter = [-98.5795, 39.8283];
       const mapOptions = {
         container: "map",
