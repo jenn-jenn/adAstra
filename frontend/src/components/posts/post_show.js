@@ -9,11 +9,10 @@ class PostShow extends React.Component {
     super(props);
     
     this.delete = this.delete.bind(this);
-
-
   }
 
   componentDidMount() {
+    // this.props.fetchUsers().then(() => this.props.fetchAPost(this.props.postId))
     this.props.fetchPosts();
   }
 
@@ -25,7 +24,7 @@ class PostShow extends React.Component {
 
   render() {
     const post = this.props.posts[this.props.postId];
-
+    debugger
     if (!post) {
       return null;
     }
@@ -45,8 +44,10 @@ class PostShow extends React.Component {
           </div>
           <p>{post.body}</p>
         </div>
-        <ImageUploadContainer post={post} />
-        <ImageIndexContainer />
+        <div>
+          <ImageUploadContainer post={post} />
+          <ImageIndexContainer post={post}/>
+          </div>
         <CommentsContainer post={post}/>
       </div>
     );

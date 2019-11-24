@@ -5,7 +5,7 @@ export const getImages = () => {
     return axios.get("/api/images/");
 }
 
-export const getImagesByPost = id => {
+export const getImagesByPost = (id) => {
     return axios.get(`/api/images/posts/${id}`)
 }
 
