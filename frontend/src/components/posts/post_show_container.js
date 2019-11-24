@@ -5,14 +5,17 @@ import { fetchUsers } from '../../actions/user_actions';
 
 
 const msp = (state, ownProps) => {
+  debugger
   return {
-    user: ownProps.location.state.user,
-    post: state.entities.posts.post,
-    postId: ownProps.match.params.postId
+    posts: state.entities.posts.all,
+    postId: ownProps.match.params.postId,
+    users: state.users
   };
 };
 
 const mdp = (dispatch) => ({
+  fetchUsers: () => dispatch(fetchUsers()),
+  fetchPosts: () => dispatch(fetchPosts()),
   fetchAPost: (postId) => dispatch(fetchAPost(postId)),
   deleteAPost: (postId) => dispatch(deleteAPost(postId))
 });

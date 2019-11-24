@@ -7,13 +7,16 @@ import '../stylesheets/forum/post_show.scss';
 class PostShow extends React.Component {
   constructor(props) {
     super(props);
+    debugger
     this.delete = this.delete.bind(this);
   }
 
   componentDidMount() {
-      this.props.fetchAPost(this.props.postId);
+      this.props.fetchUsers()
+        .then( ()=> {
+          this.props.fetchPosts();
+        })
     }
-
   delete() {
     this.props.deleteAPost(this.props.postId).then(() => {
       this.props.history.push("/posts");
@@ -21,13 +24,13 @@ class PostShow extends React.Component {
   }
 
   render() {
-    debugger
-    const post = this.props.post;
-    const user = this.props.user;
-
+    const post = this.props.posts[this.props.postId];
+    
     if (!post) {
       return null;
     }
+
+    const user = this.props.users[post.author];
     const date = new Date(post.date);
     return (
       <div className="post-show">

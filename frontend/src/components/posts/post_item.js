@@ -12,7 +12,6 @@ const PostItems = ({ post, users }) => {
         <Link
           to={{
             pathname: `/posts/${post._id}`, // on refresh, page doesnt work?
-            state: {user: user}
           }}
         >
           <h2>
