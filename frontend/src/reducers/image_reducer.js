@@ -12,7 +12,7 @@ const ImageReducer = (state = {}, action) => {
         case RECEIVE_IMAGE:
             debugger
             let newState = Object.assign({}, state)
-            newState[action.image.data.id] = action.image.data
+            newState[action.image.data._id] = action.image.data
             return newState;
         default:
             return state;

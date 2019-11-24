@@ -38,7 +38,12 @@ class ImageUpload extends React.Component {
             image.append('image', this.state.file);
             debugger
             this.props.uploadImage(image)
-            this.setState({errors: [], inputReset: Date.now()});
+            this.setState({
+                errors: [], 
+                inputReset: Date.now(),
+                file: null,
+                src: null
+            });
         }
 
     }

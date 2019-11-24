@@ -54,7 +54,8 @@ export const uploadImage = (data) => (dispatch) => {
     debugger
     return ImageUtil.uploadImage(data) 
         .then( (imgData) => {
-            return ImageUtil.uploadImageToDB(imgData).then((image) => dispatch(receiveImage(image)))
+            return ImageUtil.uploadImageToDB(imgData)
+                .then((image) => dispatch(receiveImage(image)))
         })
         .catch( err => dispatch(receiveImageErrors(err)));
 };

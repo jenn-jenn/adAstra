@@ -5,7 +5,7 @@ export const getPosts = () => {
 };
 
 export const getAPost = (postId) => {
-  return axios.get(`/api/posts${postId}`);
+  return axios.get(`/api/posts/${postId}`);
 };
 
 export const writePost = (data) => {

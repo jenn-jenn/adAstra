@@ -7,14 +7,12 @@ import '../stylesheets/forum/post_show.scss';
 class PostShow extends React.Component {
   constructor(props) {
     super(props);
-    
     this.delete = this.delete.bind(this);
   }
 
   componentDidMount() {
-    // this.props.fetchUsers().then(() => this.props.fetchAPost(this.props.postId))
-    this.props.fetchPosts();
-  }
+      this.props.fetchAPost(this.props.postId);
+    }
 
   delete() {
     this.props.deleteAPost(this.props.postId).then(() => {
@@ -23,8 +21,10 @@ class PostShow extends React.Component {
   }
 
   render() {
-    const post = this.props.posts[this.props.postId];
     debugger
+    const post = this.props.post;
+    const user = this.props.user;
+
     if (!post) {
       return null;
     }
@@ -38,7 +38,7 @@ class PostShow extends React.Component {
               {post.title}
             </h1>
             <div className="post-show-footer">
-              <h4>Posted by {post.author} | {`${date.getHours()}:${date.getMinutes()} ${date.toDateString()}`}</h4>
+              <h4>Posted by {user.handle} | {`${date.getHours()}:${date.getMinutes()} ${date.toDateString()}`}</h4>
               <i className="fa fa-trash" onClick={this.delete}/>
             </div>
           </div>

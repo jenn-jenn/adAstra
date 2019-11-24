@@ -5,7 +5,7 @@ class ImageIndex extends React.Component {
 
     constructor(props) {
         super(props);
-        debugger
+        
     }
 
     componentDidMount() {
