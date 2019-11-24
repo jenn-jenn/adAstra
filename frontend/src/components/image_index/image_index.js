@@ -1,7 +1,5 @@
 import React from 'react';
 import ImageItem from './image_item';
-import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 class ImageIndex extends React.Component {
 
