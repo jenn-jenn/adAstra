@@ -69,10 +69,19 @@
   font-size: 20px;
   width: 30px;
   text-decoration: none;
-  color: white;
+  color: rgb(133, 133, 133);
   transition: 0.3s;
   text-shadow: 0px 0px 15px grey;
 }
+
+.fa-users {
+  color: white;
+}
+
+.fa-users:hover {
+  opacity: 0.5;
+}
+
 
 .nav-right {
   display: flex;

@@ -1,8 +1,6 @@
-//per event show form
-
 import React from "react";
 
-class DateShow extends React.Component {
+class EventIndex extends React.Component {
     constructor(props) {
         super(props);
 
@@ -24,4 +22,4 @@ class DateShow extends React.Component {
     }
 }
 
-export default DateShow;
+export default EventIndex;
