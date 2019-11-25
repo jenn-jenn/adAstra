@@ -15,7 +15,7 @@ class About extends React.Component{
                         <img src="/Jessica_Zhen.jpg" alt=""/>
                         <h3>Jessica Zhen</h3>
                         <div className="socialicons">
-                            <a href="" className="fab fa-linkedin" target="_blank"></a>
+                            <a href="https://www.linkedin.com/in/xchenj/" className="fab fa-linkedin" target="_blank"></a>
                             <a href="" className="fab fa-angellist" target="_blank"></a>
                             <a href="https://github.com/zhenjess" className="fab fa-github" target="_blank"></a>
                             <a href="mailto:jessicazhen8@gmail.com" className="fab fa-google" target="_blank"></a>

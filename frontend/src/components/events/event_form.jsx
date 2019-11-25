@@ -1,5 +1,5 @@
 import React from "react";
-import '../stylesheets/modal/event_modal.scss';
+import '../stylesheets/event/event.scss';
 
 class EventForm extends React.Component {
     constructor(props) {
@@ -10,13 +10,9 @@ class EventForm extends React.Component {
             date: '',
             address: '',
             body: '',
-            //connectionCode: props.connectionCode,
-           // new: true
-            //processed: false
+            connectionCode: props.connectionCode
         }
-
         this.handleSubmit = this.handleSubmit.bind(this);
-        //this.handleEventModalClick = this.handleEventModalClick.bind(this);
     }
   
     
@@ -36,38 +32,61 @@ class EventForm extends React.Component {
     render() {
         return (
             <div className="eventCalendar">
-                <form className="event-form" >
-                    <div className="fill-event-form">New Event</div>
-                    <input type="text"
-                        value={this.state.title}
-                        onChange={this.update("title")}
-                        placeholder="ex: Stargazing Night"
-                        maxLength="50">
-                    </input>
-                    <br />
-                    <input type="text"
-                        value={this.state.date}
-                        onChange={this.update("date")}
-                        placeholder="ex: 11/22/2019"
-                        maxLength="10">
-                    </input>
-                    <br />
-                    <input type="text"
-                        value={this.state.address}
-                        onChange={this.update("address")}
-                        placeholder="ex: S.F., CA"
-                        maxLength="50">
-                    </input>
-                    <br />
-                    <input type="text"
-                        value={this.state.body}
-                        onChange={this.update("body")}     
-                        maxLength="50">
-                    </input>
-                    <br />
-                    <input onClick={this.handleSubmit} className="input submit" type="submit" value="Submit" />       
-                </form>
+                <h1>Welcome to the adAstra Event Form!</h1>
+                    <div className="event-form-container">
+
+                        <form className="event-form" >
+                            <div className="event-title">
+                                <h3>Event Title:</h3>
+                                <input type="text"
+                                    value={this.state.title}
+                                    onChange={this.update("title")}
+                                    placeholder="ex: Stargazing Night"
+                                    maxLength="50">
+                                </input>
+                                <br />
+                            </div>
+
+                            <div className="event-date">
+                                <h3>Event Date:</h3>
+                                <input type="text"
+                                    value={this.state.date}
+                                    onChange={this.update("date")}
+                                    placeholder="ex: 11/22/2019"
+                                    maxLength="10">
+                                </input>
+                                <br />
+                            </div>
+
+                            <div className="event-address">
+                                <h3>Event Address:</h3>
+                                <input type="text"
+                                    value={this.state.address}
+                                    onChange={this.update("address")}
+                                    placeholder="ex: S.F., CA"
+                                    maxLength="50">
+                                </input>
+                                <br />
+                            </div>
+
+                            <div className="event-body">
+                                <h3>Event Body:</h3>
+                                <input type="text"
+                                    value={this.state.body}
+                                    onChange={this.update("body")}  
+                                    placeholder="ex: Stargazing with friends in the city!"   
+                                    maxLength="50">
+                                </input>
+                                <br />
+                            </div>
+                            <div clasName="event-form-buttons">
+                                <input onClick={this.handleSubmit} className="event-form-update" type="submit" value="Update" />
+                                <input onClick={this.handleSubmit} className="event-form-submit" type="submit" value="Submit" />       
+                            </div>
+                        </form>
+                    </div>
             </div>
+
         )
     }
 }

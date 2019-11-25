@@ -1,5 +1,6 @@
 import React from "react";
 import EventsContainer from './events_container';
+import '../stylesheets/event/event.scss';
 
 class Events extends React.Component {
     componentDidMount() {
@@ -8,11 +9,22 @@ class Events extends React.Component {
     }
 
     render() {
+        const eventsEmpty = (
+            <div className="event-container">
+                No events scheduled
+            </div>
+        );
+
+        if (this.props.events.length === 0) {
+            return eventsEmpty;
+        }
+        
         return (
+
             <div className="events">
                 {
                     this.props.events.map( event => 
-                        <EventItems
+                        <EventObj
                             users={this.props.users}
                             currentUser={this.props.currentUser}
                             event={event}

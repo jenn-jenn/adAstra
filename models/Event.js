@@ -3,8 +3,7 @@ const Schema = mongoose.Schema;
 
 const EventSchema = new Schema({
     title: {
-        type: String, 
-       // required: true
+        type: String
     },
 
     date: {
@@ -17,8 +16,7 @@ const EventSchema = new Schema({
     },
 
     body: {
-        type: String,
-       // required: true
+        type: String
     },
     authorId: {
         type: Schema.Types.ObjectId, 

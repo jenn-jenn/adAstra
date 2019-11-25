@@ -6,7 +6,6 @@ import users from "./users_reducer";
 import entities from "./entities_reducer";
 import weather from "./weather_reducer";
 import sunset from "./sunset_reducer";
-import uiReducer from "./ui_reducer";
 
 const RootReducer = combineReducers({
   errors,
@@ -15,8 +14,7 @@ const RootReducer = combineReducers({
   users,
   weather,
   sunset,
-  entities, 
-  uiReducer
+  entities
 });
 
 export default RootReducer;
