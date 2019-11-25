@@ -83,7 +83,10 @@ class EventForm extends React.Component {
                                 </input>
                                 <br />
                             </div>
-                            <input onClick={this.handleSubmit} className="event-form-submit" type="submit" value="Submit" />       
+                            <div clasName="event-form-buttons">
+                                <input onClick={this.handleSubmit} className="event-form-update" type="submit" value="Update" />
+                                <input onClick={this.handleSubmit} className="event-form-submit" type="submit" value="Submit" />       
+                            </div>
                         </form>
                     </div>
             </div>
