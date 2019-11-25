@@ -63,6 +63,16 @@ class Dates extends React.Component {
             return null;
         }
 
+        const dateDiv = (
+            <div className="date-container">
+                <ul className="date-list">
+                    {allDates.map((date, id) => (
+                        <DateObj key={id} date={date} users={users} />
+                    ))}
+                </ul>
+            </div>
+        );
+
         return (
             <div className="dates-page">
             
@@ -74,7 +84,8 @@ class Dates extends React.Component {
                             value={this.state.date}
                         />
                     </div>
-                    <div className="calendar-events">  
+                    <div className="calendar-events">
+                        <div className="upcoming-events">
                             <h1>This Month's Events:</h1>
                             <ul>
                                 {this.props.events.map((event, i) => (
@@ -82,8 +93,10 @@ class Dates extends React.Component {
                                         {event.title}
                                     </li>
                                 ))}
-                            </ul>                     
+                            </ul>
+                        </div>
                         <Link to="/events/new" className="create-event-link">Create Event</Link>
+                        {dateDiv}
                     </div>
                 </div>
             </div>
