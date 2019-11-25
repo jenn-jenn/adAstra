@@ -31,13 +31,11 @@ router.post('/uploadImage', passport.authenticate("jwt", { session: false }), (r
         if(err) {
             return res.status(422).json({errors: err.message});
         }    
-        debugger
         return res.json({'imageUrl': req.file.location, 'postId': req.body.postId, 'fileName': req.file.originalname});
     })   
 });
 
 router.post('/uploadImageDB', (req, res) => {
-    debugger
     const newImage = new Image({
         postId: req.body.data.postId,
         fileName: req.body.data.fileName,

@@ -5,7 +5,6 @@ import { fetchUsers } from '../../actions/user_actions';
 
 
 const msp = (state, ownProps) => {
-  debugger
   return {
     posts: state.entities.posts.all,
     postId: ownProps.match.params.postId,

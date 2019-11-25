@@ -12,7 +12,6 @@ const msp = (state) => {
 };
 
 const mdp = (dispatch) => {
-    debugger
     return {
         fetchPosts: () => dispatch(fetchPosts()),
         fetchUsers: () => dispatch(fetchUsers())

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../stylesheets/forum/image_upload.scss'
 
 class ImageUpload extends React.Component {
     constructor(props) {
@@ -25,7 +25,6 @@ class ImageUpload extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault(); 
-        debugger
 
         const errors = [];
         if (this.fileInput.current.files.length <= 0) {
@@ -36,7 +35,6 @@ class ImageUpload extends React.Component {
             const image = new FormData();
             image.append('postId', this.props.post._id);
             image.append('image', this.state.file);
-            debugger
             this.props.uploadImage(image)
             this.setState({
                 errors: [], 
@@ -49,16 +47,31 @@ class ImageUpload extends React.Component {
     }
     render() {
         return (
-            <div className="upload-image-container">
-                <form encType="multi-art/form-data" onSubmit={this.handleSubmit}>
-                    <input ref={this.fileInput} key={this.state.inputReset} type="file" name="image" onChange={this.handleFiles}/>
-                    <input type="submit" value="Attach photo"/>
-                </form>
-                {this.state.errors.map(error => (
-                    <p key={error}>{error}</p>
-                ))}
-            </div>
-        )
+
+          <div className="upload-image-container">
+            <form encType="multi-art/form-data" onSubmit={this.handleSubmit}>
+              <label htmlFor="file-input">
+                <i className="fas fa-image" />
+              </label>
+              <input
+                id="file-input"
+                ref={this.fileInput}
+                key={this.state.inputReset}
+                type="file"
+                name="image"
+                onChange={this.handleFiles}
+              />
+              <input
+                type="submit"
+                value="Attach photo"
+                className="upload-image-submit"
+              />
+            </form>
+            {this.state.errors.map(error => (
+              <p key={error}>{error}</p>
+            ))}
+          </div>
+        );
     }
 }
 
