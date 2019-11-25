@@ -22,7 +22,6 @@ class Events extends React.Component {
         return (
 
             <div className="events">
-                
                 {
                     this.props.events.map( event => 
                         <EventItems
