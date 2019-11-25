@@ -13,7 +13,6 @@ const receiveImages = (images) => {
 };
 
 const receiveImage = (image) => {
-    debugger
     return {
         type: RECEIVE_IMAGE,
         image
@@ -28,7 +27,6 @@ export const receivePostImages = images => {
 }
 
 const receiveImageErrors = (errors) => {
-    debugger
     return {
         type: RECEIVE_IMAGE_ERRORS,
         errors
@@ -51,7 +49,6 @@ export const fetchPostImages = (id) => (dispatch) => {
 };
 
 export const uploadImage = (data) => (dispatch) => {
-    debugger
     return ImageUtil.uploadImage(data) 
         .then( (imgData) => {
             return ImageUtil.uploadImageToDB(imgData)

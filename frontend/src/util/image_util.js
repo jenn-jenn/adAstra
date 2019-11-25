@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 export const getImages = () => {
-    debugger
     return axios.get("/api/images/");
 }
 

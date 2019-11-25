@@ -3,7 +3,6 @@ import { uploadImage, fetchImages } from '../../actions/image_actions';
 import ImageUpload from './image_upload';
 
 const msp = (state) => {
-    debugger
     return {
  
     };

@@ -11,7 +11,7 @@ const PostItems = ({ post, users }) => {
       <div className="post-header">
         <Link
           to={{
-            pathname: `/posts/${post._id}`, // on refresh, page doesnt work?
+            pathname: `/posts/${post._id}`
           }}
         >
           <h2>
