@@ -67,7 +67,7 @@ class EventForm extends React.Component {
                             maxLength="50">
                         </input>
                         <br />
-                        <input onClick={this.handleSubmit} className="input submit" type="submit" value="Submit" />       
+                        <input onClick={this.handleSubmit} className="event-form-submit" type="submit" value="Submit" />       
                     </form>
                  </div>
             </div>
