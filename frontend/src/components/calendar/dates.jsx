@@ -63,16 +63,6 @@ class Dates extends React.Component {
             return null;
         }
 
-        const dateDiv = (
-            <div className="date-container">
-                <ul className="date-list">
-                    {allDates.map((date, id) => (
-                        <DateObj key={id} date={date} users={users} />
-                    ))}
-                </ul>
-            </div>
-        );
-
         return (
             <div className="dates-page">
             
@@ -96,7 +86,6 @@ class Dates extends React.Component {
                             </ul>
                         </div>
                         <Link to="/events/new" className="create-event-link">Create Event</Link>
-                        {dateDiv}
                     </div>
                 </div>
             </div>
