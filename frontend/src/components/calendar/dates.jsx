@@ -86,17 +86,6 @@ class Dates extends React.Component {
                             </ul>
                         </div>
                         <Link to="/events/new" className="create-event-link">Create Event</Link>
-                        {/* <div className="timeline-wrapper">
-                            <div className="timeline">
-                                {thisMonth}
-                            </div>
-                        </div>
-                        <div className="upcoming-events" id="next-month-event">Next Month</div>
-                        <div className="timeline-wrapper">
-                            <div className="timeline">
-                                {nextMonth}
-                            </div>
-                        </div> */}
                     </div>
                 </div>
             </div>

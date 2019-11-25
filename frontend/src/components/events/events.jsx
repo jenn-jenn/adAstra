@@ -24,7 +24,7 @@ class Events extends React.Component {
             <div className="events">
                 {
                     this.props.events.map( event => 
-                        <EventItems
+                        <EventObj
                             users={this.props.users}
                             currentUser={this.props.currentUser}
                             event={event}

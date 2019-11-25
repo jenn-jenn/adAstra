@@ -10,13 +10,9 @@ class EventForm extends React.Component {
             date: '',
             address: '',
             body: '',
-            //connectionCode: props.connectionCode,
-           // new: true
-            //processed: false
+            connectionCode: props.connectionCode
         }
-
         this.handleSubmit = this.handleSubmit.bind(this);
-        //this.handleEventModalClick = this.handleEventModalClick.bind(this);
     }
   
     

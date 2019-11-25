@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import React from 'react';
 import { fetchUsers } from '../../actions/user_actions';
 import { 
     fetchEvents, 
