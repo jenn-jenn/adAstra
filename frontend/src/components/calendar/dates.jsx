@@ -74,8 +74,7 @@ class Dates extends React.Component {
                             value={this.state.date}
                         />
                     </div>
-                    <div className="calendar-events">
-                        <div className="upcoming-events">
+                    <div className="calendar-events">  
                             <h1>This Month's Events:</h1>
                             <ul>
                                 {this.props.events.map((event, i) => (
@@ -83,8 +82,7 @@ class Dates extends React.Component {
                                         {event.title}
                                     </li>
                                 ))}
-                            </ul>
-                        </div>
+                            </ul>                     
                         <Link to="/events/new" className="create-event-link">Create Event</Link>
                     </div>
                 </div>
