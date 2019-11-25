@@ -4,6 +4,7 @@
   "description": "adAstra Project",
   "main": "app.js",
   "scripts": {
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
     "start": "node app.js",
     "server:debug": "nodemon --inspect app.js",
     "server": "nodemon app.js",
@@ -25,6 +26,7 @@
   },
   "homepage": "https://github.com/jenn-jenn/adAstra#readme",
   "dependencies": {
+    "aws-sdk": "^2.576.0",
     "axios": "^0.19.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
@@ -34,6 +36,8 @@
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
     "mongoose": "^5.7.11",
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
     "node-sass": "^4.13.0",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",

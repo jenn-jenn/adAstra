@@ -22,6 +22,7 @@ class Dates extends React.Component {
 
     componentDidMount() {
         this.props.fetchAllDates(this.props.user.id);
+        this.props.fetchEvents();
     }
 
     render() {
@@ -76,7 +77,7 @@ class Dates extends React.Component {
                     </div>
                     <div className="calendar-events">
                         <div className="upcoming-events">
-                            <h1>This Month's Events:</h1>
+                            <h1>Upcoming Events:</h1>
                             <ul>
                                 {this.props.events.map((event, i) => (
                                     <li key={i}>

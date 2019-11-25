@@ -76,14 +76,11 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className="nav">
-        <div className="nav-header-components">
-          {this.logoLink()}
-        </div>
-        <i className="fa fa-star-and-crescent"/>
-        <i className="fas fa-star"/>
-        <i className="fa fa-moon"/>
-        <i className="fa fa-sun"/>
-        <i className="fas fa-meteor"/>
+        <div className="nav-header-components">{this.logoLink()}</div>
+        <a href="#/about" className="fas fa-users" />
+        <i className="fas fa-star" />
+        <i className="fa fa-star-and-crescent" />
+        <i className="fas fa-meteor" />
         {this.searchBar()}
         {this.getLinks()}
       </div>
