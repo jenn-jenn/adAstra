@@ -5,15 +5,6 @@ import '../stylesheets/main_page.scss';
 import WeatherContainer from "../weather/weather_container";
 
 class MainPage extends React.Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      showModal: false
-    }
-  }
-
   componentDidMount() {
     this.props.fetchEvents()
   }
