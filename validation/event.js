@@ -5,7 +5,6 @@ module.exports = function validateEventInput(data) {
     let errors = {};
 
     data.title = validText(data.title) ? data.title : "";
-    // data.date = validText(data.date) ? data.date : "";
     data.body = validText(data.body) ? data.body : "";
     
 
@@ -16,10 +15,6 @@ module.exports = function validateEventInput(data) {
     if (Validators.isEmpty(data.title)) {
         errors.title = "Title is required";
     }
-
-    // if (!Validator.isLength(data.date, { min: 6, max: 10})) {
-    //     errors.date = "Date must be between 6 and 10 characters";
-    // }
 
     if (Validator.isEmpty(data.date)) {
         errors.date = "Date required";
