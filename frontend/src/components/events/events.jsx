@@ -18,14 +18,11 @@ class Events extends React.Component {
         if (this.props.events.length === 0) {
             return eventsEmpty;
         }
-
-        const allEvents = Object.values(this.props.events);
-        let users = {};
         
         return (
 
             <div className="events">
-                <h1>Welcome to the adAstra Event Schedule!</h1>
+                
                 {
                     this.props.events.map( event => 
                         <EventItems
