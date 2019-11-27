@@ -6,14 +6,16 @@ import { fetchUsers } from '../../actions/user_actions';
 
 const msp = (state) => {
     return {
-        posts: Object.values(state.entities.posts),
+        posts: Object.values(state.entities.posts.all),
         users: Object.values(state.users)
     };
 };
 
-const mdp = (dispatch) => ({
-    fetchPosts: () => dispatch(fetchPosts()),
-    fetchUsers: () => dispatch(fetchUsers())
-});
+const mdp = (dispatch) => {
+    return {
+        fetchPosts: () => dispatch(fetchPosts()),
+        fetchUsers: () => dispatch(fetchUsers())
+    }
+};
 
 export default connect(msp, mdp)(Posts);

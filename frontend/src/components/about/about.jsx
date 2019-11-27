@@ -7,43 +7,43 @@ class About extends React.Component{
         return(
             <div className="about">
                
-                <div className="summary">
-                    Meet the developers
-                </div>
+                <h1 className="summary">
+                    Meet the Developers
+                </h1>
                 <div className="profiles">
                     <div className="individualprofile">
                         <img src="/Jessica_Zhen.jpg" alt=""/>
-                        Jessica Zhen
+                        <h3>Jessica Zhen</h3>
                         <div className="socialicons">
-                            <a href="" className="fab fa-linkedin" target="_blank"></a>
+                            <a href="https://www.linkedin.com/in/xchenj/" className="fab fa-linkedin" target="_blank"></a>
                             <a href="" className="fab fa-angellist" target="_blank"></a>
-                            <a href="" className="fab fa-github" target="_blank"></a>
-                            <a href="" className="fab fa-google" target="_blank"></a>
+                            <a href="https://github.com/zhenjess" className="fab fa-github" target="_blank"></a>
+                            <a href="mailto:jessicazhen8@gmail.com" className="fab fa-google" target="_blank"></a>
                         </div>
                         </div>
                     <div className="individualprofile">
                         <img src="/Jennifer_Wong.jpeg" alt="" />
-                        Jennifer Wong
+                        <h3>Jennifer Wong</h3>
                         <div className="socialicons">
                             <a href="" className="fab fa-linkedin" target="_blank"></a>
                             <a href="" className="fab fa-angellist" target="_blank"></a>
-                            <a href="" className="fab fa-github" target="_blank"></a>
-                            <a href="" className="fab fa-google" target="_blank"></a>
+                            <a href="https://github.com/jenn-jenn" className="fab fa-github" target="_blank"></a>
+                            <a href="mailto:jennwong1009@gmail.com" className="fab fa-google" target="_blank"></a>
                         </div>
                         </div>
                     <div className="individualprofile">
                         <img src="/Joanna_chen.jpg" alt="" />
-                        Joanna Chen
+                        <h3>Joanna Chen</h3>
                         <div className="socialicons">
-                            <a href="" className="fab fa-linkedin" target="_blank"></a>
+                            <a href="https://www.linkedin.com/in/xchenj/" className="fab fa-linkedin" target="_blank"></a>
                             <a href="" className="fab fa-angellist" target="_blank"></a>
-                            <a href="" className="fab fa-github" target="_blank"></a>
-                            <a href="" className="fab fa-google" target="_blank"></a>
+                            <a href="https://github.com/junnac" className="fab fa-github" target="_blank"></a>
+                            <a href="mailto:x.chenj@gmail.com" className="fab fa-google" target="_blank"></a>
                         </div>
                         </div>
                     <div className="individualprofile">
                         <img src="/Albert_Yee.jpg" alt="" />
-                        Albert Yee
+                        <h3>Albert Yee</h3>
                         <div className="socialicons">
                             <a href="https://www.linkedin.com/in/albert-yee" className="fab fa-linkedin" target="_blank"></a>
                             <a href="https://angel.co/albert-yee" className="fab fa-angellist" target="_blank"></a>

@@ -4,12 +4,13 @@
     align-items: center;
     min-height: 90vh;
     flex-direction: column;
+
+    background: rgba(0,0,0,0.7)
 }
 .profiles{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 75vh;
 }
 
 .individualprofile{
@@ -17,6 +18,13 @@
     flex-direction: column;
     color: white;
     padding: 10px;
+    min-height: 70vh;
+    text-align: center;
+}
+
+.individualprofile img {
+    border-radius: 15px;
+    box-shadow: 2px 2px 15px black;
 }
 
 .fa-linkedin{
@@ -52,6 +60,6 @@
 }
 
 .summary{
-    margin-top: 10%;
+    margin: 10% 10% 3% 10%;
     color: white;
 }

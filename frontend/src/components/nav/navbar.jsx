@@ -27,6 +27,7 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div className="nav-right">
+          <Link to={"/events/new"}><button>Event</button></Link>
           <Link to={"/posts"}><button>Forum</button></Link>
           <button onClick={this.logoutUser}>Logout</button>
         </div>
@@ -75,14 +76,11 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className="nav">
-        <div className="nav-header-components">
-          {this.logoLink()}
-        </div>
-        <i className="fa fa-star-and-crescent"/>
-        <i className="fas fa-star"/>
-        <i className="fa fa-moon"/>
-        <i className="fa fa-sun"/>
-        <i className="fas fa-meteor"/>
+        <div className="nav-header-components">{this.logoLink()}</div>
+        <a href="#/about" className="fas fa-users" />
+        <i className="fas fa-star" />
+        <i className="fa fa-star-and-crescent" />
+        <i className="fas fa-meteor" />
         {this.searchBar()}
         {this.getLinks()}
       </div>

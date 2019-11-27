@@ -1,18 +1,17 @@
 import React from 'react';
-// import PostShowContainer from './post_show_container';
 import { Link } from 'react-router-dom';
 
 
 const PostItems = ({ post, users }) => {
   const date = new Date(post.date);
   const user = users[post.author];
+  
   return (
     <li className="post">
       <div className="post-header">
         <Link
           to={{
-            pathname: `/posts/${post._id}`,
-            state: { post: post }
+            pathname: `/posts/${post._id}`
           }}
         >
           <h2>

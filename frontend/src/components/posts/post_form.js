@@ -17,7 +17,7 @@ class PostForm extends React.Component {
             this.setState({[ field]: e.currentTarget.value} );
         };
     }
-    
+
     handleSubmit(e) {
         e.preventDefault();
         let data = {
@@ -29,7 +29,6 @@ class PostForm extends React.Component {
           .then( () => this.props.fetchPosts());
         this.setState({title: '', body: ''});
     }
-
 
     render() {
         return (
