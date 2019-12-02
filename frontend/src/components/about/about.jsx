@@ -15,8 +15,8 @@ class About extends React.Component{
                         <img src="/Jessica_Zhen.jpg" alt=""/>
                         <h3>Jessica Zhen</h3>
                         <div className="socialicons">
-                            <a href="https://www.linkedin.com/in/xchenj/" className="fab fa-linkedin" target="_blank"></a>
-                            <a href="" className="fab fa-angellist" target="_blank"></a>
+                            <a href="https://www.linkedin.com/in/jessica-zhen-b2272a122/" className="fab fa-linkedin" target="_blank"></a>
+                            <a href="https://angel.co/jessica-zhen" className="fab fa-angellist" target="_blank"></a>
                             <a href="https://github.com/zhenjess" className="fab fa-github" target="_blank"></a>
                             <a href="mailto:jessicazhen8@gmail.com" className="fab fa-google" target="_blank"></a>
                         </div>
@@ -25,8 +25,8 @@ class About extends React.Component{
                         <img src="/Jennifer_Wong.jpeg" alt="" />
                         <h3>Jennifer Wong</h3>
                         <div className="socialicons">
-                            <a href="" className="fab fa-linkedin" target="_blank"></a>
-                            <a href="" className="fab fa-angellist" target="_blank"></a>
+                            <a href="www.linkedin.com/in/jennifer-wong-295132103" className="fab fa-linkedin" target="_blank"></a>
+                            <a href="https://angel.co/jennifer-wong-31" className="fab fa-angellist" target="_blank"></a>
                             <a href="https://github.com/jenn-jenn" className="fab fa-github" target="_blank"></a>
                             <a href="mailto:jennwong1009@gmail.com" className="fab fa-google" target="_blank"></a>
                         </div>
