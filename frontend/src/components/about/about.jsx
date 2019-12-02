@@ -32,11 +32,11 @@ class About extends React.Component{
                         </div>
                         </div>
                     <div className="individualprofile">
-                        <img src="/Joanna_chen.jpg" alt="" />
+                        <img src="/Joanna_Chen.jpg" alt="" />
                         <h3>Joanna Chen</h3>
                         <div className="socialicons">
                             <a href="https://www.linkedin.com/in/xchenj/" className="fab fa-linkedin" target="_blank"></a>
-                            <a href="" className="fab fa-angellist" target="_blank"></a>
+                            <a href="https://angel.co/xchenj" className="fab fa-angellist" target="_blank"></a>
                             <a href="https://github.com/junnac" className="fab fa-github" target="_blank"></a>
                             <a href="mailto:x.chenj@gmail.com" className="fab fa-google" target="_blank"></a>
                         </div>
