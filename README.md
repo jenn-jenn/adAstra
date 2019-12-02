@@ -1,6 +1,9 @@
 # adAstra
 adAstra is an event planning app to help users geolocate the best sites for cosmic shows.
 
+![adAstra_map](https://user-images.githubusercontent.com/52211990/70002926-623f4980-1516-11ea-8129-8b0a76a87ba6.gif)
+
+
 ## Background and Overview:
 **ad astra** *“to the stars” (latin)*  
 
