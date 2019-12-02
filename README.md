@@ -79,9 +79,9 @@ AdAstra is built with MERN stack, a combination of the following four technologi
 * Build user calendar - **Jessica, Joanna**
   * Test functionality
   * CSS
-* Build event creation form - **Albert, Joanna**
-  * Backend - **Albert**
-  * Front-end - **Joanna**
+* Build event creation form - **Jessica**
+  * Backend 
+  * Front-end 
 
 **November 20-21**
 * Location search - map API - **Joanna**
