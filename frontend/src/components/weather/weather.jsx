@@ -27,7 +27,6 @@ class Weather extends React.Component{
         let moon;
         sunset = Object.keys(this.props.sunset).length !== 0 ? this.props.sunset.data.sunset : "";
         moon = Object.keys(this.props.sunset).length !== 0 ? this.props.sunset.data.moonrise : "";
-    
         let forecast = this.props.forecast;
         let name = Object.keys(forecast).length !== 0 ? forecast.data.name : "";
         let tempMin = Object.keys(forecast).length !== 0 ? forecast.data.main.temp_min : "";
