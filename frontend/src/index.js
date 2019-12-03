@@ -7,8 +7,10 @@ import { setAuthToken } from "./util/session_api_util";
 import { logout } from "./actions/session_actions";
 import axios from 'axios';
 import './index.css';
+// import { fetchDateEvents } from "./actions/event_actions";
 
-window.axios = axios
+window.axios = axios;
+// window.fetchDateEvents = dispatch(fetchDateEvents("December 5, 2019"));
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;

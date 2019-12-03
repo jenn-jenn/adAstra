@@ -12,11 +12,9 @@ const EventsReducer = ( oldState = {}, action ) => {
 
         switch(action.type) {
             case RECEIVE_EVENTS:
-               // newState.all = action.events.data;
                 return action.events.data;
-            // case RECEIVE_DATE_EVENTS:
-            //     newState.date = action.events.data;
-            //     return newState;
+            case RECEIVE_DATE_EVENTS:
+                return action.events.data
             case RECEIVE_NEW_EVENT:
                 return Object.assign(oldState, action.event.data);
             // case RECEIVE_AN_EVENT:

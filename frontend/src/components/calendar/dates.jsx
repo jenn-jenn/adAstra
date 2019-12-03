@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import '../stylesheets/calendar/calendar.scss';
-import DateObj from './date';
 import Calendar from 'react-calendar/dist/entry.nostyle';
 
 class Dates extends React.Component {
@@ -21,49 +20,19 @@ class Dates extends React.Component {
 
 
     componentDidMount() {
-        this.props.fetchAllDates(this.props.user.id);
         this.props.fetchEvents();
+
+        let days = document.querySelectorAll(".react-calendar__tile");
+        days.forEach(dayTile => {
+            dayTile.addEventListener("click", () => {
+                let date = dayTile.children[0].getAttribute("aria-label");
+                let fullDate = date.split(" ").join("-").split(",").join("");
+                this.props.history.push(`/events/${fullDate}`)
+            })
+        })
     }
 
     render() {
-      
-        let thisMonth = (
-            this.props.dates.map((date, i) => {
-                if (new Date(date.date).getMonth() === new Date(this.state.date).getMonth() &&
-                    new Date(date.date).getYear() === new Date(this.state.date).getYear()) {
-                    return (
-                        <DateObj
-                            date={date}
-                            key={i}
-                            changeDate={this.props.changeDate}
-                            user={this.props.user}
-                            fetchAllDates={this.props.fetchAllDates}
-                        />
-                    );
-                }
-            })
-        )
-        let nextMonth = (
-            this.props.dates.map((date, i) => {
-                if (new Date(date.date).getMonth() === new Date(this.state.date).getMonth() + 1 &&
-                    new Date(date.date).getYear() === new Date(this.state.date).getYear()) {
-                    return (
-                        <DateObj
-                            date={date}
-                            key={i}
-                            changeDate={this.props.changeDate}
-                            user={this.props.user}
-                            fetchAllDates={this.props.fetchAllDates}
-                        />
-                    );
-                }
-            })
-        );
-        
-        if (!this.props.dates) {
-            return null;
-        }
-
         return (
             <div className="dates-page">
             

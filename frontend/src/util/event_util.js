@@ -8,8 +8,8 @@ export const getEvents = () => {
     return axios.get(`/api/events`);
 };
 
-export const getEventsbyDate = id => {
-    return axios.get(`/api/events/dates/${id}`)
+export const getEventsbyDate = date => {
+    return axios.get(`/api/events/${date}`)
 }
 
 export const getAnEvent = (eventId) => {
