@@ -44,7 +44,6 @@ class Map extends React.Component {
       };
 
       function success(pos) {
-        const crd = pos.coords;
       }
 
       function error(err) {

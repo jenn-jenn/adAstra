@@ -4,7 +4,6 @@ import PostFormContainer from './post_form_container';
 import '../stylesheets/forum/post_index.scss';
 
 class Posts extends React.Component {
-
     componentDidMount() {
         this.props.fetchUsers()
             .then(() => this.props.fetchPosts())
@@ -12,7 +11,7 @@ class Posts extends React.Component {
 
     render() {
         const postsEmpty = (
-            <div className="forum">
+            <div className="post-form-container">
                 <h1>Welcome to the adAstra forum!</h1>
                 <PostFormContainer />
             </div>
