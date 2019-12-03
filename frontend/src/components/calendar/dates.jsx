@@ -48,9 +48,9 @@ class Dates extends React.Component {
                         <div className="upcoming-events">
                             <h1>Upcoming Events:</h1>
                             <ul>
-                                {this.props.events.map((event, i) => (
+                                {this.props.events.filter(event => new Date(event.date) >= new Date()).map((event, i) => (
                                     <li key={i}>
-                                        {event.title}
+                                        {event.title} ({event.date})
                                     </li>
                                 ))}
                             </ul>
