@@ -33,36 +33,15 @@
     flex-direction: column;
 }
 
-.event-title {
+.event-title, .event-date, .event-address, .event-body {
     display: flex;
     justify-content: center;
     align-items: center; 
-    margin: 10px;   
-    width: 60%;
+    width: 80%;
     padding: 15px 20px 15px 20px; 
-    min-width: 800px;
 }
 
-.event-title input {
-  border-radius: 5px;
-  outline: none;
-  border: none;
-  padding: 10px;
-  margin: 10px;
-  width: 70%;
-}
-
-.event-date {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    margin: 10px;   
-    width: 60%;
-    padding: 15px 20px 15px 20px; 
-    min-width: 800px;
-}
-
-.event-date input {
+.event-form input {
   border-radius: 5px;
   outline: none;
   border: none;
@@ -72,45 +51,11 @@
 }
 
 .event-address {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    margin: 10px;   
-    width: 60%;
-    padding: 15px 20px 15px 20px; 
-    min-width: 800px;
-    margin-left: -15px;
-}
-
-.event-address input {
-  border-radius: 5px;
-  outline: none;
-  border: none;
-  padding: 10px;
-  margin: 10px;
-  width: 70%;
-}
-
-.event-body {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    margin: 10px;   
-    width: 60%;
-    padding: 15px 20px 15px 20px; 
-    min-width: 810px;
-}
-
-.event-body input {
-  border-radius: 5px;
-  outline: none;
-  border: none;
-  padding: 10px;
-  margin: 10px;
-  width: 70%;
+    margin-left: -25px;
 }
 
 .event-form-buttons {
+    margin-bottom: 50px;   
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -133,7 +78,6 @@
   opacity: 0.5;
   cursor: pointer;
 }
-
 
 .event-form-submit {
   border: 1px solid rgb(33, 48, 67);
