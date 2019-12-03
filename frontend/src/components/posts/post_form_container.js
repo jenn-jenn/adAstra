@@ -1,6 +1,9 @@
 import { connect } from 'react-redux';
 import { createNewPost, fetchPosts } from '../../actions/post_actions';
 import PostForm from './post_form';
+import { uploadImage } from '../../actions/image_actions';
+
+
 
 
 const msp = (state) => {
@@ -14,6 +17,7 @@ const msp = (state) => {
 const mdp = (dispatch) => ({
     createNewPost: data => dispatch(createNewPost(data)),
     fetchPosts: () => dispatch(fetchPosts()),
+    uploadImage: image => dispatch(uploadImage(image))
 });
 
 export default connect(msp, mdp)(PostForm);
