@@ -18,16 +18,26 @@ class Dates extends React.Component {
         };
     }
 
-
     componentDidMount() {
-        this.props.fetchEvents();
-
         let days = document.querySelectorAll(".react-calendar__tile");
         days.forEach(dayTile => {
+            let date = dayTile.children[0].getAttribute("aria-label");
+            let fullDate = date.split(" ").join("-").split(",").join("");
             dayTile.addEventListener("click", () => {
-                let date = dayTile.children[0].getAttribute("aria-label");
-                let fullDate = date.split(" ").join("-").split(",").join("");
                 this.props.history.push(`/events/${fullDate}`)
+            })
+        })
+    }
+
+
+    componentDidUpdate() {
+        let days = document.querySelectorAll(".react-calendar__tile");
+        days.forEach(dayTile => {
+            let date = dayTile.children[0].getAttribute("aria-label");
+            let fullDate = date.split(" ").join("-").split(",").join("");
+
+            this.props.events.forEach(event => {
+                if (event.date === fullDate && !dayTile.classList.contains("has-event")) dayTile.classList.add("has-event");
             })
         })
     }
@@ -41,7 +51,7 @@ class Dates extends React.Component {
                     <div className="calendar-with-button">
                         <Calendar
                             onChange={this.changeDate()}
-                            value={this.state.date}
+                            // value={this.state.date}
                         />
                     </div>
                     <div className="calendar-events">
