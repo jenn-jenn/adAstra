@@ -33,8 +33,12 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user)
-      .then(res => this.props.login(user))
+    if (this.formType === "login") {
+      this.props.login(user)
+    } else {
+      this.props.signup(user)
+        .then(res => this.props.login(user))
+    }
   }
 
   handleDemo(e) {
@@ -44,7 +48,7 @@ class SessionForm extends React.Component {
       password: "password",
     }, () => {
       const user = Object.assign({}, this.state);
-      this.props.processForm(user)
+      this.props.login(user)
         .then(() => this.props.history.push("/main"));
     });
   }

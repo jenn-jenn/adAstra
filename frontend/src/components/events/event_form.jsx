@@ -22,11 +22,16 @@ class EventForm extends React.Component {
         };
     }
 
+    updateDate(field) {
+        return(e) => {
+            this.setState({ [field]: e.currentTarget.value.split(" ").join("-") })
+        }
+    }
+
     handleSubmit(e) {
         e.preventDefault();
-        
-        this.props.createNewEvent(this.state) 
-           .then( () => this.props.history.push('/main'));
+        this.props.createNewEvent(this.state)
+            .then(() => this.props.history.push('/main'));
     }
 
     render() {
@@ -51,9 +56,9 @@ class EventForm extends React.Component {
                                 <h3>Event Date:</h3>
                                 <input type="text"
                                     value={this.state.date}
-                                    onChange={this.update("date")}
-                                    placeholder="ex: 11/22/2019"
-                                    maxLength="10">
+                                    onChange={this.updateDate("date")}
+                                    placeholder="ex: December-5-2019"
+                                    >
                                 </input>
                                 <br />
                             </div>
@@ -79,7 +84,7 @@ class EventForm extends React.Component {
                                 </input>
                                 <br />
                             </div>
-                            <div clasName="event-form-buttons">
+                            <div className="event-form-buttons">
                                 <input onClick={this.handleSubmit} className="event-form-update" type="submit" value="Update" />
                                 <input onClick={this.handleSubmit} className="event-form-submit" type="submit" value="Submit" />       
                             </div>

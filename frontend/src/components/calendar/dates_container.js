@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import { fetchAllDates } from "../../actions/calendar_actions";
 import Dates from "./dates";
 import { fetchEvents, deleteAnEvent } from "../../actions/event_actions";
@@ -23,5 +24,5 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dates);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Dates));
 

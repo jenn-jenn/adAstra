@@ -1,24 +1,28 @@
-//per event show form
-
 import React from "react";
+import '../stylesheets/event/date_show.scss';
 
 class DateShow extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-
-        }
-    }
-
     componentDidMount() {
-        this.props.fetchDateEvents(dateId)
+        this.props.fetchDateEvents(this.props.match.params.date)
     }
 
-    render() {
-        return (
-            <div>
+    render() {        
+        if (this.props.events === undefined) return null;
 
+        return (
+            <div className="date-events">
+                <h1>{this.props.date}</h1>
+                <div className="event-container">
+                    <ul className="event-list">
+                        {this.props.events.map((event, i) => (
+                            <li key={i} className="event">
+                                <h2>{event.title}</h2>
+                                <p>{event.body}</p>
+                                {event.address}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         );
     }

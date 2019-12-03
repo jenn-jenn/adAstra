@@ -17,26 +17,27 @@ router.get('/user/:user_id', (req, res) => {
     Event.find({ user: req.params.user_id })
         .then(events => res.json(events))
         .catch(err =>
-            res.status(404).json({ noteventsfound: 'No events found from that user' }
+            res.status(404).json({ noeventsfound: 'No events found from that user' }
             )
         );
 });
 
 //get an event by event id
-router.get('/:id', (req, res) => {
-    Event.findById(req.params.id)
-        .then(event => res.json(event))
-        .catch(err =>
-            res.status(404).json({ noeventfound: 'No event found with that ID' })
-        );
-});
+// router.get('/:id', (req, res) => {
+//     Event.findById(req.params.id)
+//         .then(event => res.json(event))
+//         .catch(err =>
+//             res.status(404).json({ noeventfound: 'No event found with that ID' })
+//         );
+// });
 
 //get events by date
-router.get("/dates/:date_id", (req, res) => {
-    Event
-        .find({ dateId: req.params.date_id })
-        .then(dates => res.json(dates))
-        .catch(err => res.status(400).json(err));
+router.get("/:date", (req, res) => {
+    Event.find({ date: req.params.date })
+        .then(events => res.json(events))
+        .catch(err =>
+            res.status(404).json({ noeventsfound: 'No events found on that date' })
+        );
 });
 
 

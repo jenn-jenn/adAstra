@@ -12,8 +12,9 @@ class Posts extends React.Component {
 
     render() {
         const postsEmpty = (
-            <div className="post-container">
-                No posts made
+            <div className="forum">
+                <h1>Welcome to the adAstra forum!</h1>
+                <PostFormContainer />
             </div>
         );
     
@@ -37,8 +38,7 @@ class Posts extends React.Component {
         );
         return (
             <div className="forum">
-                <h1>Welcome to the adAstra forum!</h1>
-                <PostFormContainer />
+                {postsEmpty}
                 {postDiv}
             </div>
         )

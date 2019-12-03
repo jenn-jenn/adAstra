@@ -31,9 +31,21 @@
     font-size: 34px;
   }
 
+  .react-calendar__navigation__arrow {
+    display: none;
+  }
+
   .react-calendar__navigation__label {
     font-size: 20px;
   }
+}
+
+.react-calendar__tile:hover {
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid white;
+  box-shadow: 1px 1px 5px white;
+  background: rgba(0, 0, 0, 0.65);
 }
 
 .react-calendar__month-view {
