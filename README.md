@@ -1,6 +1,9 @@
 # adAstra
 adAstra is an event planning app to help users geolocate the best sites for cosmic shows.
 
+![adAstra_map](https://user-images.githubusercontent.com/52211990/70002926-623f4980-1516-11ea-8129-8b0a76a87ba6.gif)
+
+
 ## Background and Overview:
 **ad astra** *“to the stars” (latin)*  
 
@@ -79,9 +82,9 @@ AdAstra is built with MERN stack, a combination of the following four technologi
 * Build user calendar - **Jessica, Joanna**
   * Test functionality
   * CSS
-* Build event creation form - **Albert, Joanna**
-  * Backend - **Albert**
-  * Front-end - **Joanna**
+* Build event creation form - **Jessica**
+  * Backend 
+  * Front-end 
 
 **November 20-21**
 * Location search - map API - **Joanna**
