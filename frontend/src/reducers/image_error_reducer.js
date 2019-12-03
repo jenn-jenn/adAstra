@@ -5,7 +5,7 @@ const ImageErrorReducer = (state = [], action) => {
     Object.freeze(state);
     switch(action.type) {
         case RECEIVE_IMAGE_ERRORS:
-            return action.erors;
+            return action.errors;
         default:
             return state;
     };

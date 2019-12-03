@@ -26,6 +26,15 @@ class PostForm extends React.Component {
             author: this.props.currentUser.id
         };
         this.props.createNewPost(data)
+          .then(res =>{
+            let file = document.getElementById("file-input").files[0];
+            if (file){
+              const image = new FormData();
+              image.append('postId', res.post.data._id);
+              image.append('image', file);
+              this.props.uploadImage(image)
+            }
+          })
           .then( () => this.props.fetchPosts());
         this.setState({title: '', body: ''});
     }

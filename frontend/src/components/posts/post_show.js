@@ -24,6 +24,7 @@ class PostShow extends React.Component {
   }
 
   render() {
+    
     const post = this.props.posts[this.props.postId];
     
     if (!post) {
