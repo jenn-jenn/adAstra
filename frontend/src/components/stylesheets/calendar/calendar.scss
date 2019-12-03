@@ -40,6 +40,14 @@
   }
 }
 
+.react-calendar__tile:hover {
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid white;
+  box-shadow: 1px 1px 5px white;
+  background: black;
+}
+
 .react-calendar__month-view {
   margin-top: 30px;
   text-shadow: none;
