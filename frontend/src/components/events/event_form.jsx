@@ -80,7 +80,7 @@ class EventForm extends React.Component {
                                     value={this.state.body}
                                     onChange={this.update("body")}  
                                     placeholder="ex: Stargazing with friends in the city!"   
-                                    maxLength="50">
+                                    maxLength="140">
                                 </input>
                                 <br />
                             </div>
