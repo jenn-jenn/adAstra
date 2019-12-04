@@ -7,7 +7,7 @@ const mapStateToProps = (state) => {
     
     // let dates = Object.values(state.entities.calendars).reverse();
     
-   
+    
     return {
         // dates,
         user: state.session.user
