@@ -49,22 +49,17 @@
   align-items: center;
   justify-content: space-evenly;
 
-  width: 25%;
   min-width: 230px;
 }
 
 .search-overlay input {
+  width: 110%;
   border-radius: 10px;
   padding: 5px;
   margin: 2px 10px 2px 10px;
-  width: 350px;
   outline: none;
   border: none;
   text-align: center;
-}
-
-.search-submit {
-  display: none;
 }
 
 .fa, .fas {
@@ -78,11 +73,20 @@
   text-shadow: 0px 0px 15px grey;
 }
 
-.fa-users {
+.fa-search {
+  padding-left: 20%
+}
+
+.fa-search:hover {
+  cursor: pointer;
+  color: black
+}
+
+.fa-users, .fa-star {
   color: white;
 }
 
-.fa-users:hover {
+.fa-users:hover, .fa-star:hover {
   opacity: 0.5;
 }
 

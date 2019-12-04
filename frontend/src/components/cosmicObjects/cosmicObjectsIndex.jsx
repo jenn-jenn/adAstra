@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import CosmicObjectShow from './cosmicObjectsshow';
-import "../stylesheets/event/date_show.scss";
+import "../stylesheets/cosmicobjects/cosmic_objects_index.scss";
 
 class CosmicObjectsIndex extends React.Component {
     constructor(props) {
@@ -13,13 +14,13 @@ class CosmicObjectsIndex extends React.Component {
 
     render() {
         return (
-          <div className="date-events">
+          <div className="stars">
             <h1>Stars</h1>
-            <div className="event-container">
-              <ul className="event-list">
+            <div className="star-container">
+              <ul className="star-list">
                 {this.props.cosmicObjects.map((star, i) => (
-                  <li key={i} className="event">
-                    <h2>{star.target.name}</h2>
+                  <li key={i} className="star">
+                    <h3><Link to={`/cosmicobjects/${star.target.name.split(" ").join("").toLowerCase()}`}>{star.target.name}</Link></h3>
                 </li>
                 ))}
               </ul>
