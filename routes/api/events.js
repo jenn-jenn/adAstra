@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
-const validateEventInput = require('../../validation/event');
+const validateEventInput = require('../../validation/validate_event');
 const Event = require("../../models/Event");
 
 //GET all events
@@ -49,12 +49,12 @@ router.get("/:date", (req, res) => {
 router.post('/new',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-
         const newEvent = new Event({
             title: req.body.title,
             date: req.body.date,
-            author: req.user.id,
+            address: req.body.address,
             body: req.body.body,
+            authorId: req.user.id,
         });
 
         newEvent.save().then(event => res.json(event));

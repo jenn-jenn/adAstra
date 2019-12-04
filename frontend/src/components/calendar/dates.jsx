@@ -33,15 +33,12 @@ class Dates extends React.Component {
         };
     }
 
-
     componentDidMount() {
-        // this.props.fetchEvents();
-
         let days = document.querySelectorAll(".react-calendar__tile");
         days.forEach(dayTile => {
+            let date = dayTile.children[0].getAttribute("aria-label");
+            let fullDate = date.split(" ").join("-").split(",").join("");
             dayTile.addEventListener("click", () => {
-                let date = dayTile.children[0].getAttribute("aria-label");
-                let fullDate = date.split(" ").join("-").split(",").join("");
                 this.props.history.push(`/events/${fullDate}`)
             })
         })
@@ -64,6 +61,18 @@ class Dates extends React.Component {
                 return false
             }
         }
+    }
+
+    componentDidUpdate() {
+        let days = document.querySelectorAll(".react-calendar__tile");
+        days.forEach(dayTile => {
+            let date = dayTile.children[0].getAttribute("aria-label");
+            let fullDate = date.split(" ").join("-").split(",").join("");
+
+            this.props.events.forEach(event => {
+                if (event.date === fullDate && !dayTile.classList.contains("has-event")) dayTile.classList.add("has-event");
+            })
+        })
     }
 
     render() {

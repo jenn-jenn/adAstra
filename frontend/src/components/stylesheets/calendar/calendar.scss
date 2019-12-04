@@ -41,11 +41,20 @@
 }
 
 .react-calendar__tile:hover {
-  cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 1px solid white;
   box-shadow: 1px 1px 5px white;
   background: rgba(0, 0, 0, 0.65);
+}
+
+.has-event {
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgb(128, 128, 128);
+  background: white;
+}
+
+.has-event:hover {
+  cursor: pointer;
 }
 
 .react-calendar__navigation__label:hover {
@@ -140,3 +149,10 @@
   padding: 10px;
 }
 
+abbr {
+  text-decoration: none;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  border-bottom: 1px solid white;
+}

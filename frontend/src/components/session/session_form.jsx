@@ -21,7 +21,7 @@ class SessionForm extends React.Component {
   componentDidMount() {
     this.props.clearErrors();
   }
-
+i
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
       this.props.history.push("/main");
@@ -33,7 +33,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    if (this.formType === "login") {
+    if (this.props.formType === "login") {
       this.props.login(user)
     } else {
       this.props.signup(user)

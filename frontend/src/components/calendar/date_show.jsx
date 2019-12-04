@@ -17,8 +17,11 @@ class DateShow extends React.Component {
                         {this.props.events.map((event, i) => (
                             <li key={i} className="event">
                                 <h2>{event.title}</h2>
-                                <p>{event.body}</p>
-                                {event.address}
+                                <div className="event-info">
+                                    <a className="fas fa-map-marked-alt"
+                                        href={`https://www.google.com/maps/place/${event.address}`} />
+                                    <p>{event.body}</p>
+                                </div>
                             </li>
                         ))}
                     </ul>

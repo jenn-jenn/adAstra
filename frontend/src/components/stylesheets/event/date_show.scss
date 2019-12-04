@@ -31,3 +31,23 @@
   margin: 20px;
   text-align: center;
 }
+
+.event-info {
+  display: flex;
+  justify-content: center;
+}
+
+.event-info p {
+  text-align: left;
+  width: 70%;
+}
+
+.fa-map-marked-alt {
+  margin: 15px;
+  transition: 0.3s;
+  color: white;
+}
+
+.fa-map-marked-alt:hover {
+  opacity: 0.3;
+}

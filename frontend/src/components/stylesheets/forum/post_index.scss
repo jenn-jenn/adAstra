@@ -7,13 +7,25 @@
   top: 80px;
   color: white;
 }
+
+.forum h1 {
+  text-align: center;
+}
 .post-container {
-  width: 60%;
-  min-width: 400px;
   border-radius: 20px;
   box-shadow: 0px 0px 10px grey;
   background-color: rgba(0, 0, 0, 0.6);
   margin: 10px;
+  width: 60%;
+  min-width: 550px;
+}
+
+.post-form-container {
+  // border-radius: 20px;
+  // box-shadow: 0px 0px 10px grey;
+  // background-color: rgba(0, 0, 0, 0.6);
+  // margin: 10px;
+  width: 60%;
   min-width: 550px;
 }
 
@@ -78,9 +90,9 @@
   border-radius: 20px;
   box-sizing: border-box;
   box-shadow: 0px 0px 10px grey;
-  width: 60%;
-  padding: 15px 20px 15px 20px;
   background-color: rgba(0, 0, 0, 0.6);
+  padding: 15px 20px 15px 20px;
+  width: 100%;
   min-width: 550px;
 
   display: flex;

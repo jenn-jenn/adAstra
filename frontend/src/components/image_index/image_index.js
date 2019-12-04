@@ -3,12 +3,6 @@ import ImageItem from './image_item';
 import '../stylesheets/forum/image_index.scss'
 
 class ImageIndex extends React.Component {
-
-    constructor(props) {
-        super(props);
-        
-    }
-
     componentDidMount() {
         this.props.fetchPostImages(this.props.post._id);
     } 
