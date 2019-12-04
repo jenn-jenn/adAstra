@@ -1,59 +1,70 @@
-// .stars {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   position: relative;
-//   top: 80px;
-//   color: white;
-// }
-// .star-container {
-//   width: 60%;
-//   min-width: 400px;
-//   border-radius: 20px;
-//   box-shadow: 0px 0px 10px grey;
-//   background-color: rgba(0, 0, 0, 0.6);
-//   margin: 10px;
-//   min-width: 550px;
-// }
+.star-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 80px;
+  color: white;
+}
 
-// .star-list {
-//   border-radius: 20px;
-//   margin: 0;
-//   padding: 0px;
-//   min-height: 500px;
+.star-info h1 {
+  text-shadow: 1px 1px 2px rgb(255, 255, 255);
+  text-align: center;
+}
 
-//   display: flex;
-//   flex-flow: wrap;
-//   align-content: center;
-//   justify-content: center;
-// }
+.star-info-container {
+  width: 60%;
+  min-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px grey;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: 10px;
+  min-width: 550px;
+}
 
-// .star {
-//   list-style-type: none;
-//   box-sizing: border-box;
-//   padding: 5px 20px 5px 20px;
-//   margin: 10px;
-//   text-align: center;
-// }
+.star-info-list {
+  border-radius: 20px;
+  margin: 0;
+  padding: 0px;
+  min-height: 500px;
 
-// .star a {
-//   text-decoration: none;
-//   color: rgb(125, 125, 125);
-//   transition: 0.3s;
-// }
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
 
-// .star a:hover {
-//   color: white;
-//   text-shadow: 1px 1px 3px white;
-// }
+.star-info-list img {
+  margin-top: 5%;
+  align-self: center;
+  width: 70%;
+  border-radius: 20px;
+}
 
-// .star-info {
-//   display: flex;
-//   justify-content: center;
-// }
+.star-description {
+  margin: 5%;
+  padding: 0;
+}
 
-// .star-info p {
-//   text-align: left;
-//   width: 70%;
-// }
+.star-links {
+  margin-bottom: 25px;
+}
+
+.star-description a {
+  box-shadow: 0px 0px 10px grey;
+  border: 1px solid rgb(33, 48, 67);
+  background-color: rgb(33, 48, 67);
+  margin: 10px;
+  padding: 8px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: .3s;
+  color: white;
+  outline: none;
+  text-decoration: none;
+}
+
+.star-description a:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
