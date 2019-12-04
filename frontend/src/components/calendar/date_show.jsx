@@ -1,6 +1,31 @@
 import React from "react";
 import '../stylesheets/event/date_show.scss';
 
+const DATES = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+]
+
+const MONTHS = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+]
+
 class DateShow extends React.Component {
     componentDidMount() {
         this.props.fetchDateEvents(this.props.match.params.date)
@@ -8,10 +33,12 @@ class DateShow extends React.Component {
 
     render() {        
         if (this.props.events === undefined) return null;
+        let date = new Date(this.props.date)
+        let dateStr = `${DATES[date.getDay()]}  |  ${MONTHS[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
 
         return (
             <div className="date-events">
-                <h1>{this.props.date}</h1>
+                <h1>{dateStr}</h1>
                 <div className="event-container">
                     <ul className="event-list">
                         {this.props.events.map((event, i) => (
