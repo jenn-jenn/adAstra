@@ -69,7 +69,7 @@ class Dates extends React.Component {
             let date = dayTile.children[0].getAttribute("aria-label");
             let fullDate = date.split(" ").join("-").split(",").join("");
 
-            this.props.events.forEach(event => {
+            Object.values(this.props.events).forEach(event => {
                 if (event.date === fullDate && !dayTile.classList.contains("has-event")) dayTile.classList.add("has-event");
             })
         })
