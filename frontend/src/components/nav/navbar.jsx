@@ -36,7 +36,7 @@ class NavBar extends React.Component {
   }
 
   handleEnter(e) {
-    if (e.keyCode === 13) this.handleClick(e);
+    if (e.keyCode === 13) this.handleSubmit(e);
   }
 
   update(field) {
@@ -72,8 +72,8 @@ class NavBar extends React.Component {
               type="text"
               onChange={this.update("searchInput")}
               placeholder="Search for the stars..."
+              onKeyDown={this.handleEnter}
             />
-            <input className="search-submit" type="submit" onKeyDown={this.handleEnter} />
           </form>
           <i className="fa fa-search" onClick={this.handleSubmit} />
         </div>
@@ -102,7 +102,7 @@ class NavBar extends React.Component {
       <div className="nav">
         <div className="nav-header-components">{this.logoLink()}</div>
         <a href="#/about" className="fas fa-users" />
-        <i className="fas fa-star" />
+        <Link to={"/cosmicobjects"}><i className="fas fa-star" /></Link>
         <i className="fa fa-star-and-crescent" />
         <i className="fas fa-meteor" />
         {this.searchBar()}

@@ -1,5 +1,5 @@
 import React from 'react';
-import "../stylesheets/event/date_show.scss";
+import "../stylesheets/cosmicobjects/cosmic_objects_show.scss";
 
 class CosmicObjectsShow extends React.Component {
     constructor(props) {
@@ -18,23 +18,31 @@ class CosmicObjectsShow extends React.Component {
             })
         }
         let current = array[this.props.match.params.star.split(" ").join("").toLowerCase()];
-        // if (!current) return null;
-        const display = current ? (<div className="event">
-            <h2>{current.target.name}</h2>
-            <img src={`${current.image.src}`} />
-        </div>) : <div> Star Does not Exist</div>
+
+        const display = current ? (<div>
+            <h1>{current.target.name}</h1>
+            <div className="star-info-container">
+                <ul className="star-info-list">
+                    <img src={`${current.image.src}`} />
+                    <div className="star-description">
+                        <div className="star-links">
+                            <a href={`${current.image.href}`} target="_blank" >Interactive Map</a>
+                            <a href={`https://en.wikipedia.org/wiki/${current.target.name}`} target="_blank" >Wikipedia</a>
+                        </div>
+                        <div>
+                            RA: {current.ra.decimal}  |  DEC: {current.dec.decimal}
+                        </div>
+                        <div>
+                            Galactic Longitude: {current.galactic.lon}  |  Galactic Latitude: {current.galactic.lat}
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>) : <div><h1>Star Does not Exist</h1></div>
+
         return (
-            <div className="date-events">
-                <h1>Stars</h1>
-                <div className="event-container">
-                    <ul className="event-list">
-                        {/* <div className="event">
-                            <h2>{current.target.name}</h2>
-                            <img src={`${current.image.src}`} />
-                        </div> */}
-                        {display}
-                    </ul>
-                </div>
+            <div className="star-info">
+                {display}
             </div>
         )
     }
