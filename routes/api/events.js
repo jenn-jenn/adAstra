@@ -8,7 +8,11 @@ const Event = require("../../models/Event");
 router.get('/', (req, res) => {
     Event.find()
         .sort({ date: -1 })
-        .then(events => res.json(events))
+        .then(events => {
+            let payload = {};
+            events.map( event => payload[event.date] = event);
+            return res.json(payload)
+        })
         .catch(err => res.status(404).json({ noeventsfound: 'No events found' }));
 });
 

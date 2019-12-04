@@ -5,7 +5,7 @@ import MainPage from './main_page';
 
 const mSTP = (state) => {
   return {
-    events: Object.values(state.entities.events)
+    events: state.entities.events
   };
 };
 
