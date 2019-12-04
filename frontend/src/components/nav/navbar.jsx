@@ -5,10 +5,18 @@ import '../stylesheets/nav/nav.scss';
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+    
+    this.state = {
+      searchInput: ""
+    };
+    
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
     this.searchBar = this.searchBar.bind(this);
     this.logoLink = this.logoLink.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleEnter = this.handleEnter.bind(this);
+    this.update = this.update.bind(this);
   }
 
   logoutUser(e) {
@@ -21,6 +29,18 @@ class NavBar extends React.Component {
       e.preventDefault();
       this.props.logout();
     };
+  }
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.history.push(`/cosmicobjects/${this.state.searchInput}`)
+  }
+
+  handleEnter(e) {
+    if (e.keyCode === 13) this.handleClick(e);
+  }
+
+  update(field) {
+    return e => this.setState({ [field]: e.target.value });
   }
 
   getLinks() {
@@ -46,14 +66,18 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div className="search-overlay">
-          <input
-            id="feature-filter"
-            type="text"
-            placeholder="Search for the stars..."
-          />
-          <i className="fa fa-search"/>
+          <form action="post" onSubmit={this.handleSubmit}>
+            <input
+              id="feature-filter"
+              type="text"
+              onChange={this.update("searchInput")}
+              placeholder="Search for the stars..."
+            />
+            <input className="search-submit" type="submit" onKeyDown={this.handleEnter} />
+          </form>
+          <i className="fa fa-search" onClick={this.handleSubmit} />
         </div>
-      )
+      );
     }
   }
 
