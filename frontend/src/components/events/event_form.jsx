@@ -54,7 +54,7 @@ class EventForm extends React.Component {
 
                             <div className="event-date">
                                 <h3>Event Date:</h3>
-                                <input type="text"
+                                <input type="date"
                                     value={this.state.date}
                                     onChange={this.updateDate("date")}
                                     placeholder="ex: December-5-2019"

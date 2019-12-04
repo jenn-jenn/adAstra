@@ -4,18 +4,18 @@ import '../stylesheets/calendar/calendar.scss';
 import Calendar from 'react-calendar/dist/entry.nostyle';
 
 const MONTHS = {
-    'Jan': 'January',
-    'Feb': 'February',
-    'Mar': 'March',
-    'Apr': 'April',
-    'May': 'May',
-    'Jun': 'June',
-    'Jul': 'July',
-    'Aug': 'August',
-    'Sept': 'September',
-    'Oct': 'October',
-    'Nov': 'November',
-    'Dec': 'December',
+    'Jan': '1',
+    'Feb': '2',
+    'Mar': '3',
+    'Apr': '4',
+    'May': '5',
+    'Jun': '6',
+    'Jul': '7',
+    'Aug': '8',
+    'Sept': '9',
+    'Oct': '10',
+    'Nov': '11',
+    'Dec': '12',
 }
 
 
@@ -36,8 +36,16 @@ class Dates extends React.Component {
     componentDidMount() {
         let days = document.querySelectorAll(".react-calendar__tile");
         days.forEach(dayTile => {
-            let date = dayTile.children[0].getAttribute("aria-label");
-            let fullDate = date.split(" ").join("-").split(",").join("");
+            let dateTile = dayTile.children[0].getAttribute("aria-label");
+            let dateObject = new Date(dateTile);
+
+            let year = dateObject.getFullYear();
+            let month = dateObject.getMonth() + 1;
+            let date = dateObject.getDate();
+
+            if (date < 10) date = "0" + date.toString();
+
+            let fullDate = `${year}-${month}-${date}`
             dayTile.addEventListener("click", () => {
                 this.props.history.push(`/events/${fullDate}`)
             })
@@ -50,11 +58,7 @@ class Dates extends React.Component {
             let month = dateArray[1];
             let day = dateArray[2];
             let yr = dateArray[3];
-            if(day < 10) {
-                day = day[1]
-            }
-            let dateStr = MONTHS[month] + '-' + day + '-' + yr
-            console.log(dateStr);
+            let dateStr = yr + '-' + MONTHS[month] + '-' + day
             if(this.props.events[dateStr] !== undefined) {
                 return true
             } else {
@@ -63,11 +67,21 @@ class Dates extends React.Component {
         }
     }
 
+
+
     componentDidUpdate() {
         let days = document.querySelectorAll(".react-calendar__tile");
         days.forEach(dayTile => {
-            let date = dayTile.children[0].getAttribute("aria-label");
-            let fullDate = date.split(" ").join("-").split(",").join("");
+            let dateTile = dayTile.children[0].getAttribute("aria-label");
+            let dateObject = new Date(dateTile);
+
+            let year = dateObject.getFullYear();
+            let month = dateObject.getMonth() + 1;
+            let date = dateObject.getDate();
+
+            if (date < 10) date = "0" + date.toString();
+
+            let fullDate = `${year}-${month}-${date}`
 
             Object.values(this.props.events).forEach(event => {
                 if (event.date === fullDate && !dayTile.classList.contains("has-event")) dayTile.classList.add("has-event");
@@ -76,7 +90,6 @@ class Dates extends React.Component {
     }
 
     render() {
-        debugger
         let events = Object.values(this.props.events);
         return (
             <div className="dates-page">

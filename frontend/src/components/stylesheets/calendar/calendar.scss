@@ -40,17 +40,18 @@
   }
 }
 
+.react-calendar__tile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
 .react-calendar__tile:hover {
   border-radius: 10px;
   border: 1px solid white;
   box-shadow: 1px 1px 5px white;
   background: rgba(0, 0, 0, 0.65);
-}
-
-.has-event {
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgb(128, 128, 128);
-  background: white;
 }
 
 .has-event:hover {
