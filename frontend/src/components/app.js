@@ -11,6 +11,8 @@ import PostsContainer from "./posts/posts_container";
 import PostShowContainer from "./posts/post_show_container";
 import DateShowContainer from "./calendar/date_show_container";
 import EventFormContainer from './events/event_form_container';
+import CosmicObjectContainer from './cosmicObjects/cosmicObjectsContainer';
+import CosmicObjectsShow from './cosmicObjects/cosmicObjectsshowContainer';
 import About from "./about/about";
 
 const App = () => (
@@ -25,6 +27,8 @@ const App = () => (
       <ProtectedRoute exact path="/posts/:postId" component={PostShowContainer} />
       <ProtectedRoute exact path="/events/new" component={EventFormContainer} />    
       <ProtectedRoute exact path="/events/:date" component={DateShowContainer} />
+      <ProtectedRoute exact path="/cosmicobjects" component={CosmicObjectContainer} />
+      <ProtectedRoute exact path="/cosmicobjects/:star" component={CosmicObjectsShow} />
     </Switch>
     <Route exact path="/about" component={About} />
     <Route exact path="/main" component={FooterContainer} />
