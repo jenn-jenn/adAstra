@@ -101,8 +101,8 @@ class NavBar extends React.Component {
         <div className="nav-links">
           <a href="#/about" className="fas fa-users">{null}</a>
           <a href="#/cosmicobjects" className="fas fa-star">{null}</a>
-          <a href="#/events/new" class="fas fa-calendar-plus">{null}</a>
-          <a href="#/posts" class="fas fa-comments">{null}</a>
+          <a href="#/events/new" className="fas fa-calendar-plus">{null}</a>
+          <a href="#/posts" className="fas fa-comments">{null}</a>
         </div>
       )
     } else {

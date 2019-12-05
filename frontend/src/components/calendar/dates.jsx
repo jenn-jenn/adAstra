@@ -108,7 +108,10 @@ class Dates extends React.Component {
                         <div className="upcoming-events">
                             <h1>Upcoming Events:</h1>
                             <ul>
-                                {events.filter(event => new Date(event.date) >= new Date()).map((event, i) => (
+                                {events.filter(event => (
+                                    new Date(event.date).getMonth() === new Date().getMonth() && 
+                                    new Date(event.date).getYear() === new Date().getYear()
+                                )).map((event, i) => (
                                     <li key={i}>
                                         {event.title} ({event.date})
                                     </li>

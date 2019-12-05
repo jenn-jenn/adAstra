@@ -17,7 +17,9 @@ import About from "./about/about";
 
 const App = () => (
   <div id="app">
-    <header><NavBarContainer /></header>
+    <header>
+      <NavBarContainer />
+    </header>
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
