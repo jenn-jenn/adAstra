@@ -28,7 +28,7 @@ class ImageUpload extends React.Component {
 
         const errors = [];
         if (this.fileInput.current.files.length <= 0) {
-            errors.push('Please select an image');
+            errors.push("Unable to upload image. Image can't be blank or has to be a jpeg or png file.");
             this.setState({errors});
             
         } else {

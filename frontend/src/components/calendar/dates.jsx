@@ -106,7 +106,7 @@ class Dates extends React.Component {
                     </div>
                     <div className="calendar-events">
                         <div className="upcoming-events">
-                            <h1>Upcoming Events:</h1>
+                            <h1>Monthly Events:</h1>
                             <ul>
                                 {events.filter(event => (
                                     new Date(event.date).getMonth() === new Date().getMonth() && 

@@ -7,7 +7,7 @@ const Event = require("../../models/Event");
 //GET all events
 router.get('/', (req, res) => {
     Event.find()
-        .sort({ date: -1 })
+        .sort({ date: 1 })
         .then(events => {
             let payload = {};
             events.map( event => payload[event.date] = event);

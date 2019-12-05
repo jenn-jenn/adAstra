@@ -7,6 +7,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     date: ownProps.match.params.date,
     events: Object.values(state.entities.events),
+    errors: Object.values(state.errors.session),
   };
 };
 
