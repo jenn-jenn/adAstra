@@ -90,6 +90,22 @@ router.get("/:date", (req, res) => {
 });
 ```
 
+We seeded cosmic objects into our database through an axios call to the Strudel Lookup API.
+```javascript
+// Backend
+  constellationList.map(cons => {
+    let cosmicobject;
+    axios
+      .get(`http://www.strudel.org.uk/lookUP/json/?name=${cons}`)
+      .then(res => {
+        cosmicobject = new CosmicObject (res.data)
+      })
+      .then(res => {
+        cosmicobject.save()
+      })
+      .catch(err => console.log(err))
+  });
+
 ## Screenshots
 
 ### Demo Login
