@@ -1,6 +1,9 @@
 .upload-image-container {
   height: 100%;
   padding-left: 30px;
+
+  display: flex;
+  align-items: center;
   form {
     .fa-image:hover {
       opacity: 0.5;
@@ -23,5 +26,9 @@
   .upload-image-submit:hover {
     opacity: 0.5;
     cursor: pointer;
+  }
+
+  p {
+    margin: 0;
   }
 } 

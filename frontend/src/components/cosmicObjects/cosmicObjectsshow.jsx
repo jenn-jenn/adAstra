@@ -2,10 +2,6 @@ import React from 'react';
 import "../stylesheets/cosmicobjects/cosmic_objects_show.scss";
 
 class CosmicObjectsShow extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
     componentDidMount() {
         this.props.fetchCosmicObjects();
     }
@@ -23,11 +19,11 @@ class CosmicObjectsShow extends React.Component {
             <h1>{current.target.name}</h1>
             <div className="star-info-container">
                 <ul className="star-info-list">
-                    <img src={`${current.image.src}`} />
+                    <img src={`${current.image.src}`} alt={current.target.name} />
                     <div className="star-description">
                         <div className="star-links">
-                            <a href={`${current.image.href}`} target="_blank" >Interactive Map</a>
-                            <a href={`https://en.wikipedia.org/wiki/${current.target.name}`} target="_blank" >Wikipedia</a>
+                            <a href={`${current.image.href}`} target="_blank" rel="noopener noreferrer" >Interactive Map</a>
+                            <a href={`https://en.wikipedia.org/wiki/${current.target.name}`} target="_blank" rel="noopener noreferrer" >Wikipedia</a>
                         </div>
                         <div>
                             RA: {current.ra.decimal}  |  DEC: {current.dec.decimal}

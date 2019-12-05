@@ -63,7 +63,7 @@ class ImageUpload extends React.Component {
               />
               <input
                 type="submit"
-                value="Attach photo"
+                value="Attach Photo"
                 className="upload-image-submit"
               />
             </form>

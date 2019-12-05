@@ -26,15 +26,6 @@ router.get('/user/:user_id', (req, res) => {
         );
 });
 
-//get an event by event id
-// router.get('/:id', (req, res) => {
-//     Event.findById(req.params.id)
-//         .then(event => res.json(event))
-//         .catch(err =>
-//             res.status(404).json({ noeventfound: 'No event found with that ID' })
-//         );
-// });
-
 //get events by date
 router.get("/:date", (req, res) => {
     Event.find({ date: req.params.date })

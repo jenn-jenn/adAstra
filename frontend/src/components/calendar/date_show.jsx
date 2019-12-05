@@ -46,7 +46,7 @@ class DateShow extends React.Component {
                                 <h2>{event.title}</h2>
                                 <div className="event-info">
                                     <a className="fas fa-map-marked-alt"
-                                        href={`https://www.google.com/maps/place/${event.address}`} />
+                                        href={`https://www.google.com/maps/place/${event.address}`}>{null}</a>
                                     <p>{event.body}</p>
                                 </div>
                             </li>

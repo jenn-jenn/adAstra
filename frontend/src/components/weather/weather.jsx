@@ -35,8 +35,9 @@ class Weather extends React.Component{
           Object.keys(forecast).length !== 0
             ? forecast.data.weather[0].description
             : "";
-
-
+        tempMin = Math.floor((tempMin - 273.15) * (9/5) + 32)
+        tempMax = Math.floor((tempMax - 273.15) * (9/5) + 32)
+        
         return (
           <div className="weather">
             <div className="weather-content">
@@ -50,11 +51,13 @@ class Weather extends React.Component{
               </div>
             </div>
             <div className="weather-content forecast">
-              <div>{name}</div>
-              <div>High: {tempMax} °F</div>
-              <div>Low: {tempMin} °F</div>
-              <div>Summary: {cloudPerc}</div>
-            </div>
+              <i class="fas fa-map-marker-alt"/>
+                <span>{name}  |  
+                High: {tempMax} °F  |  
+                Low: {tempMin} °F  |  
+                Summary: {cloudPerc}
+                </span>
+              </div>
           </div>
         );
     }

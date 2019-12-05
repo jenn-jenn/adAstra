@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import DateShow from "./date_show";
-import { fetchDateEvents, deleteAnEvent } from "../../actions/event_actions";
+import { fetchDateEvents } from "../../actions/event_actions";
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -13,7 +13,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchDateEvents: (date) => dispatch(fetchDateEvents(date)),
-    delete: (eventId) => dispatch(deleteAnEvent(eventId)),
   };
 };
 
