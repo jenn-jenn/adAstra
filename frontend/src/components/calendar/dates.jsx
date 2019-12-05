@@ -4,15 +4,15 @@ import '../stylesheets/calendar/calendar.scss';
 import Calendar from 'react-calendar/dist/entry.nostyle';
 
 const MONTHS = {
-    'Jan': '1',
-    'Feb': '2',
-    'Mar': '3',
-    'Apr': '4',
-    'May': '5',
-    'Jun': '6',
-    'Jul': '7',
-    'Aug': '8',
-    'Sept': '9',
+    'Jan': '01',
+    'Feb': '02',
+    'Mar': '03',
+    'Apr': '04',
+    'May': '05',
+    'Jun': '06',
+    'Jul': '07',
+    'Aug': '08',
+    'Sept': '09',
     'Oct': '10',
     'Nov': '11',
     'Dec': '12',
@@ -106,9 +106,12 @@ class Dates extends React.Component {
                     </div>
                     <div className="calendar-events">
                         <div className="upcoming-events">
-                            <h1>Upcoming Events:</h1>
+                            <h1>Monthly Events:</h1>
                             <ul>
-                                {events.filter(event => new Date(event.date) >= new Date()).map((event, i) => (
+                                {events.filter(event => (
+                                    new Date(event.date).getMonth() === new Date().getMonth() && 
+                                    new Date(event.date).getYear() === new Date().getYear()
+                                )).map((event, i) => (
                                     <li key={i}>
                                         {event.title} ({event.date})
                                     </li>

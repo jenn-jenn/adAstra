@@ -47,15 +47,13 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div className="nav-right">
-          <Link to={"/events/new"}><button>Event</button></Link>
-          <Link to={"/posts"}><button>Forum</button></Link>
           <button onClick={this.logoutUser}>Logout</button>
         </div>
       );
     } else {
       return (
         <div className="nav-right">
-          <Link to={"/signup"}><button>Signup</button></Link>
+          <Link to={"/signup"}><button>Sign Up</button></Link>
           <Link to={"/login"}><button>Login</button></Link>
         </div>
       );
@@ -97,14 +95,29 @@ class NavBar extends React.Component {
     }
   }
   
+  navLink() {
+    if (this.props.loggedIn) {
+      return (
+        <div className="nav-links">
+          <a href="#/about" className="fas fa-users">{null}</a>
+          <a href="#/cosmicobjects" className="fas fa-star">{null}</a>
+          <a href="#/events/new" className="fas fa-calendar-plus">{null}</a>
+          <a href="#/posts" className="fas fa-comments">{null}</a>
+        </div>
+      )
+    } else {
+      return (
+        <div>
+        </div>
+      )
+    }
+  }
+  
   render() {
     return (
       <div className="nav">
         <div className="nav-header-components">{this.logoLink()}</div>
-        <a href="#/about" className="fas fa-users" />
-        <Link to={"/cosmicobjects"}><i className="fas fa-star" /></Link>
-        <i className="fa fa-star-and-crescent" />
-        <i className="fas fa-meteor" />
+        {this.navLink()}
         {this.searchBar()}
         {this.getLinks()}
       </div>

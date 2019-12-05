@@ -1,7 +1,8 @@
 .weather{
-    margin-top: 10px;
+    // margin: 10px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
     color: white;
 }
@@ -14,16 +15,16 @@
 }
 
 .weather-content.forecast{
-    margin-top: 10px;
+    margin: 10px;
     font-size: 12px;
     text-transform: capitalize;
-}
-.weather-content.forecast *{
-    margin: 5px;
+
+    display: flex;
+    justify-content: center;
 }
 
 .moonrise, .sunset {
-    padding: 20px;
+    margin: 10px;
     border-radius: 15px;
 }
 
@@ -33,4 +34,10 @@
 
 .Days img{
     border-radius: 15px;
+}
+
+.fa-map-marker-alt {
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
 }

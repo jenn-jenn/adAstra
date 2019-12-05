@@ -36,22 +36,25 @@ class DateShow extends React.Component {
         let date = new Date(this.props.date)
         let dateStr = `${DATES[date.getDay()]}  |  ${MONTHS[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
 
+        const events = this.props.events.length > 0 ? (<ul className="event-list">
+            {this.props.events.map((event, i) => (
+                <li key={i} className="event">
+                    <h2>{event.title}</h2>
+                    <div className="event-info">
+                        <a className="fas fa-map-marked-alt"
+                            href={`https://www.google.com/maps/place/${event.address}`}>{null}</a>
+                        <p>{event.body}</p>
+                    </div>
+                </li>
+            ))}
+        </ul>) : <div className="event"><h2>There are no events on this date.</h2></div>
+
+
         return (
             <div className="date-events">
                 <h1>{dateStr}</h1>
                 <div className="event-container">
-                    <ul className="event-list">
-                        {this.props.events.map((event, i) => (
-                            <li key={i} className="event">
-                                <h2>{event.title}</h2>
-                                <div className="event-info">
-                                    <a className="fas fa-map-marked-alt"
-                                        href={`https://www.google.com/maps/place/${event.address}`} />
-                                    <p>{event.body}</p>
-                                </div>
-                            </li>
-                        ))}
-                    </ul>
+                    {events}
                 </div>
             </div>
         );

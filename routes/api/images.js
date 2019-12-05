@@ -26,7 +26,6 @@ router.get("/posts/:post_id", (req, res) => {
 
 
 router.post('/uploadImage', passport.authenticate("jwt", { session: false }), (req, res) => {
-    // save to AWS
     singleUpload(req, res, function(err) {
         if(err) {
             return res.status(422).json({errors: err.message});

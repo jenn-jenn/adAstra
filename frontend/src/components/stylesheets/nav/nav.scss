@@ -37,6 +37,14 @@
   text-decoration: none;
 }
 
+.nav-links {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .search-overlay {
   box-shadow: 0px 0px 15px grey;
   background-color: #ddd;
@@ -47,16 +55,15 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
-
-  min-width: 230px;
+  justify-content: space-between;
+  width: 325px;
 }
 
 .search-overlay input {
-  width: 110%;
-  border-radius: 10px;
-  padding: 5px;
   margin: 2px 10px 2px 10px;
+  width: 275px;
+  padding: 5px;
+  border-radius: 10px;
   outline: none;
   border: none;
   text-align: center;
@@ -73,20 +80,16 @@
   text-shadow: 0px 0px 15px grey;
 }
 
-.fa-search {
-  padding-left: 20%
-}
-
 .fa-search:hover {
   cursor: pointer;
   color: black
 }
 
-.fa-users, .fa-star {
+.fa-users, .fa-star, .fa-calendar-plus, .fa-comments {
   color: white;
 }
 
-.fa-users:hover, .fa-star:hover {
+.fa-users:hover, .fa-star:hover, .fa-calendar-plus:hover, .fa-comments:hover {
   opacity: 0.5;
 }
 

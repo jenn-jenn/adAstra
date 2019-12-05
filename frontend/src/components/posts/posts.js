@@ -16,14 +16,10 @@ class Posts extends React.Component {
                 <PostFormContainer />
             </div>
         );
-    
-        if (this.props.posts.length === 0) {
-            return postsEmpty;
-        }
         
         const allPosts = Object.values(this.props.posts);
         let users = {};
-        this.props.users.map(user => {
+        this.props.users.forEach(user => {
             users[user._id] = user;
         })
         const postDiv = (
