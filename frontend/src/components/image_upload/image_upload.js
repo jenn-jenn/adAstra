@@ -25,25 +25,31 @@ class ImageUpload extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault(); 
-
-        const errors = [];
+        
         if (this.fileInput.current.files.length <= 0) {
+            const errors = [];
             errors.push("Unable to upload image. Image can't be blank or has to be a jpeg or png file.");
             this.setState({errors});
             
-        } else {
+        } else if (this.fileInput.current.files.length > 0) {
+          if (this.fileInput.current.files[0].type === "image/jpeg" || 
+              this.fileInput.current.files[0].type === "image/png") {
             const image = new FormData();
             image.append('postId', this.props.post._id);
             image.append('image', this.state.file);
             this.props.uploadImage(image)
             this.setState({
-                errors: [], 
-                inputReset: Date.now(),
-                file: null,
-                src: null
-            });
+              errors: [],
+              inputReset: Date.now(),
+              file: null,
+              src: null
+            })
+          }else {
+            const errors = [];
+            errors.push('Invalid image');
+            this.setState({ errors });
         }
-
+      }
     }
     render() {
         return (

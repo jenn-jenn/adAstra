@@ -59,6 +59,7 @@ class Dates extends React.Component {
             let day = dateArray[2];
             let yr = dateArray[3];
             let dateStr = yr + '-' + MONTHS[month] + '-' + day
+            console.log(dateStr);
             if(this.props.events[dateStr] !== undefined) {
                 return true
             } else {
