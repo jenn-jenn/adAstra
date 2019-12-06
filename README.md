@@ -105,6 +105,7 @@ We seeded cosmic objects into our database through an axios call to the Strudel 
       })
       .catch(err => console.log(err))
   });
+```
 
 ## Screenshots
 
