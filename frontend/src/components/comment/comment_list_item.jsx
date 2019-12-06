@@ -22,17 +22,18 @@ class CommentListItem extends React.Component {
     return (
       <div className="comment">
         <div className="comment-header">
-          <h4>
+          <div className="comment-user">
             <i className="fas fa-user-circle" />
             {this.props.users[this.props.comment.userId].handle}
-          </h4>
-          <p>{this.props.comment.body}</p>
-        </div>
+          </div>
         
-        <div className="comment-footer">
-          <h4>Posted {`${date.getHours()}:${date.getMinutes()} ${date.toDateString()}`}</h4>
-          {deletebutton}
+            <div className="comment-footer">
+              {deletebutton}
+              <h4>Posted {`${date.getHours()}:${date.getMinutes()} ${date.toDateString()}`}</h4>
+            </div>
         </div>
+
+        <span>{this.props.comment.body}</span>
       </div>
     );
   }

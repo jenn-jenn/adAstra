@@ -1,25 +1,25 @@
-import React from "react";
+// import React from "react";
 
-class EventIndex extends React.Component {
-    constructor(props) {
-        super(props);
+// class EventIndex extends React.Component {
+//     constructor(props) {
+//         super(props);
 
-        this.state = {
+//         this.state = {
 
-        }
-    }
+//         }
+//     }
 
-    componentDidMount() {
-        this.props.fetchDateEvents(dateId)
-    }
+//     componentDidMount() {
+//         this.props.fetchDateEvents(dateId)
+//     }
 
-    render() {
-        return (
-            <div>
+//     render() {
+//         return (
+//             <div>
 
-            </div>
-        );
-    }
-}
+//             </div>
+//         );
+//     }
+// }
 
-export default EventIndex;
+// export default EventIndex;

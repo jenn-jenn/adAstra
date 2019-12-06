@@ -1,28 +1,41 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CosmicObjectShow from './cosmicObjectsshow';
 import "../stylesheets/cosmicobjects/cosmic_objects_index.scss";
 
 class CosmicObjectsIndex extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
     componentDidMount(){
         this.props.fetchCosmicObjects();
     }
 
     render() {
+
         return (
           <div className="stars">
             <h1>Stars</h1>
             <div className="star-container">
               <ul className="star-list">
-                {this.props.cosmicObjects.map((star, i) => (
+                {this.props.cosmicObjects.map((star, i) => {
+
+                const imgStyle = {
+                  backgroundImage: `url('${star.image.src}')`,
+                  width: '120px',
+                  height: '120px',
+                  borderRadius: '100%',
+
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                };
+
+                return (
                   <li key={i} className="star">
-                    <h3><Link to={`/cosmicobjects/${star.target.name.split(" ").join("").toLowerCase()}`}>{star.target.name}</Link></h3>
-                </li>
-                ))}
+                    <div style={imgStyle}>
+                      <h3>
+                        <Link to={`/cosmicobjects/${star.target.name.split(" ").join("").toLowerCase()}`}>{star.target.name}</Link>
+                      </h3>
+                    </div>
+                  </li>
+                )})}
               </ul>
             </div>
           </div>

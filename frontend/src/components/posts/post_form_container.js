@@ -3,9 +3,6 @@ import { createNewPost, fetchPosts } from '../../actions/post_actions';
 import PostForm from './post_form';
 import { uploadImage } from '../../actions/image_actions';
 
-
-
-
 const msp = (state) => {
     return {
         currentUser: state.session.user,

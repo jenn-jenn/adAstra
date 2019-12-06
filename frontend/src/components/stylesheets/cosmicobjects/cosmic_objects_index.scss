@@ -25,20 +25,20 @@
 .star-list {
   border-radius: 20px;
   margin: 0;
-  padding: 0px;
+  padding: 50px;
   min-height: 500px;
 
   display: flex;
   flex-flow: wrap;
   align-content: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .star {
   list-style-type: none;
   box-sizing: border-box;
-  padding: 10px 20px 0px 20px;
-  margin: 10px;
+  margin: 20px;
   text-align: center;
 }
 

@@ -7,7 +7,7 @@ const Event = require("../../models/Event");
 //GET all events
 router.get('/', (req, res) => {
     Event.find()
-        .sort({ date: -1 })
+        .sort({ date: 1 })
         .then(events => {
             let payload = {};
             events.map( event => payload[event.date] = event);
@@ -25,15 +25,6 @@ router.get('/user/:user_id', (req, res) => {
             )
         );
 });
-
-//get an event by event id
-// router.get('/:id', (req, res) => {
-//     Event.findById(req.params.id)
-//         .then(event => res.json(event))
-//         .catch(err =>
-//             res.status(404).json({ noeventfound: 'No event found with that ID' })
-//         );
-// });
 
 //get events by date
 router.get("/:date", (req, res) => {

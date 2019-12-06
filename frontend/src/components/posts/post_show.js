@@ -36,6 +36,7 @@ class PostShow extends React.Component {
     return (
       <div className="post-show">
         <div className="post-show-content">
+
           <div className="post-show-header">
             <h1>
               <i className="fas fa-meteor" alt="meteor" />
@@ -46,11 +47,14 @@ class PostShow extends React.Component {
               <i className="fa fa-trash" onClick={this.delete}/>
             </div>
           </div>
-          <p>{post.body}</p>
+
+          <div className="post-show-post">
+            <p>{post.body}</p>
+            <ImageIndexContainer post={post}/>
+          </div>
         </div>
         <div className="images">
           <ImageUploadContainer post={post} />
-          <ImageIndexContainer post={post}/>
         </div>
         <CommentsContainer post={post}/>
       </div>

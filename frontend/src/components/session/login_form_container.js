@@ -1,5 +1,3 @@
-// src/components/session/login_form_container.js
-
 import { connect } from "react-redux";
 import { login, clearErrors } from "../../actions/session_actions";
 import SessionForm from './session_form';

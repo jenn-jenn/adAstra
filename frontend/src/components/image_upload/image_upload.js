@@ -28,7 +28,7 @@ class ImageUpload extends React.Component {
         
         if (this.fileInput.current.files.length <= 0) {
             const errors = [];
-            errors.push('Please select an image');
+            errors.push("Unable to upload image. Image can't be blank or has to be a jpeg or png file.");
             this.setState({errors});
             
         } else if (this.fileInput.current.files.length > 0) {
@@ -69,7 +69,7 @@ class ImageUpload extends React.Component {
               />
               <input
                 type="submit"
-                value="Attach photo"
+                value="Attach Photo"
                 className="upload-image-submit"
               />
             </form>
