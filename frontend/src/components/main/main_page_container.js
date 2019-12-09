@@ -5,7 +5,8 @@ import MainPage from './main_page';
 
 const mSTP = (state) => {
   return {
-    events: state.entities.events
+    events: state.entities.events,
+    location: state.weather
   };
 };
 

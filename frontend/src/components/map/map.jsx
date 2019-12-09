@@ -52,6 +52,13 @@ class Map extends React.Component {
       }
 
       navigator.geolocation.getCurrentPosition(success, error, options);
+
+      document.querySelectorAll('.marker').forEach(m => {
+        m.addEventListener('click', (e) => {
+          let name = e.target.innerHTML.split(" ").join("").toLowerCase()
+          this.props.history.push(`/cosmicobjects/${name}`)
+        })
+      })    
     })
   }
 
