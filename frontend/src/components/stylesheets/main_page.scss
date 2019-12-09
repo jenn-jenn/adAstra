@@ -18,7 +18,8 @@
 
 .main p {
     margin: 0;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .main-content {
@@ -46,6 +47,11 @@
   align-items: center;
   margin: 20px;
   padding: 20px;
+}
+
+.content-wrapper img {
+    height: 20px;
+    border-radius: 5px;
 }
 
 footer {
