@@ -11,23 +11,20 @@ class MarkerManager {
     const el = document.createElement('div');
     el.className = 'marker';
 
+    el.addEventListener('mouseover', () => {
+      el.innerText = object.target.name;
+    })
+    el.addEventListener('mouseout', () => {
+      el.innerText = '';
+    })
+
     const lng = object.ra.decimal;
     const lat = object.dec.decimal;
     const coordinates = [lng, lat];
 
-    const popup = new mapboxgl.Popup({
-      offset: 25,
-      className: "popup"
-    })
-      .setLngLat(coordinates)
-      .setHTML(`<h1>${object.target.name}</h1>`)
-      .addTo(this.map);
-
-
     new mapboxgl.Marker(el)
       .setLngLat(coordinates)
       .addTo(this.map)
-      .setPopup(popup)
   }
 
   updateMarkers(objects) {

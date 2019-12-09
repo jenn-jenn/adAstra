@@ -51,7 +51,7 @@ class Weather extends React.Component{
               </div>
             </div>
             <div className="weather-content forecast">
-              <i class="fas fa-map-marker-alt"/>
+              <i className="fas fa-map-marker-alt"/>
                 <span>{name}  |  
                 High: {tempMax} °F  |  
                 Low: {tempMin} °F  |  
