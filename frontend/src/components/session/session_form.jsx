@@ -37,7 +37,9 @@ i
       this.props.login(user)
     } else {
       this.props.signup(user)
-        .then(res => this.props.login(user))
+        .then(res => {
+          if(!res.errors) this.props.login(user)
+        })
     }
   }
 

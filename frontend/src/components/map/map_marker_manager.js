@@ -1,5 +1,4 @@
-import { Redirect } from 'react-router-dom';
-import React from 'react'
+
 const mapboxgl = require("mapbox-gl/dist/mapbox-gl.js");
 
 
