@@ -17,7 +17,7 @@ class SplashPage extends React.Component {
         <div id="cover"><img src="/shooting-star.gif" alt="shooting-star"/></div>
           <h2>adAstra</h2>
             <div className="splash-page-intro">
-              <p><em>Let's plan events and meet new people!</em></p>
+              <p><em>Let's plan stargazing events and meet other stargazers!</em></p>
             </div>
             <div className="splash-page-buttons">
               <Link to='/login' className="loginbutton">
