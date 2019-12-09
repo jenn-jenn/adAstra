@@ -1,6 +1,8 @@
 # adAstra
 __**ad astra** *“to the stars” (latin)*__
 
+[Live Link](http://ad--astra.herokuapp.com/#/)
+
 adAstra is an event planning app to help users geolocate the best sites for cosmic shows.
 
 ## Background and Overview:
