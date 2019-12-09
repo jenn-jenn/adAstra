@@ -13,6 +13,11 @@
   text-align: center;
 }
 
+.star-info h3 {
+  margin-top: 5%;
+  font-size: 15px;
+}
+
 .star-info-container {
   width: 60%;
   min-width: 400px;
@@ -35,7 +40,6 @@
 }
 
 .star-info-list img {
-  margin-top: 5%;
   align-self: center;
   width: 70%;
   border-radius: 20px;

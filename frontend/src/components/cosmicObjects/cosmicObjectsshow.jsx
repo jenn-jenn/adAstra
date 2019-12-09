@@ -19,6 +19,7 @@ class CosmicObjectsShow extends React.Component {
             <h1>{current.target.name}</h1>
             <div className="star-info-container">
                 <ul className="star-info-list">
+                    <h3>Live Image</h3>
                     <img src={`${current.image.src}`} alt={current.target.name} />
                     <div className="star-description">
                         <div className="star-links">
