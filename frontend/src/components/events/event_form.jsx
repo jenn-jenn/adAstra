@@ -8,11 +8,25 @@ class EventForm extends React.Component {
         this.state = {
             title: '',
             date: '',
-            address: '',
+            address: "",
             body: '',
             connectionCode: props.connectionCode
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidMount() {
+        this.getLocation()
+    }
+
+    getLocation() {
+        function success(pos) {
+            const crd = pos.coords;
+            this.props.fetchLocation(crd)
+                .then(res => this.setState({address: res.data.features[0].place_name}));
+            
+        }
+        navigator.geolocation.getCurrentPosition(success.bind(this));
     }
   
     
