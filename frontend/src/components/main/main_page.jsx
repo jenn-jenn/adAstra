@@ -21,7 +21,8 @@ class MainPage extends React.Component {
             <h3>Constellation Map</h3>
             <p>
               <img src="./location_icon.png" alt="icon" /> Click the icon on the map to find constellations in your viewing radius.<br/>
-              Hover over markers for constellation name.
+              Hover over marker for constellation name.<br/>
+              Click marker to view live constellation image.
             </p>
             <MapContainer />
           </div>

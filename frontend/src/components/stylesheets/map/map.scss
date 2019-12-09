@@ -17,18 +17,12 @@
 
 .marker {
   background: url('icons8-marker-24.png');
-  filter: invert(30%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
-  background-position: center;
-  background-repeat: no-repeat;
   width: 5%;
   height: 5%;
-  border: none;
-  box-shadow: none;
-  padding: 0;
-  color: white;
+  color: black;
 }
 
 .marker:hover {
   cursor: pointer;
-  filter: invert(85%) sepia(51%) saturate(2878%) hue-rotate(180deg) brightness(104%) contrast(97%);
+  background: none;
 }
