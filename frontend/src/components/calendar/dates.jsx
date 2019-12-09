@@ -101,7 +101,7 @@ class Dates extends React.Component {
                             onChange={this.changeDate()}
                             value={this.state.date}
                             tileClassName='tile-content'
-                            tileContent={({ date, view }) => this.hasEvent(date) ? <i className="far fa-star"></i> : null }
+                            tileContent={({ date, view }) => this.hasEvent(date) ? <i className="fas fa-star"></i> : null }
                         />
                     </div>
                     <div className="calendar-events">
