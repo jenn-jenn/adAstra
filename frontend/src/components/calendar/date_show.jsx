@@ -47,7 +47,7 @@ class DateShow extends React.Component {
                     </div>
                 </li>
             ))}
-        </ul>) : <div className="event"><h2>There are no events on this date.</h2></div>
+        </ul>) : <div className="event"><h2>No events found on this date.</h2></div>
 
 
         return (
