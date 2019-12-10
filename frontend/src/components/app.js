@@ -14,6 +14,8 @@ import EventFormContainer from './events/event_form_container';
 import CosmicObjectContainer from './cosmicObjects/cosmicObjectsContainer';
 import CosmicObjectsShow from './cosmicObjects/cosmicObjectsshowContainer';
 import About from "./about/about";
+import EventFormModal from "./modal/eventformmodal";
+
 
 const App = () => (
   <div id="app">
@@ -32,13 +34,11 @@ const App = () => (
       <ProtectedRoute exact path="/cosmicobjects" component={CosmicObjectContainer} />
       <ProtectedRoute exact path="/cosmicobjects/:star" component={CosmicObjectsShow} />
     </Switch>
+    <ProtectedRoute path="/" component={EventFormModal} />
     <Route exact path="/about" component={About} />
     <Route exact path="/main" component={FooterContainer} />
     
-    <div className="event-form-modal hidden">
-      <i className="fa fa-times eventx" />
-      <EventFormContainer />
-    </div>
+
   </div>
 );
 
