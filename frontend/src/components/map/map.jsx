@@ -60,8 +60,7 @@ class Map extends React.Component {
         })
       })
 
-      document.querySelector('.fa.fa-times').addEventListener('click', () => {
-        console.log('click')
+      document.querySelector('.fa.fa-times.mapx').addEventListener('click', () => {
         document.querySelector('.map-modal').classList.add('hidden');
       })
     })
@@ -71,7 +70,7 @@ class Map extends React.Component {
     return (
       <div id="map-container">
         <div className="map-modal">
-          <i className="fa fa-times" />
+          <i className="fa fa-times mapx" />
           <p>
             <img src="./location_icon.png" alt="icon" /> Click to find viewing radius.<br />
             Hover over marker for name.<br />
