@@ -96,6 +96,7 @@
 }
 
 .fa-users:hover, .fa-star:hover, .fa-calendar-plus:hover, .fa-comments:hover, .nav-links a:hover {
+  cursor: pointer;
   opacity: 0.5;
 }
 

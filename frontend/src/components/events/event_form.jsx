@@ -45,7 +45,7 @@ class EventForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createNewEvent(this.state)
-            .then(() => this.props.history.push('/main'));
+            .then(() => this.props.history.push(`/events/${this.state.date}`));
     }
 
     render() {
@@ -53,7 +53,6 @@ class EventForm extends React.Component {
             <div className="eventCalendar">
                 <h1>Welcome to the adAstra Event Form!</h1>
                     <div className="event-form-container">
-
                         <form className="event-form" >
                             <div className="event-title">
                                 <h3>Event Title:</h3>

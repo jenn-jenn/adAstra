@@ -116,7 +116,7 @@ class Dates extends React.Component {
                                 ))}
                             </ul>
                         </div>
-                        <Link to="/events/new" className="create-event-link">Create Event</Link>
+                        <span className="create-event-link">Create Event</span>
                     </div>
                 </div>
             </div>
