@@ -53,7 +53,7 @@ i
 
     const typeUser = () => {
       let timeout;
-      if (i < demoEmail.length - 1) {
+      if (i < demoEmail.length) {
         document.getElementById("email").value += demoEmail.charAt(i);
         i++;
         timeout = setTimeout(typeUser, 150);
@@ -64,7 +64,7 @@ i
 
     const typePw = () => {
       let timeout;
-      if (j < demoPassword.length - 1) {
+      if (j < demoPassword.length) {
         document.getElementById("password").value += demoPassword.charAt(j);
         j++;
         timeout = setTimeout(typePw, 200);
@@ -131,7 +131,6 @@ i
             placeholder="Email"
             type="text"
             name="email"
-            value={this.state.email}
           />
 
           <input
@@ -150,7 +149,6 @@ i
             placeholder="Password"
             type="password"
             name="password"
-            value={this.state.password}
           />
 
           <input

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from 'react-router-dom';
 import '../stylesheets/calendar/calendar.scss';
 import Calendar from 'react-calendar/dist/entry.nostyle';
 
