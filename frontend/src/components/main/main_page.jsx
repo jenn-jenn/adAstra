@@ -12,6 +12,9 @@ class MainPage extends React.Component {
         document.querySelector('.create-event-link').addEventListener('click', () => {
           document.querySelector('.event-form-modal').classList.remove('hidden');
         })
+        document.querySelector('.create-event-icon').addEventListener('click', () => {
+          document.querySelector('.event-form-modal').classList.remove('hidden');
+        })
 
         document.querySelector('.fa.fa-times.eventx').addEventListener('click', () => {
           document.querySelector('.event-form-modal').classList.add('hidden');
