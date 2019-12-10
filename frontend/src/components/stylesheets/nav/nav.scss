@@ -45,7 +45,7 @@
   justify-content: space-between;
 }
 
-.nav-links a {
+.nav-links a, .nav-links span {
   text-decoration: none;
   color: white;
   transition: 0.3s;
@@ -95,7 +95,7 @@
   color: white;
 }
 
-.fa-users:hover, .fa-star:hover, .fa-calendar-plus:hover, .fa-comments:hover, .nav-links a:hover {
+.fa-users:hover, .fa-star:hover, .fa-calendar-plus:hover, .fa-comments:hover, .nav-links a:hover, .nav-links span:hover {
   cursor: pointer;
   opacity: 0.5;
 }
