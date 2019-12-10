@@ -93,8 +93,6 @@ class Dates extends React.Component {
         let events = Object.values(this.props.events);
         return (
             <div className="dates-page">
-            
-                <div className="empty-line"></div>
                 <div className="main-cal-and-timeline">
                     <div className="calendar-with-button">
                         <Calendar
