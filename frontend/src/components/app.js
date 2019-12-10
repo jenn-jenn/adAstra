@@ -34,6 +34,11 @@ const App = () => (
     </Switch>
     <Route exact path="/about" component={About} />
     <Route exact path="/main" component={FooterContainer} />
+    
+    <div className="event-form-modal hidden">
+      <i className="fa fa-times eventx" />
+      <EventFormContainer />
+    </div>
   </div>
 );
 

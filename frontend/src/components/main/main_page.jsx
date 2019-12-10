@@ -3,7 +3,6 @@ import DatesContainer from "../../components/calendar/dates_container";
 import MapContainer from '../map/map_container';
 import '../stylesheets/main_page.scss';
 import WeatherContainer from "../weather/weather_container";
-import EventFormContainer from "../events/event_form_container";
 
 class MainPage extends React.Component {
   componentDidMount() {
@@ -37,11 +36,6 @@ class MainPage extends React.Component {
           <div className="content-wrapper">
             <DatesContainer events={this.props.events} />
           </div>
-        </div>
-
-        <div className="event-form-modal hidden">
-          <i className="fa fa-times eventx" />
-          <EventFormContainer />
         </div>
       </div>
     );
