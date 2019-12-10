@@ -104,8 +104,8 @@ class NavBar extends React.Component {
             Forum</a>
           </div>
           <div>
-            <span href="#/cosmicobjects"><i className="fas fa-star" />
-            Constellations</span>
+            <a href="#/cosmicobjects"><i className="fas fa-star" />
+            Constellations</a>
           </div>
           <div>
             <a className="create-event-icon"><i className="fas fa-calendar-plus" />

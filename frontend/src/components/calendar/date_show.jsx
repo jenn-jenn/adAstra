@@ -34,7 +34,7 @@ class DateShow extends React.Component {
     render() {        
         if (this.props.events === undefined) return null;
         let date = new Date(this.props.date)
-        let dateStr = `${DATES[date.getDay()]}  |  ${MONTHS[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
+        let dateStr = `Events on ${DATES[date.getDay()]}  |  ${MONTHS[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
 
         const events = this.props.events.length > 0 ? (<ul className="event-list">
             {this.props.events.map((event, i) => (
