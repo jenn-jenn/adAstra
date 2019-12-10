@@ -58,13 +58,26 @@ class Map extends React.Component {
           let name = e.target.innerHTML.split(" ").join("").toLowerCase()
           this.props.history.push(`/cosmicobjects/${name}`)
         })
-      })    
+      })
+
+      document.querySelector('.fa.fa-times').addEventListener('click', () => {
+        console.log('click')
+        document.querySelector('.map-modal').classList.add('hidden');
+      })
     })
   }
 
   render() {
     return (
       <div id="map-container">
+        <div className="map-modal">
+          <i className="fa fa-times" />
+          <p>
+            <img src="./location_icon.png" alt="icon" /> Click to find viewing radius.<br />
+            Hover over marker for name.<br />
+            Click marker for more info.
+          </p>
+        </div>
         <div id="map"></div>
       </div>
     );

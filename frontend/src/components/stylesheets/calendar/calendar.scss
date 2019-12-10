@@ -37,6 +37,8 @@
 
   .react-calendar__navigation__label {
     font-size: 20px;
+    pointer-events: none;
+    cursor: default;
   }
 }
 
@@ -58,9 +60,6 @@
   cursor: pointer;
 }
 
-.react-calendar__navigation__label:hover {
-  cursor: pointer;
-}
 .react-calendar__navigation__label:focus {
   outline: none;
 }

@@ -19,15 +19,10 @@ class MainPage extends React.Component {
         <div className="main-content">
           <div className="content-wrapper">
             <h3>Constellation Map</h3>
-            <p>
-              <img src="./location_icon.png" alt="icon" /> Click the icon on the map to find constellations in your viewing radius.<br/>
-              Hover over marker for constellation name.<br/>
-              Click marker to view live constellation image.
-            </p>
             <MapContainer />
           </div>
           <div className="content-wrapper">
-           <DatesContainer events={this.props.events} />
+            <DatesContainer events={this.props.events} />
           </div>
         </div>
       </div>
