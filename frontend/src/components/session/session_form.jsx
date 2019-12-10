@@ -43,14 +43,49 @@ i
 
   handleDemo(e) {
     e.preventDefault();
-    this.setState({
-      email: "guest@guest.com",
-      password: "password",
-    }, () => {
-      const user = Object.assign({}, this.state);
-      this.props.login(user)
-        .then(() => this.props.history.push("/main"));
-    });
+
+    let i = 0;
+    let j = 0;
+    let demoEmail = "guest@guest.com";
+    let demoPassword = "password";
+
+    const typeUser = () => {
+      let timeout;
+      if (i < demoEmail.length - 1) {
+        document.getElementById("email").value += demoEmail.charAt(i);
+        i++;
+        timeout = setTimeout(typeUser, 150);
+      } else {
+        clearTimeout(timeout)
+      }
+    }
+
+    const typePw = () => {
+      let timeout;
+      if (j < demoPassword.length - 1) {
+        document.getElementById("password").value += demoPassword.charAt(j);
+        j++;
+        timeout = setTimeout(typePw, 200);
+      } else {
+        clearTimeout(timeout)
+      }
+    }
+
+    if (this.props.formType === 'login') {
+      typeUser();
+
+      window.setTimeout(() => {
+        typePw();
+      }, 200)
+
+      window.setTimeout(() => {
+        this.setState({ email: "guest@guest.com", password: "password"}, () => {
+          const user = Object.assign({}, this.state);
+          this.props.login(user)
+            .then(() => this.props.history.push("/main"));
+        });
+      }, 2000)
+    }
   }
 
   update(field) {
@@ -88,6 +123,7 @@ i
         <form className="form flex-center">
 
           <input
+            id="email"
             className="input"
             onChange={this.update("email")}
             placeholder="Email"
@@ -106,6 +142,7 @@ i
           />
 
           <input
+            id="password"
             className="input"
             onChange={this.update("password")}
             placeholder="Password"
