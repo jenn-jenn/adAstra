@@ -99,10 +99,22 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div className="nav-links">
-          <a href="#/posts" className="fas fa-comments">{null}</a>
-          <a href="#/cosmicobjects" className="fas fa-star">{null}</a>
-          <a href="#/events/new" className="fas fa-calendar-plus">{null}</a>
-          <a href="#/about" className="fas fa-users">{null}</a>
+          <div>
+            <a href="#/posts" ><i className="fas fa-comments" />
+            Forum</a>
+          </div>
+          <div>
+            <a href="#/cosmicobjects" ><i className="fas fa-star" />
+            Constellations</a>
+          </div>
+          <div>
+            <a href="#/events/new" ><i className="fas fa-calendar-plus" />
+            Create Event</a>
+          </div>
+          <div>
+            <a href="#/about" ><i className="fas fa-users" />
+            About</a>
+          </div>
         </div>
       )
     } else {
