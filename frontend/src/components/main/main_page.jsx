@@ -19,11 +19,6 @@ class MainPage extends React.Component {
         <div className="main-content">
           <div className="content-wrapper">
             <h3>Constellation Map</h3>
-            <p>
-              <img src="./location_icon.png" alt="icon" /> Click the icon to find constellations in your viewing radius.<br/>
-              Hover over marker for constellation name.<br/>
-              Click marker to view constellation.
-            </p>
             <MapContainer />
           </div>
           <div className="content-wrapper">

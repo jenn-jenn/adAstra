@@ -2,11 +2,12 @@
   width: 500px;
   height: 500px;
   overflow: hidden;
-  border-radius: 10px;
   margin: 0px 40px 30px 40px;
+  position: relative;
 }
 
 #map {
+  border-radius: 10px;
   width: 500px;
   height: 500px;
 }
@@ -25,4 +26,38 @@
 .marker:hover {
   cursor: pointer;
   background: none;
+}
+
+.map-modal {
+  position: absolute;
+  border-radius: 10px;
+  top: 5%;
+  left: 5%;
+  width: 450px;
+  height: 450px;
+
+  box-sizing: border-box;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fa-times {
+  position: absolute;
+  top: 15px;
+  right: 0;
+  font-size: 40px;
+}
+
+.fa-times:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.hidden {
+  display: none;
 }
