@@ -16,15 +16,6 @@ router.get('/', (req, res) => {
         .catch(err => res.status(404).json({ msg: 'No events found' }));
 });
 
-//get an event by user
-// router.get('/user/:user_id', (req, res) => {
-//     Event.find({ user: req.params.user_id })
-//         .then(events => res.json(events))
-//         .catch(err =>
-//             res.status(404).json({ noeventsfound: 'No events found from that user' }
-//             )
-//         );
-// });
 
 //get events by date
 router.get("/:date", (req, res) => {
@@ -40,6 +31,12 @@ router.get("/:date", (req, res) => {
 router.post('/new',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
+        const { errors, isValid } = validateEventInput(req.body);
+
+        if (!isValid) {
+            return res.status(400).json(errors);
+        }
+
         const newEvent = new Event({
             title: req.body.title,
             date: req.body.date,
@@ -50,9 +47,20 @@ router.post('/new',
 
         newEvent.save()
             .then(event => res.json(event))
-            .catch(err => res.status(400).json({ msg: 'Event must have a title, date, location, and description.' }));
+            // .catch(err => res.status(400).json({ msg: 'Event must have a title, date, location, and description.' }));
     }
 );
+
+
+//get an event by user
+// router.get('/user/:user_id', (req, res) => {
+//     Event.find({ user: req.params.user_id })
+//         .then(events => res.json(events))
+//         .catch(err =>
+//             res.status(404).json({ noeventsfound: 'No events found from that user' }
+//             )
+//         );
+// });
 
 //edit an event by event id
 // router.patch('/:id', (req, res) => {

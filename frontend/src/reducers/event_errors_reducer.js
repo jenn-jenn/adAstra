@@ -1,6 +1,6 @@
 import { RECEIVE_EVENT_ERRORS } from "../actions/event_actions";
 
-const EventErrorReducer = (oldState = {}, action) => {
+const EventErrorReducer = (oldState = [], action) => {
   Object.freeze(oldState);
 
   switch (action.type) {
