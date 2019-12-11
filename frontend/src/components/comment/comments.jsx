@@ -8,7 +8,7 @@ export const Comments = props => {
     useEffect(() => {
         props.fetchUsers()
         .then(() => props.fetchPostComments(props.post._id))
-    })
+    }, [])
 
     return (
         <div className="comments">
