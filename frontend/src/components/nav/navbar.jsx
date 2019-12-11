@@ -115,19 +115,19 @@ class NavBar extends React.Component {
         <div className="nav-links">
           <div>
             <a href="#/posts"><i className="fas fa-comments" />
-            Forum</a>
+            <span>Forum</span></a>
           </div>
           <div>
             <a href="#/cosmicobjects"><i className="fas fa-star" />
-            Constellations</a>
+            <span>Constellations</span></a>
           </div>
-          <div>
-            <span className="create-event-icon"><i className="fas fa-calendar-plus" />
-            Create Event</span>
+          <div className="create-event-icon">
+            <i className="fas fa-calendar-plus" />
+            <span className="create-event-icon">Create Event</span>
           </div>
           <div>
             <a href="#/about" ><i className="fas fa-users" />
-            About</a>
+            <span>About</span></a>
           </div>
         </div>
       )

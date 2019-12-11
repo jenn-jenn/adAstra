@@ -8,9 +8,9 @@ import {Comments} from './comments';
 
 const mapStateToProps = state => {
     return {
-        comments: Object.values(state.comments.post),
+        comments: Object.values(state.entities.comments.post),
         currentUser: state.session.user,
-        users: state.users
+        users: state.entities.users
     }
 }
 

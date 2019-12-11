@@ -4,8 +4,8 @@ import Weather from './weather';
 
 const msp = state => {
     return {
-        forecast: state.weather,
-        sunset: state.sunset,
+        forecast: state.entities.weather,
+        sunset: state.entities.sunset,
     }
 }
 

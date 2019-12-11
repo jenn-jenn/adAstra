@@ -7,7 +7,7 @@ import { fetchUsers } from '../../actions/user_actions';
 const msp = (state) => {
     return {
         posts: Object.values(state.entities.posts.all),
-        users: Object.values(state.users)
+        users: Object.values(state.entities.users)
     };
 };
 

@@ -24,7 +24,6 @@
     box-shadow: 0px 0px 10px grey;
     height: 100%;
     width: 100%;
-    padding: 15px 20px 15px 20px;
     background-color: rgba(0, 0, 0, 0.6);
     min-width: 550px;
     display: flex;
@@ -38,20 +37,15 @@
     justify-content: center;
     align-items: center; 
     width: 80%;
-    padding: 15px 20px 15px 20px; 
 }
 
 .event-form input {
   border-radius: 5px;
   outline: none;
   border: none;
-  padding: 10px;
+  padding: 15px;
   margin: 10px;
   width: 70%;
-}
-
-.event-address {
-    margin-left: -25px;
 }
 
 .event-form-buttons {
