@@ -9,7 +9,8 @@ export const getAPost = (postId) => {
 };
 
 export const writePost = (data) => {
-    return axios.post('/api/posts/', data);
+    return axios
+      .post('/api/posts/', data)
 };
 
 export const deletePost = (postId) => {

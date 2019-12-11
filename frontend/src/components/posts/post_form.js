@@ -3,12 +3,11 @@ import React from 'react';
 class PostForm extends React.Component {
     constructor(props) {
         super(props);
-
+ 
         this.state = {
             title: '',
             body: ''
         };
-
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -25,6 +24,7 @@ class PostForm extends React.Component {
             body: this.state.body,
             author: this.props.currentUser.id
         };
+  
         this.props.createNewPost(data)
           .then(res =>{
             let file = document.getElementById("file-input").files[0];
@@ -35,38 +35,54 @@ class PostForm extends React.Component {
               this.props.uploadImage(image)
             }
           })
-          .then( () => this.props.fetchPosts());
-        this.setState({title: '', body: ''});
+          .then( () => this.props.fetchPosts())
+        this.props.clearErrors()
+        this.setState({title: '', body: '', errors:[]});
     }
+
+  renderErrors() {
+    return (
+      <ul className="errors">
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
     render() {
         return (
-          <form onSubmit={this.handleSubmit} className="post-form">
-            <input
-              type="text"
-              value={this.state.title}
-              onChange={this.update("title")}
-              placeholder="Title"
-            />
-            <input
-              className="write"
-              type="textarea"
-              value={this.state.body}
-              onChange={this.update("body")}
-              placeholder="Write post"
-            />
-            <div className="image-upload">
-              <label htmlFor="file-input">
-                <i className="fas fa-image"/>
-              </label>
-              <input id="file-input" type="file" />
-            </div>
-            <input
-              type="submit"
-              value="Submit"
-              className="post-form-submit"
-            />
-          </form>
+          <>
+            <form onSubmit={this.handleSubmit} className="post-form">
+              <input
+                type="text"
+                value={this.state.title}
+                onChange={this.update("title")}
+                placeholder="Title"
+              />
+              <input
+                className="write"
+                type="textarea"
+                value={this.state.body}
+                onChange={this.update("body")}
+                placeholder="Write post"
+              />
+              <div className="image-upload">
+                <label htmlFor="file-input">
+                  <i className="fas fa-image"/>
+                </label>
+                <input id="file-input" type="file" />
+              </div>
+              <input
+                type="submit"
+                value="Submit"
+                className="post-form-submit"
+              />
+            </form>
+            {this.renderErrors()}
+          </>
         );
     }
 };
