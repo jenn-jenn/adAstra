@@ -31,6 +31,11 @@
   padding: 0px;
 }
 
+.post-list a {
+  text-decoration: none;
+  color: white;
+}
+
 .post {
   list-style-type: none;
   border-radius: 20px;
@@ -108,6 +113,10 @@
   width: 50%;
 }
 
+.fa-image {
+  font-size: 30px;
+}
+
 .fa-image:hover {
   opacity: 0.5;
   cursor: pointer;
@@ -131,4 +140,12 @@
 .post-form-submit:hover {
   opacity: 0.5;
   cursor: pointer;
+}
+
+.file-input-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
 }

@@ -44,6 +44,16 @@ class PostForm extends React.Component {
           this.props.clearErrors()
     }
 
+  componentDidMount() {
+    document.querySelector(".fas.fa-image").addEventListener("mouseover", () => {
+      document.querySelector(".file-input-div").classList.remove("hidden");
+    })
+    document.querySelector(".fas.fa-image").addEventListener("mouseout", () => {
+      const div = document.querySelector(".file-input-div")
+      if (!div.className.includes("hidden")) div.classList.add("hidden");
+    })
+  }
+
   renderErrors() {
     return (
       <ul className="errors">
@@ -73,10 +83,11 @@ class PostForm extends React.Component {
                 onChange={this.update("body")}
                 placeholder="Write post"
               />
+
               <div className="image-upload">
-                <label htmlFor="file-input">
+                <label htmlFor="file-input" className="file-input-label">
                   <i className="fas fa-image"></i>
-                  Attach Image
+                  <div className="file-input-div hidden">Attach Image</div>
                 </label>
                 <input id="file-input" type="file" />
               </div>

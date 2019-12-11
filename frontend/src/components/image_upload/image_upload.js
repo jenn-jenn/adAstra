@@ -51,13 +51,25 @@ class ImageUpload extends React.Component {
         }
       }
     }
+
+    componentDidMount() {
+      document.querySelector(".fas.fa-image").addEventListener("mouseover", () => {
+        document.querySelector(".file-input-div").classList.remove("hidden");
+      })
+      document.querySelector(".fas.fa-image").addEventListener("mouseout", () => {
+        const div = document.querySelector(".file-input-div")
+        if (!div.className.includes("hidden")) div.classList.add("hidden");
+      })
+    }
+
     render() {
         return (
 
           <div className="upload-image-container">
             <form encType="multi-art/form-data" onSubmit={this.handleSubmit}>
-              <label htmlFor="file-input">
-                <i className="fas fa-image" />
+              <label htmlFor="file-input" className="file-input-label">
+                <i className="fas fa-image"></i>
+                <div className="file-input-div hidden">Attach Image</div>
               </label>
               <input
                 id="file-input"
@@ -69,7 +81,7 @@ class ImageUpload extends React.Component {
               />
               <input
                 type="submit"
-                value="Attach Photo"
+                value="Submit Photo"
                 className="upload-image-submit"
               />
             </form>
