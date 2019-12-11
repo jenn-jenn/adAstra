@@ -4,6 +4,7 @@ import PostForm from './post_form';
 import { uploadImage } from '../../actions/image_actions';
 
 const msp = (state) => {
+    debugger
     return {
         currentUser: state.session.user,
         newPost: Object.values(state.entities.posts)[Object.values(state.entities.posts).length - 1],

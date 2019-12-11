@@ -1,30 +1,26 @@
-import React from "react";
-import CommentListItem from './comment_list_item';
+import React, { useEffect } from "react";
+import {CommentListItem} from './comment_list_item';
 import CommentFormContainer from './comment_form_container';
 import '../stylesheets/forum/comments.scss';
 
-class Comments extends React.Component {
+export const Comments = props => {
 
-    componentDidMount(){
-        this.props.fetchUsers()
-        .then(()=> this.props.fetchPostComments(this.props.post._id))
-    }
+    useEffect(() => {
+        props.fetchUsers()
+        .then(() => props.fetchPostComments(props.post._id))
+    }, [])
 
-    render() {
-        return (
-            <div className="comments">
-                {this.props.comments.map( comment =>  
-                    <CommentListItem 
-                    users={this.props.users}
-                    currentUser = {this.props.currentUser}
-                    comment={comment} 
+    return (
+        <div className="comments">
+            {props.comments.map(comment =>
+                <CommentListItem
+                    users={props.users}
+                    currentUser={props.currentUser}
+                    comment={comment}
                     key={comment._id}
-                    destroyComment={this.props.destroyComment}/>
-                )}
-                <CommentFormContainer postId={this.props.post._id}/>
-            </div>
-        )
-    }   
+                    destroyComment={props.destroyComment} />
+            )}
+            <CommentFormContainer postId={props.post._id} />
+        </div>
+    )
 }
-
-export default Comments;
