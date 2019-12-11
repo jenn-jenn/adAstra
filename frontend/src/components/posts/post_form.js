@@ -6,7 +6,7 @@ class PostForm extends React.Component {
  
         this.state = {
             title: '',
-            body: ''
+            body: '',
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -35,9 +35,13 @@ class PostForm extends React.Component {
               this.props.uploadImage(image)
             }
           })
+          .then( () => {
+            if(this.props.errors.length === 0) {
+              this.setState({title: '', body: ''})
+            }
+          })
           .then( () => this.props.fetchPosts())
-        this.props.clearErrors()
-        this.setState({title: '', body: '', errors:[]});
+          this.props.clearErrors()
     }
 
   renderErrors() {
