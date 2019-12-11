@@ -145,9 +145,24 @@
 }
 
 .searchList {
-  top: 50px;
   position: absolute;
+  width: 250px;
+  top: 60px;
+  right: 18%;
   display: flex;
   flex-direction: column;
-  background: blue;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  padding-bottom: 10px;
+}
+
+.searchList a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.searchList a:hover {
+  opacity: 0.5;
 }
