@@ -7,8 +7,7 @@ class NavBar extends React.Component {
     super(props);
     
     this.state = {
-      searchInput: "",
-      cosmicObjects: [],
+      searchInput: ""
     };
     
     this.logoutUser = this.logoutUser.bind(this);
@@ -17,6 +16,7 @@ class NavBar extends React.Component {
     this.logoLink = this.logoLink.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleEnter = this.handleEnter.bind(this);
+    this.handleStarClick = this.handleStarClick.bind(this);
     this.update = this.update.bind(this);
   }
 
@@ -61,12 +61,16 @@ class NavBar extends React.Component {
     }
   }
 
+  handleStarClick() {
+    this.setState({ searchInput: '' })
+  }
+
   searchBar() {
     let cosmicObjects;
     let display = "";
     if (this.props.cosmic.length !== undefined && this.state.searchInput !== "") {
       cosmicObjects = this.props.cosmic.filter(el => el.target.name.toLowerCase().includes(this.state.searchInput))
-      display = cosmicObjects.length > 0 ? cosmicObjects.sort().map((el, i) => <div key={i}>{el.target.name}</div>) : ""
+      display = cosmicObjects.length > 0 ? cosmicObjects.sort().map((el, i) => <a onClick={this.handleStarClick} href={`#/cosmicobjects/${el.target.name}`} key={i}>{el.target.name}</a>) : ""
     }
     if (display.length === 0) display = "";
 
@@ -83,6 +87,7 @@ class NavBar extends React.Component {
               type="text"
               onChange={this.update("searchInput")}
               placeholder="Search for the stars..."
+              autoComplete="off"
               onKeyDown={this.handleEnter}
             />
           </form>
@@ -139,6 +144,8 @@ class NavBar extends React.Component {
     }
   }
   
+
+
   render() {
 
     return (
