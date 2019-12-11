@@ -4,7 +4,7 @@ import {
   destroyComment
 } from "../../actions/comment_actions";
 import { fetchUsers } from "../../actions/user_actions";
-import Comments from './comments';
+import {Comments} from './comments';
 
 const mapStateToProps = state => {
     return {

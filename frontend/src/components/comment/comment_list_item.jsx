@@ -1,42 +1,37 @@
 import React from "react";
 
-class CommentListItem extends React.Component {
-  constructor(props) {
-    super(props)
-    this.handleDelete = this.handleDelete.bind(this);
-  }
-
-  handleDelete(e){
+export const CommentListItem = props => {
+  const handleDelete = (e) => {
     e.preventDefault();
-    this.props.destroyComment(e.target.id)
+    props.destroyComment(e.target.id)
   }
 
-  render() {
-    let deletebutton = this.props.currentUser.id === this.props.comment.userId ? 
-      <i onClick={this.handleDelete}
-        id={this.props.comment._id}
-        className="fa fa-trash"/>
-      : "";
+  const date = new Date(props.comment.date);
 
-    const date = new Date(this.props.comment.date);
-    return (
-      <div className="comment">
-        <div className="comment-header">
-          <div className="comment-user">
-            <i className="fas fa-user-circle" />
-            {this.props.users[this.props.comment.userId].handle}
-          </div>
-        
-            <div className="comment-footer">
-              {deletebutton}
-              <h4>Posted {`${date.getHours()}:${date.getMinutes()} ${date.toDateString()}`}</h4>
-            </div>
+    const deletebutton = (props) => {
+      let deletebutton = props.currentUser.id === props.comment.userId ? <i onClick={handleDelete}
+        id={props.comment._id}
+        className="fa fa-trash" />
+        : "";
+      return deletebutton;
+    }
+
+
+  return (
+    <div className="comment">
+      <div className="comment-header">
+        <div className="comment-user">
+          <i className="fas fa-user-circle" />
+          {props.users[props.comment.userId].handle}
         </div>
 
-        <span>{this.props.comment.body}</span>
+        <div className="comment-footer">
+          {deletebutton(props)}
+          <h4>Posted {`${date.getHours()}:${date.getMinutes()} ${date.toDateString()}`}</h4>
+        </div>
       </div>
-    );
-  }
-}
 
-export default CommentListItem;
+      <span>{props.comment.body}</span>
+    </div>
+  );
+}
