@@ -8,7 +8,7 @@ class EventForm extends React.Component {
         this.state = {
             title: '',
             date: '',
-            address: "",
+            address: '',
             body: '',
             connectionCode: props.connectionCode
         }
@@ -16,7 +16,20 @@ class EventForm extends React.Component {
     }
 
     componentDidMount() {
-        this.getLocation()
+        this.getLocation();
+        document.querySelector('.event-form-submit').addEventListener('click', () => {
+            const modal = document.querySelector('.event-form-modal')
+            debugger
+            if (!modal.className.includes('hidden')) modal.classList.add('hidden');
+        });
+
+        document.querySelector('.event-form-cancel').addEventListener('click', () => {
+            document.querySelector('.event-form-modal').classList.add('hidden');
+        })
+
+        document.querySelector('.fa.fa-times.eventx').addEventListener('click', () => {
+            document.querySelector('.event-form-modal').classList.add('hidden');
+        })
     }
 
     getLocation() {
@@ -70,7 +83,7 @@ class EventForm extends React.Component {
                                 <input type="date"
                                     value={this.state.date}
                                     onChange={this.updateDate("date")}
-                                    placeholder="ex: December-5-2019"
+                                    placeholder="ex: 2019-12-25"
                                     >
                                 </input>
                                 <br />
@@ -98,7 +111,7 @@ class EventForm extends React.Component {
                                 <br />
                             </div>
                             <div className="event-form-buttons">
-                                <input onClick={this.handleSubmit} className="event-form-update" type="submit" value="Update" />
+                                <input className="event-form-cancel" type="submit" value="Cancel" />
                                 <input onClick={this.handleSubmit} className="event-form-submit" type="submit" value="Submit" />       
                             </div>
                         </form>
