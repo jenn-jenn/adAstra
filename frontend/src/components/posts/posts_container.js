@@ -14,7 +14,7 @@ const msp = (state) => {
 const mdp = (dispatch) => {
     return {
         fetchPosts: () => dispatch(fetchPosts()),
-        fetchUsers: () => dispatch(fetchUsers())
+        fetchUsers: () => dispatch(fetchUsers()),
     }
 };
 

@@ -7,7 +7,8 @@ class NavBar extends React.Component {
     super(props);
     
     this.state = {
-      searchInput: ""
+      searchInput: "",
+      cosmicObjects: [],
     };
     
     this.logoutUser = this.logoutUser.bind(this);
@@ -61,9 +62,21 @@ class NavBar extends React.Component {
   }
 
   searchBar() {
+    let cosmicObjects;
+    let display = "";
+    if (this.props.cosmic.length !== undefined && this.state.searchInput !== "") {
+      cosmicObjects = this.props.cosmic.filter(el => el.target.name.toLowerCase().includes(this.state.searchInput))
+      display = cosmicObjects.length > 0 ? cosmicObjects.sort().map((el, i) => <div key={i}>{el.target.name}</div>) : ""
+    }
+    if (display.length === 0) display = "";
+
+    
     if (this.props.loggedIn) {
       return (
         <div className="search-overlay">
+          <div className="searchList">
+            {display}
+          </div>
           <form action="post" onSubmit={this.handleSubmit}>
             <input
               id="feature-filter"
@@ -74,6 +87,7 @@ class NavBar extends React.Component {
             />
           </form>
           <i className="fa fa-search" onClick={this.handleSubmit} />
+       
         </div>
       );
     }
@@ -126,12 +140,14 @@ class NavBar extends React.Component {
   }
   
   render() {
+
     return (
       <div className="nav">
         <div className="nav-header-components">{this.logoLink()}</div>
         {this.navLink()}
         {this.searchBar()}
         {this.getLinks()}
+
       </div>
     );
   }

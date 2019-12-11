@@ -19,7 +19,7 @@ const receiveImage = (image) => {
     };
 };
 
-export const receivePostImages = images => {
+const receivePostImages = images => {
     return ({
         type: RECEIVE_POST_IMAGES,
         images

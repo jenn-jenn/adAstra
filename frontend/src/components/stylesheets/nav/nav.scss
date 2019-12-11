@@ -143,3 +143,11 @@
     display: none;
   }
 }
+
+.searchList {
+  top: 50px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background: blue;
+}
