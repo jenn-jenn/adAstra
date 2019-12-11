@@ -13,25 +13,25 @@ router.get('/', (req, res) => {
             events.map( event => payload[event.date] = event);
             return res.json(payload)
         })
-        .catch(err => res.status(404).json({ noeventsfound: 'No events found' }));
+        .catch(err => res.status(404).json({ msg: 'No events found' }));
 });
 
 //get an event by user
-router.get('/user/:user_id', (req, res) => {
-    Event.find({ user: req.params.user_id })
-        .then(events => res.json(events))
-        .catch(err =>
-            res.status(404).json({ noeventsfound: 'No events found from that user' }
-            )
-        );
-});
+// router.get('/user/:user_id', (req, res) => {
+//     Event.find({ user: req.params.user_id })
+//         .then(events => res.json(events))
+//         .catch(err =>
+//             res.status(404).json({ noeventsfound: 'No events found from that user' }
+//             )
+//         );
+// });
 
 //get events by date
 router.get("/:date", (req, res) => {
     Event.find({ date: req.params.date })
         .then(events => res.json(events))
         .catch(err =>
-            res.status(404).json({ noeventsfound: 'No events found on that date' })
+            res.status(404).json({ msg: 'No events found on that date' })
         );
 });
 
@@ -48,31 +48,33 @@ router.post('/new',
             authorId: req.user.id,
         });
 
-        newEvent.save().then(event => res.json(event));
+        newEvent.save()
+            .then(event => res.json(event))
+            .catch(err => res.status(400).json({ msg: 'Event must have a title, date, location, and description.' }));
     }
 );
 
 //edit an event by event id
-router.patch('/:id', (req, res) => {
-    Event.findById(req.params.id)
-        .then(event => {
-            event.title = validText(req.body.title) ? req.body.title : event.title;
-            event.date = (req.body.date === undefined) ? event.date : req.body.date;
-            event.authorId = validText(req.body.authorId) ? req.body.authorId : event.authorId;
+// router.patch('/:id', (req, res) => {
+//     Event.findById(req.params.id)
+//         .then(event => {
+//             event.title = validText(req.body.title) ? req.body.title : event.title;
+//             event.date = (req.body.date === undefined) ? event.date : req.body.date;
+//             event.authorId = validText(req.body.authorId) ? req.body.authorId : event.authorId;
 
-            event.save().then(event => res.json(event));
-        });
-});
+//             event.save().then(event => res.json(event));
+//         });
+// });
 
 //delete an event by id
-router.delete('/:id', (req, res) => {
-    Event.findById(req.params.id)
-        .then(event => {
-            event.remove().then(event => res.json(event));
-        })
-        .catch(err =>
-            res.status(404).json({ noeventfound: 'No event found with that ID' })
-        );
-});
+// router.delete('/:id', (req, res) => {
+//     Event.findById(req.params.id)
+//         .then(event => {
+//             event.remove().then(event => res.json(event));
+//         })
+//         .catch(err =>
+//             res.status(404).json({ noeventfound: 'No event found with that ID' })
+//         );
+// });
 
 module.exports = router;

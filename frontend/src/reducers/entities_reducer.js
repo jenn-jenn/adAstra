@@ -1,14 +1,22 @@
 import { combineReducers } from "redux";
-import CosmicObjectsReducer from "./cosmic_objects_reducer";
-import calendarsReducer from "./calendar_reducer";
-import PostReducer from "./posts_reducer";
-import ImageReducer from "./image_reducer";
-import EventReducer from "./events_reducer";
+import cosmicObjects from "./cosmic_objects_reducer";
+import calendars from "./calendar_reducer";
+import posts from "./posts_reducer";
+import images from "./image_reducer";
+import events from "./events_reducer";
+import comments from "./comment_reducer";
+import users from "./users_reducer";
+import weather from "./weather_reducer";
+import sunset from "./sunset_reducer";
 
 export default combineReducers({
-  calendars: calendarsReducer,
-  cosmicObjects: CosmicObjectsReducer,
-  posts: PostReducer,
-  images: ImageReducer,
-  events: EventReducer
+  calendars,
+  cosmicObjects,
+  posts,
+  images,
+  events,
+  comments,
+  users,
+  weather,
+  sunset
 });
