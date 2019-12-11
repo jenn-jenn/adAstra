@@ -13,13 +13,13 @@ class EventForm extends React.Component {
             connectionCode: props.connectionCode
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleCancel = this.handleCancel.bind(this);
     }
 
     componentDidMount() {
         this.getLocation();
         document.querySelector('.event-form-submit').addEventListener('click', () => {
             const modal = document.querySelector('.event-form-modal')
-            debugger
             if (!modal.className.includes('hidden')) modal.classList.add('hidden');
         });
 
@@ -61,59 +61,55 @@ class EventForm extends React.Component {
             .then(() => this.props.history.push(`/events/${this.state.date}`));
     }
 
+    handleCancel(e) {
+        e.preventDefault();
+    }
+
     render() {
         return (
             <div className="eventCalendar">
                 <h1>Welcome to the adAstra Event Form!</h1>
                     <div className="event-form-container">
                         <form className="event-form" >
+                            <h2>Create Event</h2>
                             <div className="event-title">
-                                <h3>Event Title:</h3>
                                 <input type="text"
                                     value={this.state.title}
                                     onChange={this.update("title")}
-                                    placeholder="ex: Stargazing Night"
+                                    placeholder="Title (ex: Stargazing Night)"
                                     maxLength="50">
                                 </input>
-                                <br />
                             </div>
 
                             <div className="event-date">
-                                <h3>Event Date:</h3>
                                 <input type="date"
                                     value={this.state.date}
                                     onChange={this.updateDate("date")}
-                                    placeholder="ex: 2019-12-25"
                                     >
                                 </input>
-                                <br />
                             </div>
 
                             <div className="event-address">
-                                <h3>Event Address:</h3>
                                 <input type="text"
                                     value={this.state.address}
                                     onChange={this.update("address")}
-                                    placeholder="ex: S.F., CA"
+                                    placeholder="Location (ex: 825 Battery St, San Francisco, CA)"
                                     maxLength="50">
                                 </input>
-                                <br />
                             </div>
 
                             <div className="event-body">
-                                <h3>Event Body:</h3>
                                 <input type="text"
                                     value={this.state.body}
-                                    onChange={this.update("body")}  
-                                    placeholder="ex: Stargazing with friends in the city!"   
+                                    onChange={this.update("body")}
+                                    placeholder="Description (ex: Stargazing with friends in the city!)"
                                     maxLength="140">
                                 </input>
-                                <br />
                             </div>
-                            <div className="event-form-buttons">
-                                <input className="event-form-cancel" type="submit" value="Cancel" />
+                            <span className="event-form-buttons">
+                                <input onClick={this.handleCancel} className="event-form-cancel" type="submit" value="Cancel" />
                                 <input onClick={this.handleSubmit} className="event-form-submit" type="submit" value="Submit" />       
-                            </div>
+                            </span>
                         </form>
                     </div>
             </div>

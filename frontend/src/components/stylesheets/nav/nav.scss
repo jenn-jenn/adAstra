@@ -131,6 +131,19 @@
   cursor: pointer;
 }
 
+@media (max-width: 1200px) {
+  .nav-links span {
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
+}
+
+@media (max-width: 1000px) {
+  .nav-links span {
+    display: none;
+  }
+}
+
 .searchList {
   top: 50px;
   position: absolute;

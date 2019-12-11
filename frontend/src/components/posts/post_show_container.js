@@ -8,7 +8,7 @@ const msp = (state, ownProps) => {
   return {
     posts: state.entities.posts.all,
     postId: ownProps.match.params.postId,
-    users: state.users
+    users: state.entities.users
   };
 };
 

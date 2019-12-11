@@ -5,6 +5,8 @@ module.exports = function validateEventInput(data) {
     let errors = {};
 
     data.title = validText(data.title) ? data.title : "";
+    data.date = validText(data.date) ? data.date : "";
+    data.address = validText(data.address) ? data.address : "";
     data.body = validText(data.body) ? data.body : "";
     
 
@@ -12,14 +14,18 @@ module.exports = function validateEventInput(data) {
         errors.title = "Title must be between 3 and 50 characters";
     }
 
-    if (Validators.isEmpty(data.title)) {
+    if (Validator.isEmpty(data.title)) {
         errors.title = "Title is required";
     }
 
     if (Validator.isEmpty(data.date)) {
-        errors.date = "Date required";
+        errors.date = "Date is required";
     }
-    
+
+    if (Validator.isEmpty(data.address)) {
+        errors.address = "Address is required";
+    }
+
     if (!Validator.isLength(data.body, {min: 5, max: 140})) {
         errors.body = "Body must be between 5 and 140 characters";
     }

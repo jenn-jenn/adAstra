@@ -70,11 +70,11 @@ footer {
     transform: translate(-50%, -50%);
     z-index: 6;
 
-    background: black;
+    background: rgba(0, 0, 0, 0.95);
     box-shadow: 0px 0px 10px grey;
     border-radius: 20px;
 
-    width: 800px;
+    width: 700px;
     height: 550px;
 }
 
@@ -104,5 +104,5 @@ footer {
 }
 
 .hidden {
-  display: none;
+    display: none;
 }

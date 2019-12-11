@@ -48,7 +48,7 @@ class Map extends React.Component {
 
       function error(err) {
         console.warn(`ERROR(${err.code}): ${err.message}`);
-        alert("There was an error in retrieving your location. Unable to retrieve star, moon, and sun information.");
+        alert("Error in retrieving your location. Please allow location share.");
       }
 
       navigator.geolocation.getCurrentPosition(success, error, options);
