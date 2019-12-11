@@ -36,7 +36,7 @@ router.post('/new',
         if (!isValid) {
             return res.status(400).json(errors);
         }
-
+        console.log(req);
         const newEvent = new Event({
             title: req.body.title,
             date: req.body.date,
