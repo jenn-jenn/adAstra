@@ -29,11 +29,13 @@ class CosmicObjectsIndex extends React.Component {
 
                 return (
                   <li key={i} className="star">
-                    <div style={imgStyle}>
-                      <h3>
-                        <Link to={`/cosmicobjects/${star.target.name.split(" ").join("").toLowerCase()}`}>{star.target.name}</Link>
-                      </h3>
-                    </div>
+                    <Link to={`/cosmicobjects/${star.target.name.split(" ").join("").toLowerCase()}`}>
+                      <div style={imgStyle}>
+                        <h3>
+                          {star.target.name}
+                        </h3>
+                      </div>
+                    </Link>
                   </li>
                 )})}
               </ul>

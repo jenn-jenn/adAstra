@@ -48,7 +48,17 @@
   transition: 0.3s;
 }
 
-.star a:hover {
+.star li {
+  border-radius: 20px;
+}
+
+.star div {
+  transition: 0.3s;
+}
+
+.star div:hover {
   color: white;
   text-shadow: 1px 1px 3px white;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px white;
 }
