@@ -75,7 +75,8 @@ class PostForm extends React.Component {
               />
               <div className="image-upload">
                 <label htmlFor="file-input">
-                  <i className="fas fa-image"/>
+                  <i className="fas fa-image"></i>
+                  Attach Image
                 </label>
                 <input id="file-input" type="file" />
               </div>

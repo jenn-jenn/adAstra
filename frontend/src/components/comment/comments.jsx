@@ -4,23 +4,24 @@ import CommentFormContainer from './comment_form_container';
 import '../stylesheets/forum/comments.scss';
 
 export const Comments = props => {
+    const { fetchPostComments, fetchUsers, destroyComment, post, comments, users, currentUser } = props
 
     useEffect(() => {
-        props.fetchUsers()
-        .then(() => props.fetchPostComments(props.post._id))
-    }, [])
+        fetchUsers()
+        .then(() => fetchPostComments(post._id))
+    }, [fetchPostComments, fetchUsers, post])
 
     return (
         <div className="comments">
-            {props.comments.map(comment =>
+            {comments.map(comment =>
                 <CommentListItem
-                    users={props.users}
-                    currentUser={props.currentUser}
+                    users={users}
+                    currentUser={currentUser}
                     comment={comment}
                     key={comment._id}
-                    destroyComment={props.destroyComment} />
+                    destroyComment={destroyComment} />
             )}
-            <CommentFormContainer postId={props.post._id} />
+            <CommentFormContainer postId={post._id} />
         </div>
     )
 }
