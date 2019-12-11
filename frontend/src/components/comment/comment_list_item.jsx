@@ -8,14 +8,11 @@ export const CommentListItem = props => {
 
   const date = new Date(props.comment.date);
 
-    const deletebutton = (props) => {
-      let deletebutton = props.currentUser.id === props.comment.userId ? <i onClick={handleDelete}
-        id={props.comment._id}
-        className="fa fa-trash" />
-        : "";
-      return deletebutton;
-    }
-
+  const deletebutton = props.currentUser.id === props.comment.userId ? 
+  <i onClick={handleDelete}
+      id={props.comment._id}
+      className="fa fa-trash" />
+    : "";
 
   return (
     <div className="comment">
@@ -26,7 +23,7 @@ export const CommentListItem = props => {
         </div>
 
         <div className="comment-footer">
-          {deletebutton(props)}
+          {deletebutton}
           <h4>Posted {`${date.getHours()}:${date.getMinutes()} ${date.toDateString()}`}</h4>
         </div>
       </div>
