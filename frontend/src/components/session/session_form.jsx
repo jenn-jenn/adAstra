@@ -21,7 +21,7 @@ class SessionForm extends React.Component {
   componentDidMount() {
     this.props.clearErrors();
   }
-i
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
       this.props.history.push("/main");
