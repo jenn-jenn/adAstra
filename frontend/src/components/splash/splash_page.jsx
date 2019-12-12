@@ -17,15 +17,10 @@ class SplashPage extends React.Component {
         <div id="cover"><img src="/shooting-star.gif" alt="shooting-star"/></div>
           <h2>adAstra</h2>
             <div className="splash-page-intro">
-              <p><em>Let's plan stargazing events and meet other stargazers!</em></p>
-            </div>
-            <div className="splash-page-buttons">
-              <Link to='/login' className="loginbutton">
-                Log In
-              </Link>
-              <Link to='/signup' className="signupbutton">
-                Sign Up
-              </Link>
+              <p><em>Join our community and meet other stargazers!</em></p>
+              <p>Built to reconnect with the ebb and flow of space,<br/>
+              adAstra helps you geolocate the best sites<br/>
+              for stargazing and meteor showers.</p>
             </div>
       </div>
 

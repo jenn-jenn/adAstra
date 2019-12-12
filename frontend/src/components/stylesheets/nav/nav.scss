@@ -1,7 +1,7 @@
 .nav {
   height: 70px;
   width: 100%;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: bold;
   color: rgb(248, 229, 229);
 
@@ -23,7 +23,7 @@
 .nav-header-components {
   h2 {
     padding: 20px;
-    font-size: 32px;
+    font-size: 40px;
     letter-spacing: 1.3px;
     color: white;
     text-shadow: 1px 1px 3px rgb(255, 255, 255);
@@ -95,7 +95,11 @@
   color: white;
 }
 
-.fa-users:hover, .fa-star:hover, .fa-calendar-plus:hover, .fa-comments:hover, .nav-links a:hover, .nav-links span:hover {
+.nav-links {
+  transition: 0.3s;
+}
+
+.nav-links div:hover{
   cursor: pointer;
   opacity: 0.5;
 }
@@ -120,7 +124,6 @@
   margin: 10px;
   padding: 8px 20px;
   border-radius: 10px;
-  font-size: 15px;
   transition: .3s;
   color: white;
   outline: none;
@@ -155,6 +158,7 @@
   background: rgba(0, 0, 0, 0.8);
   border-radius: 20px;
   padding-bottom: 10px;
+  font-size: 15px;
 }
 
 .searchList a {

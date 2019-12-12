@@ -4,7 +4,7 @@ body, html {
 }
 
 .splash-main {
-  top: 200px;
+  top: 125px;
   position: relative;
   align-items: center;
   flex-direction: column;
@@ -33,6 +33,7 @@ body, html {
   background-color: black;
   text-decoration: none;
   padding: 10px;
+  font-size: 20px;
 }
 
 .loginbutton, .signupbutton {
@@ -61,7 +62,7 @@ body, html {
 }
 
 #cover {
-  top: -200px;
+  top: -50px;
   position: relative;
 }
 
@@ -80,7 +81,11 @@ body, html {
 }
 
 .splash-page-intro {
-  font-size: 25px;
+  font-size: 30px;
   color: white;
   font-weight: 20;
+}
+
+.splash-page-intro p:first-child {
+  font-size: 35px;
 }

@@ -7,9 +7,6 @@ const EventErrorReducer = (oldState = [], action) => {
     case RECEIVE_EVENT_ERRORS:
       return action.errors;
     case CLEAR_ERRORS:
-      debugger
-      // const newState = Object.assign({}, oldState);
-      // delete newState.errors;
       return [];
     default:
       return oldState;

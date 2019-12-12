@@ -13,7 +13,6 @@ class EventForm extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
-        debugger
     }
 
     componentDidMount() {

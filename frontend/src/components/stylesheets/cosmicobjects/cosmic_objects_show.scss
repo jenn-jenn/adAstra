@@ -31,19 +31,18 @@
   border-radius: 20px;
   min-width: 550px;
   min-height: 400px;
-  margin: 10px;
-  padding: 10px;
+  padding: 20px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: 18px;
 }
 
 .star-info-container img {
   align-self: center;
   border-radius: 20px;
-
 }
 
 .star-links {
@@ -57,7 +56,6 @@
   margin: 10px;
   padding: 8px 20px;
   border-radius: 10px;
-  font-size: 15px;
   transition: .3s;
   color: white;
   outline: none;

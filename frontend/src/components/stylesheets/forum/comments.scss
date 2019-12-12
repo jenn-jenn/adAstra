@@ -13,6 +13,7 @@
   overflow-wrap: break-word;
   word-wrap: break-word;
   hyphens: auto;
+  font-size: 15px;
 }
 
 .comment-header {
@@ -27,7 +28,8 @@
   flex-direction: row;
   align-items: center;
   text-transform: capitalize;
-  font-size: 15px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .comment-footer {
@@ -35,9 +37,14 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  font-family: 'Alata', sans-serif;
 }
 
 .comment-footer * {
   margin-left: 5px;
+}
+
+.comment span {
+  font-family: 'Alata', sans-serif;
 }
 
