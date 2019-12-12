@@ -38,6 +38,8 @@ class Weather extends React.Component{
         tempMin = Math.floor((tempMin - 273.15) * (9/5) + 32)
         tempMax = Math.floor((tempMax - 273.15) * (9/5) + 32)
         
+      if (tempMin < -100 || tempMax < -100) return <div className="load-weather">Share your location. Loading Weather <i class="fas fa-spinner fa-pulse"></i></div>;
+
         return (
           <div className="weather">
             <div className="weather-content">
@@ -51,11 +53,19 @@ class Weather extends React.Component{
               </div>
             </div>
             <div className="weather-content forecast">
-              <i className="fas fa-map-marker-alt"/>
-                <span>{name}  |  
-                High: {tempMax} °F  |  
-                Low: {tempMin} °F  |  
-                Summary: {cloudPerc}
+                <span>
+                High: {tempMax} °F
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Low: {tempMin} °F
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                {cloudPerc}
+                </span>
+                <br/>
+                <span>
+                <i className="fas fa-map-marker-alt"/>
+                {name}
                 </span>
               </div>
           </div>

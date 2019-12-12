@@ -23,9 +23,6 @@ const App = () => (
       <NavBarContainer />
     </header>
     <Switch>
-      <AuthRoute exact path="/login" component={LoginFormContainer} />
-      <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <AuthRoute exact path="/" component={SplashPage} />
       <ProtectedRoute exact path="/main" component={MainPageContainer} />
       <ProtectedRoute exact path="/posts" component={PostsContainer} />
       <ProtectedRoute exact path="/posts/:postId" component={PostShowContainer} />
@@ -33,8 +30,11 @@ const App = () => (
       <ProtectedRoute exact path="/events/:date" component={DateShowContainer} />
       <ProtectedRoute exact path="/cosmicobjects" component={CosmicObjectContainer} />
       <ProtectedRoute exact path="/cosmicobjects/:star" component={CosmicObjectsShow} />
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
+      <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <AuthRoute exact path="/" component={SplashPage} />
     </Switch>
-    <ProtectedRoute path="/" component={EventFormModal} />
+    <Route path="/" component={EventFormModal} />
     <Route exact path="/about" component={About} />
     <Route exact path="/main" component={FooterContainer} />
     

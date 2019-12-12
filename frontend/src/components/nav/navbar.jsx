@@ -31,6 +31,7 @@ class NavBar extends React.Component {
       this.props.logout();
     };
   }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.history.push(`/cosmicobjects/${this.state.searchInput}`);
@@ -162,7 +163,6 @@ class NavBar extends React.Component {
         {this.navLink()}
         {this.searchBar()}
         {this.getLinks()}
-
       </div>
     );
   }

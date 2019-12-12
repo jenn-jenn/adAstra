@@ -1,5 +1,4 @@
 .weather{
-    // margin: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,14 +11,17 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-evenly;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .weather-content.forecast{
     margin: 10px;
-    font-size: 12px;
     text-transform: capitalize;
 
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
@@ -40,4 +42,16 @@
     font-size: 15px;
     padding: 0;
     margin: 0;
+}
+
+.load-weather {
+    height: 125px;
+    text-align: center;
+    line-height: 125px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.fa-spinner{
+    color: white;
 }

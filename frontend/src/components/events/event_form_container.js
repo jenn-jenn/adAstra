@@ -5,7 +5,6 @@ import { createNewEvent, fetchDateEvents, clearErrors } from '../../actions/even
 import { fetchLocation } from '../../actions/map_actions';
 
 const mSTP = (state) => {
-    // debugger
     return {
         errors: Object.values(state.errors.event)
     };

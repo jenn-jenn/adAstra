@@ -1,11 +1,11 @@
 .main {    
-    top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 800px;
     min-width: 800px;
+    margin-top: 75px;
 }
 
 .main h2 {
@@ -13,7 +13,6 @@
     color: rgb(255, 255, 255);
     font-size: 100px;
     margin: 0;
-    margin-top: 75px;
 }
 
 .main p {

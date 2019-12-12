@@ -10,7 +10,6 @@
 }
 
 .post-show-content {
-  border: 1px solid grey;
   border-radius: 20px;
   box-sizing: border-box;
   min-width: 550px;
@@ -31,24 +30,29 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  font-family: 'Alata', sans-serif;
 }
 
 .post-show-footer h4 {
   margin-right: 10px;
 }
 
+.post-show-post {
+  font-family: 'Alata', sans-serif;
+}
+
 .post-show h1 {
   text-transform: capitalize;
-  font-size: 24px;
+  font-size: 30px;
 }
 
 .post-show h4 {
   text-transform: capitalize;
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .post-show p {
-  font-size: 16px;
+  font-size: 18px;
   padding: 0px 10px 0px 10px;
 }
 

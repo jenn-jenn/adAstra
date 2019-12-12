@@ -1,12 +1,3 @@
-body {
-	background-image:  url('sky.jpg');
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
-}
-
-
 .flex-center {
   display: flex;
   flex-direction: column;
@@ -31,7 +22,7 @@ body {
 }
 
 .logo {
-  font-size: 75px;
+  font-size: 85px;
   color: rgb(255, 255, 255);
 
   height: 60px;
@@ -43,7 +34,7 @@ body {
 
 .session-link {
   text-transform: uppercase;
-  font-size: 130%;
+  font-size: 25px;
   margin: 20px;
   text-decoration: none;
 }
@@ -77,6 +68,7 @@ body {
   color: grey;
   border-radius: 10px;
   outline: none;
+  font-family: 'Alata', sans-serif;
 }
 
 .submit {
@@ -87,6 +79,10 @@ body {
   outline: none;
   border: 1px solid #222121;
   transition: 0.3s;
+}
+
+.signup, .login {
+  font-family: 'Alegreya Sans SC', sans-serif;
 }
 
 .submit:hover {

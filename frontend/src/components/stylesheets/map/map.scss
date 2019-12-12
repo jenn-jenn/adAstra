@@ -2,8 +2,11 @@
   width: 500px;
   height: 500px;
   overflow: hidden;
-  margin: 0px 40px 30px 40px;
+  margin: 20px 40px 30px 40px;
   position: relative;
+
+  border-top: 1px solid white;
+  padding-top: 40px;
 }
 
 #map {
@@ -31,7 +34,7 @@
 .map-modal {
   position: absolute;
   border-radius: 10px;
-  top: 5%;
+  top: 12%;
   left: 5%;
   width: 450px;
   height: 450px;

@@ -43,15 +43,11 @@ class Map extends React.Component {
         maximumAge: 0
       };
 
-      function success(pos) {
-      }
-
       function error(err) {
-        console.warn(`ERROR(${err.code}): ${err.message}`);
-        alert("Error in retrieving your location. Please allow location share.");
+        alert("Share your location for weather information.");
       }
 
-      navigator.geolocation.getCurrentPosition(success, error, options);
+      navigator.geolocation.getCurrentPosition(()=>{}, error, options);
 
       document.querySelectorAll('.marker').forEach(m => {
         m.addEventListener('click', (e) => {
@@ -75,8 +71,9 @@ class Map extends React.Component {
       <div id="map-container">
         <div className="map-modal">
           <i className="fa fa-times mapx" />
-          <p>
-            <img src="./location_icon.png" alt="icon" /> Click to find viewing radius.<br />
+          <p><h3>Constellation Map</h3>
+            <img src="./location_icon.png" alt="icon" />
+            Click to find viewing radius.<br />
             Hover over marker for name.<br />
             Click marker for more info.
           </p>
