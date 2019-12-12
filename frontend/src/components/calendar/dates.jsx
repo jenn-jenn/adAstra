@@ -51,7 +51,9 @@ class Dates extends React.Component {
         })
 
         document.querySelector('.create-event-link').addEventListener('click', () => {
-            document.querySelector('.event-form-modal').classList.remove('hidden');
+            document.querySelector('.event-modal-container ').classList.remove('hidden');
+            document.querySelector('.event-form-modal ').classList.remove('hidden');
+
         })
         
     }

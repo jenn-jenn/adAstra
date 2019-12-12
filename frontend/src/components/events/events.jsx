@@ -6,6 +6,7 @@ class Events extends React.Component {
     componentDidMount() {
         this.props.fetchUsers()
             .then(() => this.props.fetchDateEvents(this.props.date._id))
+
     }
 
     render() {
