@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from 'react-router-dom';
 import '../stylesheets/session/splash_page.scss';
 
 class SplashPage extends React.Component {
