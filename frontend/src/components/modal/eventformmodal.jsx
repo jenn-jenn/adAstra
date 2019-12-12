@@ -8,11 +8,7 @@ class EventFormModal extends React.Component {
         document.getElementsByClassName("event-modal-container")[0].addEventListener('click', () => {
             document.getElementsByClassName("event-modal-container")[0].classList.add('hidden');
             document.getElementsByClassName("event-form-modal")[0].classList.add('hidden');
-            // console.log('am i closing?')
         })
-        // document.querySelectorAll(".event-modal-container :not(.event-form-modal)").addEventListener('click', () =>{
-        //     document.querySelector(".event-modal-container").classList.add('hidden');
-        // })
     }
 
     render() {
