@@ -9,8 +9,7 @@ class EventForm extends React.Component {
             title: '',
             date: '',
             address: '',
-            body: '',
-            connectionCode: props.connectionCode
+            body: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCancel = this.handleCancel.bind(this);

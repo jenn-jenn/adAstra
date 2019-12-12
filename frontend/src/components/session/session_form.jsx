@@ -56,7 +56,7 @@ class SessionForm extends React.Component {
       if (i < demoEmail.length) {
         document.getElementById("email").value += demoEmail.charAt(i);
         i++;
-        timeout = setTimeout(typeUser, 150);
+        timeout = setTimeout(typeUser, 100);
       } else {
         clearTimeout(timeout)
       }
@@ -67,7 +67,7 @@ class SessionForm extends React.Component {
       if (j < demoPassword.length) {
         document.getElementById("password").value += demoPassword.charAt(j);
         j++;
-        timeout = setTimeout(typePw, 200);
+        timeout = setTimeout(typePw, 100);
       } else {
         clearTimeout(timeout)
       }
@@ -78,7 +78,7 @@ class SessionForm extends React.Component {
 
       window.setTimeout(() => {
         typePw();
-      }, 200)
+      }, 1500)
 
       window.setTimeout(() => {
         this.setState({ email: "guest@guest.com", password: "password"}, () => {
@@ -86,7 +86,7 @@ class SessionForm extends React.Component {
           this.props.login(user)
             .then(() => this.props.history.push("/main"));
         });
-      }, 2000)
+      }, 3000)
     }
   }
 

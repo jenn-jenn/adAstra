@@ -89,3 +89,38 @@
   opacity: 0.5;
   cursor: pointer;
 }
+
+
+.event-form-modal {
+  position: fixed;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 6;
+
+  background: #001c33ea;
+  // background: linear-gradient(to bottom right, rgb(42, 80, 85),#001c33);
+  border-radius: 20px;
+
+  width: 700px;
+  height: 550px;
+}
+
+.event-form-modal .event-form-container, .event-form-modal .event-form {
+  background: none;
+  box-shadow: none;
+
+  padding: 0;
+  margin: 0;
+  width: 800px;
+}
+
+.event-form-modal h1 {
+  display: none;
+}
+
+.fa.fa-times.eventx {
+  font-size: 30px;
+  top: 20px;
+  right: 20px;
+}
