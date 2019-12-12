@@ -49,6 +49,11 @@ class Dates extends React.Component {
                 this.props.history.push(`/events/${fullDate}`)
             })
         })
+
+        document.querySelector('.create-event-link').addEventListener('click', () => {
+            document.querySelector('.event-form-modal').classList.remove('hidden');
+        })
+        
     }
 
     hasEvent(date) {

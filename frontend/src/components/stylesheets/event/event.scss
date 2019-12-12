@@ -103,7 +103,7 @@
   border-radius: 20px;
 
   width: 700px;
-  height: 550px;
+  height: 600px;
 }
 
 .event-form-modal .event-form-container, .event-form-modal .event-form {
@@ -123,4 +123,8 @@
   font-size: 30px;
   top: 20px;
   right: 20px;
+}
+
+.errors {
+  color: red;
 }
