@@ -63,6 +63,10 @@ class Map extends React.Component {
       document.querySelector('.fa.fa-times.mapx').addEventListener('click', () => {
         document.querySelector('.map-modal').classList.add('hidden');
       })
+
+      document.querySelector('.map-modal').addEventListener('click', () => {
+        document.querySelector('.map-modal').classList.add('hidden');
+      })
     })
   }
 

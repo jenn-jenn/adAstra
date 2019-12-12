@@ -18,13 +18,14 @@ class EventForm extends React.Component {
 
     componentDidMount() {
         this.getLocation();
+        const modal = document.querySelector('.event-form-modal');
 
         document.querySelector('.event-form-cancel').addEventListener('click', () => {
-            document.querySelector('.event-form-modal').classList.add('hidden');
+            if (!modal.className.includes('hidden')) modal.classList.add('hidden');
         })
 
         document.querySelector('.fa.fa-times.eventx').addEventListener('click', () => {
-            document.querySelector('.event-form-modal').classList.add('hidden');
+            modal.classList.add('hidden');
         })
     }
 
@@ -77,11 +78,15 @@ class EventForm extends React.Component {
                     modal.classList.add('hidden');
                 }
             })
+            .then(() => this.props.fetchDateEvents(this.state.date))
+            .then(() => this.props.history.push(`/events/${this.state.date}`));
+
         this.props.clearErrors();
         this.setState({
             title: '',
             body: ''
         })
+            
     }
 
     handleCancel(e) {

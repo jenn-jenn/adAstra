@@ -1,16 +1,12 @@
 import { connect } from 'react-redux';
-import EventForm from './event_form';
-import { createNewEvent, clearErrors } from '../../actions/event_actions';
- 
+import EventForm from './event_form'; 
 import { withRouter } from 'react-router-dom';
+import { createNewEvent, fetchDateEvents, clearErrors } from '../../actions/event_actions';
 import { fetchLocation } from '../../actions/map_actions';
 
 const mSTP = (state) => {
-    let { id: authorId, connectionCode } = state.session.user;
-    debugger
+    // debugger
     return {
-        authorId,
-        connectionCode,
         errors: Object.values(state.errors.event)
     };
 };
@@ -18,6 +14,7 @@ const mSTP = (state) => {
 const mDTP = (dispatch) => {
     return {
         createNewEvent: (data) => dispatch(createNewEvent(data)),
+        fetchDateEvents: (date) => dispatch(fetchDateEvents(date)),
         fetchLocation: crd => dispatch(fetchLocation(crd)),
         clearErrors: () => dispatch(clearErrors())
     };

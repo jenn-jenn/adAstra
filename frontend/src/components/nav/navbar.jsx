@@ -33,7 +33,8 @@ class NavBar extends React.Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    this.props.history.push(`/cosmicobjects/${this.state.searchInput}`)
+    this.props.history.push(`/cosmicobjects/${this.state.searchInput}`);
+    this.setState({ searchInput: '' });
   }
 
   handleEnter(e) {
@@ -88,6 +89,7 @@ class NavBar extends React.Component {
               onChange={this.update("searchInput")}
               placeholder="Search for the stars..."
               autoComplete="off"
+              value={this.state.searchInput}
               onKeyDown={this.handleEnter}
             />
           </form>
@@ -144,7 +146,13 @@ class NavBar extends React.Component {
     }
   }
   
-
+  componentDidMount() {
+    if (this.props.loggedIn) {
+      document.querySelector('.create-event-icon').addEventListener('click', () => {
+        document.querySelector('.event-form-modal').classList.remove('hidden');
+      })
+    }
+  }
 
   render() {
 
