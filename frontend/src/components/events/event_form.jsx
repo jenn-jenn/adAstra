@@ -27,6 +27,8 @@ class EventForm extends React.Component {
         document.querySelector('.fa.fa-times.eventx').addEventListener('click', () => {
             modal.classList.add('hidden');
         })
+        
+
     }
 
 
@@ -79,7 +81,6 @@ class EventForm extends React.Component {
                 }
             })
             .then(() => this.props.fetchDateEvents(this.state.date))
-            .then(() => this.props.history.push(`/events/${this.state.date}`));
 
         this.props.clearErrors();
         this.setState({
@@ -91,6 +92,11 @@ class EventForm extends React.Component {
 
     handleCancel(e) {
         e.preventDefault();
+        this.props.clearErrors();
+        this.setState({
+            title: '',
+            body: ''
+        })
     }
 
     render() {
@@ -99,7 +105,7 @@ class EventForm extends React.Component {
             <div className="eventCalendar">
                 <h1>Welcome to the adAstra Event Form!</h1>
                     <div className="event-form-container">
-                        {this.renderErrors()}
+                        
                         <form className="event-form" >
                             <h2>Create Event</h2>
                             <div className="event-title">
@@ -136,6 +142,7 @@ class EventForm extends React.Component {
                                     maxLength="140">
                                 </input>
                             </div>
+                            {this.renderErrors()}
                             <span className="event-form-buttons">
                                 <input onClick={this.handleCancel} className="event-form-cancel" type="submit" value="Cancel" />
                                 <input onClick={this.handleSubmit} className="event-form-submit" type="submit" value="Submit" />       
