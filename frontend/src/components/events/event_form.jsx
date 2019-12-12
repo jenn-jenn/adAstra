@@ -17,17 +17,18 @@ class EventForm extends React.Component {
 
     componentDidMount() {
         this.getLocation();
+        const modal = document.querySelector('.event-form-modal');
+
         document.querySelector('.event-form-submit').addEventListener('click', () => {
-            const modal = document.querySelector('.event-form-modal')
             if (!modal.className.includes('hidden')) modal.classList.add('hidden');
         });
 
         document.querySelector('.event-form-cancel').addEventListener('click', () => {
-            document.querySelector('.event-form-modal').classList.add('hidden');
+            if (!modal.className.includes('hidden')) modal.classList.add('hidden');
         })
 
         document.querySelector('.fa.fa-times.eventx').addEventListener('click', () => {
-            document.querySelector('.event-form-modal').classList.add('hidden');
+            modal.classList.add('hidden');
         })
     }
 

@@ -13,7 +13,7 @@ const EventsReducer = ( oldState = {}, action ) => {
             case RECEIVE_DATE_EVENTS:
                 return action.events.data
             case RECEIVE_NEW_EVENT:
-                return Object.assign(oldState, action.event.data);
+                return Object.assign({}, oldState, action.event.data);
             default:
                 return oldState;
         }
