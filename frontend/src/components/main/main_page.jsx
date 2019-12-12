@@ -18,14 +18,12 @@ class MainPage extends React.Component {
     return (
       <div className="main">
         <h2>adAstra</h2>
-        <div className="content-wrapper">
-          <WeatherContainer />
-        </div>
-        <div className="main-content">
+        <div className="main-content">          
           <div className="content-wrapper">
-            <h3>Constellation Map</h3>
+            <WeatherContainer />
             <MapContainer />
           </div>
+
           <div className="content-wrapper">
             <DatesContainer events={this.props.events} />
           </div>
