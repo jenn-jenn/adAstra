@@ -1,4 +1,4 @@
-import { RECEIVE_EVENT_ERRORS } from "../actions/event_actions";
+import { RECEIVE_EVENT_ERRORS, CLEAR_ERRORS } from "../actions/event_actions";
 
 const EventErrorReducer = (oldState = [], action) => {
   Object.freeze(oldState);
@@ -6,9 +6,16 @@ const EventErrorReducer = (oldState = [], action) => {
   switch (action.type) {
     case RECEIVE_EVENT_ERRORS:
       return action.errors;
+    case CLEAR_ERRORS:
+      debugger
+      // const newState = Object.assign({}, oldState);
+      // delete newState.errors;
+      return [];
     default:
       return oldState;
   }
 };
+
+
 
 export default EventErrorReducer;

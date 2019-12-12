@@ -2,6 +2,7 @@ import {
     RECEIVE_EVENTS,
     RECEIVE_DATE_EVENTS,
     RECEIVE_NEW_EVENT,
+
 } from "../actions/event_actions";
 
 const EventsReducer = ( oldState = {}, action ) => {
@@ -18,5 +19,6 @@ const EventsReducer = ( oldState = {}, action ) => {
                 return oldState;
         }
     };
+
 
     export default EventsReducer;

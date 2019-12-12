@@ -9,19 +9,15 @@ class EventForm extends React.Component {
             title: '',
             date: '',
             address: '',
-            body: '',
-            connectionCode: props.connectionCode
+            body: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
+        debugger
     }
 
     componentDidMount() {
         this.getLocation();
-        document.querySelector('.event-form-submit').addEventListener('click', () => {
-            const modal = document.querySelector('.event-form-modal')
-            if (!modal.className.includes('hidden')) modal.classList.add('hidden');
-        });
 
         document.querySelector('.event-form-cancel').addEventListener('click', () => {
             document.querySelector('.event-form-modal').classList.add('hidden');
@@ -31,6 +27,7 @@ class EventForm extends React.Component {
             document.querySelector('.event-form-modal').classList.add('hidden');
         })
     }
+
 
     getLocation() {
         function success(pos) {
@@ -55,10 +52,36 @@ class EventForm extends React.Component {
         }
     }
 
+    renderErrors() {
+        return (
+            <ul className="errors">
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+
     handleSubmit(e) {
-        e.preventDefault();
+        
+        e.preventDefault()
+
         this.props.createNewEvent(this.state)
-            // .then(() => this.props.history.push(`/events/${this.state.date}`));
+            .then(() => {
+                if (this.props.errors.length === 0) {
+                    this.props.history.push(`/events/${this.state.date}`)
+                    
+                    const modal = document.querySelector('.event-form-modal')
+                    modal.classList.add('hidden');
+                }
+            })
+        this.props.clearErrors();
+        this.setState({
+            title: '',
+            body: ''
+        })
     }
 
     handleCancel(e) {
@@ -67,9 +90,11 @@ class EventForm extends React.Component {
 
     render() {
         return (
+            
             <div className="eventCalendar">
                 <h1>Welcome to the adAstra Event Form!</h1>
                     <div className="event-form-container">
+                        {this.renderErrors()}
                         <form className="event-form" >
                             <h2>Create Event</h2>
                             <div className="event-title">
@@ -112,8 +137,10 @@ class EventForm extends React.Component {
                             </span>
                         </form>
                     </div>
+                    
             </div>
-
+    
+        
         )
     }
 }
