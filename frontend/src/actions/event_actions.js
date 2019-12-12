@@ -4,6 +4,7 @@ export const RECEIVE_EVENTS = 'RECEIVE_EVENTS';
 export const RECEIVE_NEW_EVENT = 'RECEIVE_NEW_EVENT';
 export const RECEIVE_DATE_EVENTS = "RECEIVE_DATE_EVENTS";
 export const RECEIVE_EVENT_ERRORS = 'RECEIVE_EVENT_ERRORS';
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
 // export const RECEIVE_AN_EVENT = "RECEIVE_AN_EVENT";
 // export const REMOVE_EVENT = 'REMOVE_EVENT';
 
@@ -28,6 +29,12 @@ const receiveEventErrors = errors => {
         errors
     };
 };
+
+export const clearErrors = () => {
+    return {
+        type: CLEAR_ERRORS
+    }
+}
 
 export const fetchEvents = () => dispatch => {
     return EventUtil.getEvents()
