@@ -9,6 +9,7 @@ class MainPage extends React.Component {
     this.props.fetchEvents()
       .then(() => {
         document.querySelector('.create-event-icon').addEventListener('click', () => {
+          document.querySelector('.event-modal-container').classList.remove('hidden');
           document.querySelector('.event-form-modal').classList.remove('hidden');
         })
       })

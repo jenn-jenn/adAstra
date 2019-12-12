@@ -1,9 +1,20 @@
+.event-modal-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  // background-color: red;
+  z-index: 11;
+  width: 100%;
+  height: 100%;
+}
+
 .event-form-modal {
   position: fixed;
   top: 53%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 6;
+  z-index: 12;
 
   background: #001c33ea;
   border-radius: 20px;
