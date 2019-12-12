@@ -147,9 +147,11 @@ class NavBar extends React.Component {
   }
   
   componentDidMount() {
-    document.querySelector('.create-event-icon').addEventListener('click', () => {
-      document.querySelector('.event-form-modal').classList.remove('hidden');
-    })
+    if (this.props.loggedIn) {
+      document.querySelector('.create-event-icon').addEventListener('click', () => {
+        document.querySelector('.event-form-modal').classList.remove('hidden');
+      })
+    }
   }
 
   render() {

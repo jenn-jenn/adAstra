@@ -58,7 +58,8 @@ class EventForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createNewEvent(this.state)
-            // .then(() => this.props.history.push(`/events/${this.state.date}`));
+            .then(() => this.props.fetchDateEvents(this.state.date))
+            .then(() => this.props.history.push(`/events/${this.state.date}`));
     }
 
     handleCancel(e) {
