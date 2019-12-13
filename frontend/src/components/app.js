@@ -14,7 +14,7 @@ import EventFormContainer from './events/event_form_container';
 import CosmicObjectContainer from './cosmicObjects/cosmicObjectsContainer';
 import CosmicObjectsShow from './cosmicObjects/cosmicObjectsshowContainer';
 import About from "./about/about";
-import EventFormModal from "./modal/eventformmodal";
+import EventFormModal from "./modal/event_form_modal";
 
 
 const App = () => (

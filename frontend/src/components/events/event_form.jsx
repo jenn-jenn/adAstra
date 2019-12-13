@@ -24,12 +24,18 @@ class EventForm extends React.Component {
         })
 
         document.querySelector('.fa.fa-times.eventx').addEventListener('click', () => {
-            modal.classList.add('hidden');
+            if (!modal.className.includes('hidden')) modal.classList.add('hidden');
         })
+
+        // if (document.querySelector('.event-form-modal').className.includes('hidden')) {
+        //     document.querySelectorAll('.nav *:not(.create-event-icon)').forEach(ele => {
+        //         ele.addEventListener('click', () => {
+        //             document.querySelector('.event-form-modal').classList.add('hidden')
+        //         })
+        //     })
+        // }
         
-
     }
-
 
     getLocation() {
         function success(pos) {
@@ -75,7 +81,7 @@ class EventForm extends React.Component {
                 if (this.props.errors.length === 0) {
                     this.props.history.push(`/events/${this.state.date}`)
                     
-                    const modal = document.querySelector('.event-form-modal')
+                    const modal = document.querySelector('event-form-modal');
                     modal.classList.add('hidden');
                 }
             })

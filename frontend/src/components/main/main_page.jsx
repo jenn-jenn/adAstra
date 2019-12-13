@@ -7,11 +7,6 @@ import WeatherContainer from "../weather/weather_container";
 class MainPage extends React.Component {
   componentDidMount() {
     this.props.fetchEvents()
-      .then(() => {
-        document.querySelector('.create-event-icon').addEventListener('click', () => {
-          document.querySelector('.event-form-modal').classList.remove('hidden');
-        })
-      })
   }
 
   render() {   

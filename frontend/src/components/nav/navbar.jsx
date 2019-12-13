@@ -130,7 +130,7 @@ class NavBar extends React.Component {
             <span>Constellations</span></a>
           </div>
           <div className="create-event-icon">
-            <i className="fas fa-calendar-plus" />
+            <i className="fas fa-calendar-plus create-event-icon" />
             <span className="create-event-icon">Create Event</span>
           </div>
           <div>
