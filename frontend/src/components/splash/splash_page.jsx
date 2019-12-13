@@ -16,7 +16,7 @@ class SplashPage extends React.Component {
         <div id="cover"><img src="/shooting-star.gif" alt="shooting-star"/></div>
           <h2>adAstra</h2>
             <div className="splash-page-intro">
-              <p><em>Join our community and meet other stargazers!</em></p>
+              <p>Join our community and meet other stargazers!</p>
               <p>Built to reconnect with the ebb and flow of space,<br/>
               adAstra helps you geolocate the best sites<br/>
               for stargazing and meteor showers.</p>

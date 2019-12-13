@@ -28,11 +28,8 @@ class EventForm extends React.Component {
         document.querySelector('.fa.fa-times.eventx').addEventListener('click', () => {
             modalContainer.classList.add('hidden');
             formModal.classList.add('hidden');
-        })
-        
-
+        })        
     }
-
 
     getLocation() {
         function success(pos) {

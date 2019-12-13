@@ -14,7 +14,7 @@ import EventFormContainer from './events/event_form_container';
 import CosmicObjectContainer from './cosmicObjects/cosmicObjectsContainer';
 import CosmicObjectsShow from './cosmicObjects/cosmicObjectsshowContainer';
 import About from "./about/about";
-import EventFormModal from "./modal/eventformmodal";
+import EventFormModal from "./modal/event_form_modal";
 
 
 const App = () => (
@@ -28,8 +28,8 @@ const App = () => (
       <ProtectedRoute exact path="/posts/:postId" component={PostShowContainer} />
       <ProtectedRoute exact path="/events/new" component={EventFormContainer} />    
       <ProtectedRoute exact path="/events/:date" component={DateShowContainer} />
-      <ProtectedRoute exact path="/cosmicobjects" component={CosmicObjectContainer} />
-      <ProtectedRoute exact path="/cosmicobjects/:star" component={CosmicObjectsShow} />
+      <ProtectedRoute exact path="/constellations" component={CosmicObjectContainer} />
+      <ProtectedRoute exact path="/constellations/:star" component={CosmicObjectsShow} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <AuthRoute exact path="/" component={SplashPage} />

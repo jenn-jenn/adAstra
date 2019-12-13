@@ -34,7 +34,7 @@ class NavBar extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.history.push(`/cosmicobjects/${this.state.searchInput}`);
+    this.props.history.push(`/constellations/${this.state.searchInput}`);
     this.setState({ searchInput: '' });
   }
 
@@ -72,7 +72,7 @@ class NavBar extends React.Component {
     let display = "";
     if (this.props.cosmic.length !== undefined && this.state.searchInput !== "") {
       cosmicObjects = this.props.cosmic.filter(el => el.target.name.toLowerCase().includes(this.state.searchInput))
-      display = cosmicObjects.length > 0 ? cosmicObjects.sort().map((el, i) => <a onClick={this.handleStarClick} href={`#/cosmicobjects/${el.target.name}`} key={i}>{el.target.name}</a>) : ""
+      display = cosmicObjects.length > 0 ? cosmicObjects.sort().map((el, i) => <a onClick={this.handleStarClick} href={`#/constellations/${el.target.name}`} key={i}>{el.target.name}</a>) : ""
     }
     if (display.length === 0) display = "";
 
@@ -126,11 +126,11 @@ class NavBar extends React.Component {
             <span>Forum</span></a>
           </div>
           <div>
-            <a href="#/cosmicobjects"><i className="fas fa-star" />
+            <a href="#/constellations"><i className="fas fa-star" />
             <span>Constellations</span></a>
           </div>
           <div className="create-event-icon">
-            <i className="fas fa-calendar-plus" />
+            <i className="fas fa-calendar-plus create-event-icon" />
             <span className="create-event-icon">Create Event</span>
           </div>
           <div>
@@ -144,14 +144,6 @@ class NavBar extends React.Component {
         <div>
         </div>
       )
-    }
-  }
-  
-  componentDidMount() {
-    if (this.props.loggedIn) {
-      document.querySelector('.create-event-icon').addEventListener('click', () => {
-        document.querySelector('.event-form-modal').classList.remove('hidden');
-      })
     }
   }
 

@@ -52,7 +52,7 @@ class Map extends React.Component {
       document.querySelectorAll('.marker').forEach(m => {
         m.addEventListener('click', (e) => {
           let name = e.target.innerHTML.split(" ").join("").toLowerCase()
-          this.props.history.push(`/cosmicobjects/${name}`)
+          this.props.history.push(`/constellations/${name}`)
         })
       })
 
@@ -71,7 +71,8 @@ class Map extends React.Component {
       <div id="map-container">
         <div className="map-modal">
           <i className="fa fa-times mapx" />
-          <p><h3>Constellation Map</h3>
+          <h3>Constellation Map</h3>
+          <p>
             <img src="./location_icon.png" alt="icon" />
             Click to find viewing radius.<br />
             Hover over marker for name.<br />

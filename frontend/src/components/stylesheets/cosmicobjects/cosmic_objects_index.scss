@@ -8,16 +8,10 @@
   color: white;
 }
 
-.stars h1 {
-  text-shadow: 1px 1px 2px rgb(255, 255, 255);
-}
-
 .star-container {
   width: 60%;
   min-width: 400px;
   border-radius: 20px;
-  box-shadow: 0px 0px 10px grey;
-  background-color: rgba(0, 0, 0, 0.6);
   margin: 10px;
   min-width: 550px;
 }
@@ -32,7 +26,7 @@
   flex-flow: wrap;
   align-content: center;
   justify-content: space-evenly;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .star {
@@ -44,7 +38,7 @@
 
 .star a {
   text-decoration: none;
-  color: rgb(125, 125, 125);
+  color: white;
   transition: 0.3s;
 }
 
@@ -57,8 +51,7 @@
 }
 
 .star div:hover {
-  color: white;
-  text-shadow: 1px 1px 3px white;
+  text-shadow: 0px 0px 2px white;
   cursor: pointer;
   box-shadow: 0px 0px 10px white;
 }

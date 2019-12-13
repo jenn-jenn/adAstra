@@ -2,8 +2,7 @@
   position: fixed;
   left: 0;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  // background-color: red;
+  background-color: rgba(0, 0, 0, 0.85);
   z-index: 11;
   width: 100%;
   height: 100%;
@@ -16,11 +15,13 @@
   transform: translate(-50%, -50%);
   z-index: 12;
 
-  background: #001c33ea;
+  background: #0a1d2c;
   border-radius: 20px;
+  box-shadow: 0px 0px 10px rgb(48, 48, 48);
 
   width: 700px;
   height: 600px;
+  box-sizing: border-box;
 }
 
 .event-form-modal .event-form-container, .event-form-modal .event-form {
@@ -86,13 +87,13 @@
 }
 
 .event-form input {
-  border-radius: 5px;
+  border-radius: 10px;
   outline: none;
   border: none;
   padding: 15px;
   margin: 10px;
   width: 70%;
-  font-size: 15px;
+  font-size: 12px;
   font-family: 'Alata', sans-serif;
 }
 
@@ -104,38 +105,20 @@
   justify-content: space-evenly;
 }
 
-.event-form-cancel {
+.event-form-cancel, .event-form-submit {
   border: 1px solid rgb(33, 48, 67);
   background-color: rgb(33, 48, 67);
-  padding: 12px 24px;
-  border-radius: 10px;
   transition: .3s;
   color: white;
   outline: none;
   margin-left: 100px;
+  box-shadow: 0px 0px 5px grey;
 }
 
-.event-form-cancel:hover {
+.event-form-cancel:hover, .event-form-submit:hover {
   opacity: 0.5;
   cursor: pointer;
 }
-
-.event-form-submit {
-  border: 1px solid rgb(33, 48, 67);
-  background-color: rgb(33, 48, 67);
-  padding: 12px 24px;
-  border-radius: 10px;
-  transition: .3s;
-  color: white;
-  outline: none;
-  margin-left: 150px;
-}
-
-.event-form-submit:hover {
-  opacity: 0.5;
-  cursor: pointer;
-}
-
 
 .errors {
   color: red;
