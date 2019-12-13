@@ -11,7 +11,7 @@ class CosmicObjectsIndex extends React.Component {
 
         return (
           <div className="stars">
-            <h1>Stars</h1>
+            <h1>Constellations</h1>
             <div className="star-container">
               <ul className="star-list">
                 {this.props.cosmicObjects.map((star, i) => {
@@ -29,7 +29,7 @@ class CosmicObjectsIndex extends React.Component {
 
                 return (
                   <li key={i} className="star">
-                    <Link to={`/cosmicobjects/${star.target.name.split(" ").join("").toLowerCase()}`}>
+                    <Link to={`/constellations/${star.target.name.split(" ").join("").toLowerCase()}`}>
                       <div style={imgStyle}>
                         <h3>
                           {star.target.name}

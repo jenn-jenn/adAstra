@@ -17,24 +17,18 @@ class EventForm extends React.Component {
 
     componentDidMount() {
         this.getLocation();
-        const modal = document.querySelector('.event-form-modal');
+        const modalContainer = document.querySelector('.event-modal-container ');
+        const formModal = document.querySelector('.event-form-modal');
 
         document.querySelector('.event-form-cancel').addEventListener('click', () => {
-            if (!modal.className.includes('hidden')) modal.classList.add('hidden');
+            if (!modalContainer.className.includes('hidden')) modalContainer.classList.add('hidden');
+            if (!formModal.className.includes('hidden')) formModal.classList.add('hidden');
         })
 
         document.querySelector('.fa.fa-times.eventx').addEventListener('click', () => {
-            if (!modal.className.includes('hidden')) modal.classList.add('hidden');
-        })
-
-        // if (document.querySelector('.event-form-modal').className.includes('hidden')) {
-        //     document.querySelectorAll('.nav *:not(.create-event-icon)').forEach(ele => {
-        //         ele.addEventListener('click', () => {
-        //             document.querySelector('.event-form-modal').classList.add('hidden')
-        //         })
-        //     })
-        // }
-        
+            modalContainer.classList.add('hidden');
+            formModal.classList.add('hidden');
+        })        
     }
 
     getLocation() {
@@ -81,8 +75,10 @@ class EventForm extends React.Component {
                 if (this.props.errors.length === 0) {
                     this.props.history.push(`/events/${this.state.date}`)
                     
-                    const modal = document.querySelector('event-form-modal');
+                    const modalContainer = document.querySelector('.event-modal-container');
+                    const modal = document.querySelector('.event-form-modal')
                     modal.classList.add('hidden');
+                    modalContainer.classList.add('hidden');
                 }
             })
             .then(() => this.props.fetchDateEvents(this.state.date))

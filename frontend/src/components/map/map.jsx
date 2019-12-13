@@ -52,7 +52,7 @@ class Map extends React.Component {
       document.querySelectorAll('.marker').forEach(m => {
         m.addEventListener('click', (e) => {
           let name = e.target.innerHTML.split(" ").join("").toLowerCase()
-          this.props.history.push(`/cosmicobjects/${name}`)
+          this.props.history.push(`/constellations/${name}`)
         })
       })
 
