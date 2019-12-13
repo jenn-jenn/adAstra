@@ -38,7 +38,7 @@
 
 .star a {
   text-decoration: none;
-  color: rgb(125, 125, 125);
+  color: white;
   transition: 0.3s;
 }
 
@@ -51,7 +51,6 @@
 }
 
 .star div:hover {
-  color: white;
   text-shadow: 0px 0px 2px white;
   cursor: pointer;
   box-shadow: 0px 0px 10px white;
