@@ -7,7 +7,8 @@ class NavBar extends React.Component {
     super(props);
     
     this.state = {
-      searchInput: ""
+      searchInput: "",
+      isDisplay: false
     };
     
     this.logoutUser = this.logoutUser.bind(this);
@@ -16,8 +17,9 @@ class NavBar extends React.Component {
     this.logoLink = this.logoLink.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleEnter = this.handleEnter.bind(this);
-    this.handleStarClick = this.handleStarClick.bind(this);
     this.update = this.update.bind(this);
+    this.handleUndisplayList = this.handleUndisplayList.bind(this);
+    this.handleDisplayList = this.handleDisplayList.bind(this);
   }
 
   logoutUser(e) {
@@ -63,16 +65,26 @@ class NavBar extends React.Component {
     }
   }
 
-  handleStarClick() {
-    this.setState({ searchInput: '' })
+  handleDisplayList(e) {
+    e.stopPropagation();
+    setTimeout(() => {
+      this.setState({ isDisplay: true })
+    }, 150)
+  }
+
+  handleUndisplayList() {
+    setTimeout(() => {
+      this.setState({ isDisplay: false, searchInput: '' });
+    }, 150)
   }
 
   searchBar() {
     let cosmicObjects;
     let display = "";
-    if (this.props.cosmic.length !== undefined && this.state.searchInput !== "") {
+  
+    if (this.props.cosmic.length !== undefined && this.state.isDisplay) {
       cosmicObjects = this.props.cosmic.filter(el => el.target.name.toLowerCase().includes(this.state.searchInput))
-      display = cosmicObjects.length > 0 ? cosmicObjects.sort().map((el, i) => <a onClick={this.handleStarClick} href={`#/constellations/${el.target.name}`} key={i}>{el.target.name}</a>) : ""
+      display = cosmicObjects.length > 0 ? cosmicObjects.sort().map((el, i) => <a href={`#/constellations/${el.target.name}`} key={i}>{el.target.name}</a>) : ""
     }
     if (display.length === 0) display = "";
 
@@ -88,6 +100,8 @@ class NavBar extends React.Component {
               id="feature-filter"
               type="text"
               onChange={this.update("searchInput")}
+              onFocus={this.handleDisplayList}
+              onBlur={this.handleUndisplayList}
               placeholder="Search for the stars..."
               autoComplete="off"
               value={this.state.searchInput}
@@ -95,7 +109,6 @@ class NavBar extends React.Component {
             />
           </form>
           <i className="fa fa-search" onClick={this.handleSubmit} />
-       
         </div>
       );
     }
